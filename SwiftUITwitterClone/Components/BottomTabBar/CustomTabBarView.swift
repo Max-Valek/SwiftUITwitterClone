@@ -55,7 +55,7 @@ extension CustomTabBarView {
                 .font(.title3)
         }
         .fontWeight(localSelection == tab ? .semibold : .regular)
-        .foregroundColor(localSelection == tab ? Color.white.opacity(0.8) : Color.white.opacity(0.4))
+        .foregroundColor(localSelection == tab ? Color.white.opacity(0.6) : Color.white.opacity(0.4))
         .padding(.vertical, 8)
         .frame(maxWidth: .infinity)
         .background(
@@ -79,7 +79,7 @@ extension CustomTabBarView {
             }
         }
         .padding(6)
-        .background(Color.white.opacity(0.05).ignoresSafeArea(edges: .bottom))
+        .background(Color.white.opacity(0.03).ignoresSafeArea(edges: .bottom))
         .cornerRadius(5)
         // .shadow(color: Color.white.opacity(0.4), radius: 10, x: 0, y: 5)
         .padding(.horizontal)

@@ -16,6 +16,7 @@
 		9D45A7D329E9D5C30041C60A /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7D229E9D5C30041C60A /* TabBarItemsPreferenceKey.swift */; };
 		9D45A7D529E9D5D90041C60A /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7D429E9D5D90041C60A /* TabBarItem.swift */; };
 		9D45A7E429E9DAB20041C60A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7E329E9DAB20041C60A /* MainView.swift */; };
+		9D45A7E929E9DF660041C60A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7E829E9DF660041C60A /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		9D45A7D229E9D5C30041C60A /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
 		9D45A7D429E9D5D90041C60A /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		9D45A7E329E9DAB20041C60A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9D45A7E829E9DF660041C60A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,7 @@
 		9D45A7C829E9D44A0041C60A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				9D45A7CA29E9D47C0041C60A /* TabBar */,
+				9D45A7CA29E9D47C0041C60A /* BottomTabBar */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -90,11 +92,12 @@
 			isa = PBXGroup;
 			children = (
 				9D45A7E229E9DAA00041C60A /* Main */,
+				9D45A7E629E9DF3D0041C60A /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		9D45A7CA29E9D47C0041C60A /* TabBar */ = {
+		9D45A7CA29E9D47C0041C60A /* BottomTabBar */ = {
 			isa = PBXGroup;
 			children = (
 				9D45A7CE29E9D55A0041C60A /* TabBarSampleView.swift */,
@@ -103,7 +106,7 @@
 				9D45A7D229E9D5C30041C60A /* TabBarItemsPreferenceKey.swift */,
 				9D45A7D429E9D5D90041C60A /* TabBarItem.swift */,
 			);
-			path = TabBar;
+			path = BottomTabBar;
 			sourceTree = "<group>";
 		};
 		9D45A7E229E9DAA00041C60A /* Main */ = {
@@ -112,6 +115,14 @@
 				9D45A7E329E9DAB20041C60A /* MainView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		9D45A7E629E9DF3D0041C60A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9D45A7E829E9DF660041C60A /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 				9D45A7CF29E9D55A0041C60A /* TabBarSampleView.swift in Sources */,
 				9D45A7D329E9D5C30041C60A /* TabBarItemsPreferenceKey.swift in Sources */,
 				9D45A7D529E9D5D90041C60A /* TabBarItem.swift in Sources */,
+				9D45A7E929E9DF660041C60A /* HomeView.swift in Sources */,
 				9D45A7BB29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift in Sources */,
 				9D45A7D129E9D58E0041C60A /* CustomTabBarContainerView.swift in Sources */,
 			);

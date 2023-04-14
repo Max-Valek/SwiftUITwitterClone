@@ -24,8 +24,8 @@ struct MainView: View {
             
             // home, search, spaces, notifications, messages
             
-            
-            Color.black
+            HomeView()
+            //Color.black
                 // add TabBarItem to TabBarItemsPreferenceKey array
                 .tabBarItem(tab: TabBarItem.home, selection: $tabSelection)
             
