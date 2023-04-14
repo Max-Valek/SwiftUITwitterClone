@@ -23,11 +23,11 @@ struct HomeView: View {
                 
                 TopTabBarContainerView(selection: $tabSelection) {
                     
-                    Color.black
+                    ForYouView()
                     // add TabBarItem to TabBarItemsPreferenceKey array
                         .topTabBarItem(tab: TopTabBarItem.forYou, selection: $tabSelection)
                     
-                    Color.red
+                    FollowingView()
                         .topTabBarItem(tab: TopTabBarItem.following, selection: $tabSelection)
                     
                 }

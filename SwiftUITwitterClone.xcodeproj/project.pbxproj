@@ -22,6 +22,9 @@
 		9D45A7F429E9EB670041C60A /* TopTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7F329E9EB670041C60A /* TopTabBarView.swift */; };
 		9D45A7F629E9ED2F0041C60A /* TopTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7F529E9ED2F0041C60A /* TopTabBarContainerView.swift */; };
 		9D45A7F829E9ED570041C60A /* TopTabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7F729E9ED570041C60A /* TopTabBarItemsPreferenceKey.swift */; };
+		9D45A7FC29E9FCEE0041C60A /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7FB29E9FCEE0041C60A /* ForYouView.swift */; };
+		9D45A7FE29E9FD560041C60A /* FollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7FD29E9FD560041C60A /* FollowingView.swift */; };
+		9D45A80129E9FDAC0041C60A /* TweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A80029E9FDAC0041C60A /* TweetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		9D45A7F329E9EB670041C60A /* TopTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarView.swift; sourceTree = "<group>"; };
 		9D45A7F529E9ED2F0041C60A /* TopTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarContainerView.swift; sourceTree = "<group>"; };
 		9D45A7F729E9ED570041C60A /* TopTabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		9D45A7FB29E9FCEE0041C60A /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
+		9D45A7FD29E9FD560041C60A /* FollowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingView.swift; sourceTree = "<group>"; };
+		9D45A80029E9FDAC0041C60A /* TweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 		9D45A7C829E9D44A0041C60A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9D45A7FF29E9FD9D0041C60A /* Tweet */,
 				9D45A7CA29E9D47C0041C60A /* BottomTabBar */,
 			);
 			path = Components;
@@ -130,6 +137,8 @@
 		9D45A7E629E9DF3D0041C60A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9D45A7F929E9FCD30041C60A /* ForYou */,
+				9D45A7FA29E9FCDD0041C60A /* Following */,
 				9D45A7EA29E9E8430041C60A /* TopTabBar */,
 				9D45A7E829E9DF660041C60A /* HomeView.swift */,
 			);
@@ -146,6 +155,30 @@
 				9D45A7F129E9EA700041C60A /* TopTabBarItem.swift */,
 			);
 			path = TopTabBar;
+			sourceTree = "<group>";
+		};
+		9D45A7F929E9FCD30041C60A /* ForYou */ = {
+			isa = PBXGroup;
+			children = (
+				9D45A7FB29E9FCEE0041C60A /* ForYouView.swift */,
+			);
+			path = ForYou;
+			sourceTree = "<group>";
+		};
+		9D45A7FA29E9FCDD0041C60A /* Following */ = {
+			isa = PBXGroup;
+			children = (
+				9D45A7FD29E9FD560041C60A /* FollowingView.swift */,
+			);
+			path = Following;
+			sourceTree = "<group>";
+		};
+		9D45A7FF29E9FD9D0041C60A /* Tweet */ = {
+			isa = PBXGroup;
+			children = (
+				9D45A80029E9FDAC0041C60A /* TweetView.swift */,
+			);
+			path = Tweet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,10 +259,13 @@
 				9D45A7CF29E9D55A0041C60A /* BottomTabBarSampleView.swift in Sources */,
 				9D45A7D329E9D5C30041C60A /* BottomTabBarItemsPreferenceKey.swift in Sources */,
 				9D45A7F429E9EB670041C60A /* TopTabBarView.swift in Sources */,
+				9D45A7FC29E9FCEE0041C60A /* ForYouView.swift in Sources */,
 				9D45A7D529E9D5D90041C60A /* BottomTabBarItem.swift in Sources */,
 				9D45A7F629E9ED2F0041C60A /* TopTabBarContainerView.swift in Sources */,
 				9D45A7E929E9DF660041C60A /* HomeView.swift in Sources */,
+				9D45A7FE29E9FD560041C60A /* FollowingView.swift in Sources */,
 				9D45A7BB29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift in Sources */,
+				9D45A80129E9FDAC0041C60A /* TweetView.swift in Sources */,
 				9D45A7D129E9D58E0041C60A /* BottomTabBarContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
