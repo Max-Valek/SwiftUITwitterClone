@@ -24,18 +24,20 @@ import SwiftUI
 // use a model (struct) when you dont know what the data it.
 // if you have the data up front, use an enum
 enum TabBarItem: Hashable {
-    case home, favorites, profile, messages
+    case home, search, spaces, notifications, messages
     
     var iconName: String {
         switch self {
         case .home:
             return "house"
-        case .favorites:
-            return "heart"
-        case .profile:
-            return "person"
+        case .search:
+            return "magnifyingglass"
+        case .spaces:
+            return "mic"
+        case .notifications:
+            return "bell"
         case .messages:
-            return "message"
+            return "envelope"
         }
     }
     
@@ -43,10 +45,12 @@ enum TabBarItem: Hashable {
         switch self {
         case .home:
             return "Home"
-        case .favorites:
-            return "Favorites"
-        case .profile:
-            return "Profile"
+        case .search:
+            return "Search"
+        case .spaces:
+            return "Spaces"
+        case .notifications:
+            return "Notif"
         case .messages:
             return "Messages"
         }
@@ -55,13 +59,15 @@ enum TabBarItem: Hashable {
     var color: Color {
         switch self {
         case .home:
-            return Color.red
-        case .favorites:
-            return Color.blue
-        case .profile:
-            return Color.green
+            return Color.black
+        case .search:
+            return Color.mint
+        case .spaces:
+            return Color.purple
+        case .notifications:
+            return Color.gray
         case .messages:
-            return Color.orange
+            return Color.blue
         }
     }
 }

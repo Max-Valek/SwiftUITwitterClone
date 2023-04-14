@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9D45A7BB29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7BA29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift */; };
-		9D45A7BD29E9D2BA0041C60A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7BC29E9D2BA0041C60A /* ContentView.swift */; };
 		9D45A7BF29E9D2BB0041C60A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D45A7BE29E9D2BB0041C60A /* Assets.xcassets */; };
 		9D45A7C229E9D2BB0041C60A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D45A7C129E9D2BB0041C60A /* Preview Assets.xcassets */; };
 		9D45A7CD29E9D4D90041C60A /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7CC29E9D4D90041C60A /* CustomTabBarView.swift */; };
@@ -16,12 +15,12 @@
 		9D45A7D129E9D58E0041C60A /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7D029E9D58E0041C60A /* CustomTabBarContainerView.swift */; };
 		9D45A7D329E9D5C30041C60A /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7D229E9D5C30041C60A /* TabBarItemsPreferenceKey.swift */; };
 		9D45A7D529E9D5D90041C60A /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7D429E9D5D90041C60A /* TabBarItem.swift */; };
+		9D45A7E429E9DAB20041C60A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7E329E9DAB20041C60A /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9D45A7B729E9D2BA0041C60A /* SwiftUITwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D45A7BA29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITwitterCloneApp.swift; sourceTree = "<group>"; };
-		9D45A7BC29E9D2BA0041C60A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D45A7BE29E9D2BB0041C60A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D45A7C129E9D2BB0041C60A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D45A7CC29E9D4D90041C60A /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
@@ -29,6 +28,7 @@
 		9D45A7D029E9D58E0041C60A /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
 		9D45A7D229E9D5C30041C60A /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
 		9D45A7D429E9D5D90041C60A /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		9D45A7E329E9DAB20041C60A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,6 @@
 				9D45A7C929E9D44D0041C60A /* Scenes */,
 				9D45A7C829E9D44A0041C60A /* Components */,
 				9D45A7BA29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift */,
-				9D45A7BC29E9D2BA0041C60A /* ContentView.swift */,
 				9D45A7BE29E9D2BB0041C60A /* Assets.xcassets */,
 				9D45A7C029E9D2BB0041C60A /* Preview Content */,
 			);
@@ -90,6 +89,7 @@
 		9D45A7C929E9D44D0041C60A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9D45A7E229E9DAA00041C60A /* Main */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -104,6 +104,14 @@
 				9D45A7D429E9D5D90041C60A /* TabBarItem.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		9D45A7E229E9DAA00041C60A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9D45A7E329E9DAB20041C60A /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,7 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D45A7CD29E9D4D90041C60A /* CustomTabBarView.swift in Sources */,
-				9D45A7BD29E9D2BA0041C60A /* ContentView.swift in Sources */,
+				9D45A7E429E9DAB20041C60A /* MainView.swift in Sources */,
 				9D45A7CF29E9D55A0041C60A /* TabBarSampleView.swift in Sources */,
 				9D45A7D329E9D5C30041C60A /* TabBarItemsPreferenceKey.swift in Sources */,
 				9D45A7D529E9D5D90041C60A /* TabBarItem.swift in Sources */,
