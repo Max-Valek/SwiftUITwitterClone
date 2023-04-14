@@ -14,7 +14,12 @@ struct ForYouView: View {
         ScrollView {
             ForEach(0..<10, id: \.self) { num in
                 TweetView()
+                
+                RoundedRectangle(cornerRadius: 5)
+                    .frame(height: 0.5)
+                    .foregroundColor(.gray)
             }
+            .padding(.top, 50)
         }
     }
 }

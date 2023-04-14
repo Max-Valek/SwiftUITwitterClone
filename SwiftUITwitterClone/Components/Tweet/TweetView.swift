@@ -16,20 +16,51 @@ struct TweetView: View {
                 .resizable()
                 .frame(width: 40, height: 40)
             
-            VStack {
+            VStack(alignment: .leading, spacing: 8) {
                 
                 HStack {
                     Text("User")
-                        .font(.title2)
+                        .font(.title3)
                     
-                    Text("@user")
+                    Text("@user • 1m")
                         .font(.title3)
                         .foregroundColor(.gray)
                     
-                    Text("1m")
+                    Spacer()
                     
                     Text("•••")
+                        .foregroundColor(.gray)
                 }
+                
+                Text("This is a sample tweet. It is not very pretty and this is just sample text.")
+                
+                HStack {
+                    HStack {
+                        Image(systemName: "bubble.left")
+                        Text("82")
+                    }
+                    Spacer()
+                    HStack {
+                        Image(systemName: "arrow.triangle.2.circlepath")
+                        Text("71")
+                    }
+                    Spacer()
+                    HStack {
+                        Image(systemName: "heart")
+                        Text("1,538")
+                    }
+                    Spacer()
+                    HStack {
+                        Image(systemName: "chart.bar")
+                        Text("182K")
+                    }
+                    Spacer()
+                    Image(systemName: "square.and.arrow.up")
+                }
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .foregroundColor(.gray)
+                
             }
         }
     }
