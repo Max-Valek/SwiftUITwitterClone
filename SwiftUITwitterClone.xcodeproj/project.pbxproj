@@ -10,13 +10,18 @@
 		9D45A7BB29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7BA29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift */; };
 		9D45A7BF29E9D2BB0041C60A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D45A7BE29E9D2BB0041C60A /* Assets.xcassets */; };
 		9D45A7C229E9D2BB0041C60A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D45A7C129E9D2BB0041C60A /* Preview Assets.xcassets */; };
-		9D45A7CD29E9D4D90041C60A /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7CC29E9D4D90041C60A /* CustomTabBarView.swift */; };
-		9D45A7CF29E9D55A0041C60A /* TabBarSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7CE29E9D55A0041C60A /* TabBarSampleView.swift */; };
-		9D45A7D129E9D58E0041C60A /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7D029E9D58E0041C60A /* CustomTabBarContainerView.swift */; };
-		9D45A7D329E9D5C30041C60A /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7D229E9D5C30041C60A /* TabBarItemsPreferenceKey.swift */; };
-		9D45A7D529E9D5D90041C60A /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7D429E9D5D90041C60A /* TabBarItem.swift */; };
+		9D45A7CD29E9D4D90041C60A /* BottomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7CC29E9D4D90041C60A /* BottomTabBarView.swift */; };
+		9D45A7CF29E9D55A0041C60A /* BottomTabBarSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7CE29E9D55A0041C60A /* BottomTabBarSampleView.swift */; };
+		9D45A7D129E9D58E0041C60A /* BottomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7D029E9D58E0041C60A /* BottomTabBarContainerView.swift */; };
+		9D45A7D329E9D5C30041C60A /* BottomTabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7D229E9D5C30041C60A /* BottomTabBarItemsPreferenceKey.swift */; };
+		9D45A7D529E9D5D90041C60A /* BottomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7D429E9D5D90041C60A /* BottomTabBarItem.swift */; };
 		9D45A7E429E9DAB20041C60A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7E329E9DAB20041C60A /* MainView.swift */; };
 		9D45A7E929E9DF660041C60A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7E829E9DF660041C60A /* HomeView.swift */; };
+		9D45A7EC29E9E9DF0041C60A /* TopTabBarSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7EB29E9E9DF0041C60A /* TopTabBarSampleView.swift */; };
+		9D45A7F229E9EA700041C60A /* TopTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7F129E9EA700041C60A /* TopTabBarItem.swift */; };
+		9D45A7F429E9EB670041C60A /* TopTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7F329E9EB670041C60A /* TopTabBarView.swift */; };
+		9D45A7F629E9ED2F0041C60A /* TopTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7F529E9ED2F0041C60A /* TopTabBarContainerView.swift */; };
+		9D45A7F829E9ED570041C60A /* TopTabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7F729E9ED570041C60A /* TopTabBarItemsPreferenceKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,13 +29,18 @@
 		9D45A7BA29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITwitterCloneApp.swift; sourceTree = "<group>"; };
 		9D45A7BE29E9D2BB0041C60A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D45A7C129E9D2BB0041C60A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9D45A7CC29E9D4D90041C60A /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
-		9D45A7CE29E9D55A0041C60A /* TabBarSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSampleView.swift; sourceTree = "<group>"; };
-		9D45A7D029E9D58E0041C60A /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
-		9D45A7D229E9D5C30041C60A /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
-		9D45A7D429E9D5D90041C60A /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		9D45A7CC29E9D4D90041C60A /* BottomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarView.swift; sourceTree = "<group>"; };
+		9D45A7CE29E9D55A0041C60A /* BottomTabBarSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarSampleView.swift; sourceTree = "<group>"; };
+		9D45A7D029E9D58E0041C60A /* BottomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarContainerView.swift; sourceTree = "<group>"; };
+		9D45A7D229E9D5C30041C60A /* BottomTabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		9D45A7D429E9D5D90041C60A /* BottomTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarItem.swift; sourceTree = "<group>"; };
 		9D45A7E329E9DAB20041C60A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9D45A7E829E9DF660041C60A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9D45A7EB29E9E9DF0041C60A /* TopTabBarSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarSampleView.swift; sourceTree = "<group>"; };
+		9D45A7F129E9EA700041C60A /* TopTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarItem.swift; sourceTree = "<group>"; };
+		9D45A7F329E9EB670041C60A /* TopTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarView.swift; sourceTree = "<group>"; };
+		9D45A7F529E9ED2F0041C60A /* TopTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarContainerView.swift; sourceTree = "<group>"; };
+		9D45A7F729E9ED570041C60A /* TopTabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +110,11 @@
 		9D45A7CA29E9D47C0041C60A /* BottomTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				9D45A7CE29E9D55A0041C60A /* TabBarSampleView.swift */,
-				9D45A7CC29E9D4D90041C60A /* CustomTabBarView.swift */,
-				9D45A7D029E9D58E0041C60A /* CustomTabBarContainerView.swift */,
-				9D45A7D229E9D5C30041C60A /* TabBarItemsPreferenceKey.swift */,
-				9D45A7D429E9D5D90041C60A /* TabBarItem.swift */,
+				9D45A7CE29E9D55A0041C60A /* BottomTabBarSampleView.swift */,
+				9D45A7CC29E9D4D90041C60A /* BottomTabBarView.swift */,
+				9D45A7D029E9D58E0041C60A /* BottomTabBarContainerView.swift */,
+				9D45A7D229E9D5C30041C60A /* BottomTabBarItemsPreferenceKey.swift */,
+				9D45A7D429E9D5D90041C60A /* BottomTabBarItem.swift */,
 			);
 			path = BottomTabBar;
 			sourceTree = "<group>";
@@ -120,9 +130,22 @@
 		9D45A7E629E9DF3D0041C60A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9D45A7EA29E9E8430041C60A /* TopTabBar */,
 				9D45A7E829E9DF660041C60A /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		9D45A7EA29E9E8430041C60A /* TopTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9D45A7EB29E9E9DF0041C60A /* TopTabBarSampleView.swift */,
+				9D45A7F329E9EB670041C60A /* TopTabBarView.swift */,
+				9D45A7F529E9ED2F0041C60A /* TopTabBarContainerView.swift */,
+				9D45A7F729E9ED570041C60A /* TopTabBarItemsPreferenceKey.swift */,
+				9D45A7F129E9EA700041C60A /* TopTabBarItem.swift */,
+			);
+			path = TopTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,14 +218,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D45A7CD29E9D4D90041C60A /* CustomTabBarView.swift in Sources */,
+				9D45A7F829E9ED570041C60A /* TopTabBarItemsPreferenceKey.swift in Sources */,
+				9D45A7CD29E9D4D90041C60A /* BottomTabBarView.swift in Sources */,
+				9D45A7EC29E9E9DF0041C60A /* TopTabBarSampleView.swift in Sources */,
+				9D45A7F229E9EA700041C60A /* TopTabBarItem.swift in Sources */,
 				9D45A7E429E9DAB20041C60A /* MainView.swift in Sources */,
-				9D45A7CF29E9D55A0041C60A /* TabBarSampleView.swift in Sources */,
-				9D45A7D329E9D5C30041C60A /* TabBarItemsPreferenceKey.swift in Sources */,
-				9D45A7D529E9D5D90041C60A /* TabBarItem.swift in Sources */,
+				9D45A7CF29E9D55A0041C60A /* BottomTabBarSampleView.swift in Sources */,
+				9D45A7D329E9D5C30041C60A /* BottomTabBarItemsPreferenceKey.swift in Sources */,
+				9D45A7F429E9EB670041C60A /* TopTabBarView.swift in Sources */,
+				9D45A7D529E9D5D90041C60A /* BottomTabBarItem.swift in Sources */,
+				9D45A7F629E9ED2F0041C60A /* TopTabBarContainerView.swift in Sources */,
 				9D45A7E929E9DF660041C60A /* HomeView.swift in Sources */,
 				9D45A7BB29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift in Sources */,
-				9D45A7D129E9D58E0041C60A /* CustomTabBarContainerView.swift in Sources */,
+				9D45A7D129E9D58E0041C60A /* BottomTabBarContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,58 +8,33 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State private var tabSelection: TopTabBarItem = TopTabBarItem.forYou
+    
     var body: some View {
         
         ZStack {
-            Color.black
             
+            Color.black.ignoresSafeArea()
+        
             VStack {
                 
-                // top icons and tabs
-                VStack {
-                    HStack {
-                        Image(systemName: "person.circle")
-                            .resizable()
-                            .frame(width: 35, height: 35)
-                        
-                        Spacer()
-                        
-                        Image("twitter")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                        
-                        Spacer()
-                        
-                        Image(systemName: "person.circle")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .opacity(0)
-                    }
+                topImages
+                
+                TopTabBarContainerView(selection: $tabSelection) {
                     
-                    //Spacer()
+                    Color.black
+                    // add TabBarItem to TabBarItemsPreferenceKey array
+                        .topTabBarItem(tab: TopTabBarItem.forYou, selection: $tabSelection)
                     
-                    HStack {
-                        Spacer()
-                        Text("For You")
-                        
-                        Spacer()
-                        Spacer()
-                        
-                        Text("Following")
-                        
-                        Spacer()
-
-                    }
-                    .font(.system(size: 20, design: .rounded))
-                    .fontWeight(.semibold)
-                    .foregroundColor(.gray)
+                    Color.red
+                        .topTabBarItem(tab: TopTabBarItem.following, selection: $tabSelection)
+                    
                 }
-                .padding()
-                .padding(.top, 40)
-                .background(Color.white.opacity(0.03))
                 
                 Spacer()
             }
+            .padding(.horizontal)
         }
         .foregroundColor(.white)
     }
@@ -68,5 +43,29 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+extension HomeView {
+    
+    private var topImages: some View {
+        HStack {
+            Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 35, height: 35)
+            
+            Spacer()
+            
+            Image("twitter")
+                .resizable()
+                .frame(width: 45, height: 45)
+            
+            Spacer()
+            
+            Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 30, height: 30)
+                .opacity(0)
+        }
     }
 }

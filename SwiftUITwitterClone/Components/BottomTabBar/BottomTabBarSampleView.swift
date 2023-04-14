@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct AppTabBarView: View {
+struct BottomTabBarSampleView: View {
     
     // selection for content (used in CustomTabBarContainerView)
     @State private var selection: String = "home"
     
-    @State private var tabSelection: TabBarItem = TabBarItem.home
+    @State private var tabSelection: BottomTabBarItem = BottomTabBarItem.home
     
     var body: some View {
         // TabView from Apple
         // defaultTabView
         
         // our custom implementation of TabView
-        CustomTabBarContainerView(selection: $tabSelection) {
+        BottomTabBarContainerView(selection: $tabSelection) {
             // ViewBuilder
             
             // home, search, spaces, notifications, messages
@@ -27,34 +27,34 @@ struct AppTabBarView: View {
             
             Color.black
                 // add TabBarItem to TabBarItemsPreferenceKey array
-                .tabBarItem(tab: TabBarItem.home, selection: $tabSelection)
+                .bottomTabBarItem(tab: BottomTabBarItem.home, selection: $tabSelection)
             
             Color.white
-                .tabBarItem(tab: TabBarItem.search, selection: $tabSelection)
+                .bottomTabBarItem(tab: BottomTabBarItem.search, selection: $tabSelection)
             
             Color.purple
-                .tabBarItem(tab: TabBarItem.spaces, selection: $tabSelection)
+                .bottomTabBarItem(tab: BottomTabBarItem.spaces, selection: $tabSelection)
             
             Color.gray
-                .tabBarItem(tab: TabBarItem.notifications, selection: $tabSelection)
+                .bottomTabBarItem(tab: BottomTabBarItem.notifications, selection: $tabSelection)
             
             Color.blue
-                .tabBarItem(tab: TabBarItem.messages, selection: $tabSelection)
+                .bottomTabBarItem(tab: BottomTabBarItem.messages, selection: $tabSelection)
         }
         
     }
 }
 
-struct AppTabBarView_Previews: PreviewProvider {
+struct BottomTabBarSampleView_Previews: PreviewProvider {
     
     static var previews: some View {
-        AppTabBarView()
+        BottomTabBarSampleView()
     }
 }
 
 // MARK: - AppTabBarView (Example of Apple's TabView)
 
-extension AppTabBarView {
+extension BottomTabBarSampleView {
     
     private var defaultTabView: some View {
         // SwiftUI's TabView

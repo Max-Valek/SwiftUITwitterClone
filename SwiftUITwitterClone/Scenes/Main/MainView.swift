@@ -12,14 +12,14 @@ struct MainView: View {
     // selection for content (used in CustomTabBarContainerView)
     @State private var selection: String = "home"
     
-    @State private var tabSelection: TabBarItem = TabBarItem.home
+    @State private var tabSelection: BottomTabBarItem = BottomTabBarItem.home
     
     var body: some View {
         // TabView from Apple
         // defaultTabView
         
         // our custom implementation of TabView
-        CustomTabBarContainerView(selection: $tabSelection) {
+        BottomTabBarContainerView(selection: $tabSelection) {
             // ViewBuilder
             
             // home, search, spaces, notifications, messages
@@ -27,19 +27,19 @@ struct MainView: View {
             HomeView()
             //Color.black
                 // add TabBarItem to TabBarItemsPreferenceKey array
-                .tabBarItem(tab: TabBarItem.home, selection: $tabSelection)
+                .bottomTabBarItem(tab: BottomTabBarItem.home, selection: $tabSelection)
             
             Color.black
-                .tabBarItem(tab: TabBarItem.search, selection: $tabSelection)
+                .bottomTabBarItem(tab: BottomTabBarItem.search, selection: $tabSelection)
             
             Color.black
-                .tabBarItem(tab: TabBarItem.spaces, selection: $tabSelection)
+                .bottomTabBarItem(tab: BottomTabBarItem.spaces, selection: $tabSelection)
             
             Color.black
-                .tabBarItem(tab: TabBarItem.notifications, selection: $tabSelection)
+                .bottomTabBarItem(tab: BottomTabBarItem.notifications, selection: $tabSelection)
             
             Color.black
-                .tabBarItem(tab: TabBarItem.messages, selection: $tabSelection)
+                .bottomTabBarItem(tab: BottomTabBarItem.messages, selection: $tabSelection)
         }
         
     }

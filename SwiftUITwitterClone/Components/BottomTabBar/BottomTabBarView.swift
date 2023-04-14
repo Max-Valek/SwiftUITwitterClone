@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct CustomTabBarView: View {
+struct BottomTabBarView: View {
     // array of tabs, each with icon name, title, and color
-    let tabs: [TabBarItem]
+    let tabs: [BottomTabBarItem]
     // selection bound to main app view
-    @Binding var selection: TabBarItem
+    @Binding var selection: BottomTabBarItem
     // for matched geometry effect
     @Namespace private var namespace
     // selection used in this file to animate the tab bar
     // without animating the content
-    @State var localSelection: TabBarItem
+    @State var localSelection: BottomTabBarItem
     
     var body: some View {
         
@@ -30,25 +30,25 @@ struct CustomTabBarView: View {
     }
 }
 
-struct CustomTabBarView_Previews: PreviewProvider {
+struct BottomTabBarView_Previews: PreviewProvider {
 
-    static let tabs: [TabBarItem] = [
+    static let tabs: [BottomTabBarItem] = [
         .home, .search, .spaces, .notifications, .messages
     ]
     static var previews: some View {
         VStack {
             Spacer()
-            CustomTabBarView(tabs: tabs, selection: .constant(tabs.first!), localSelection: tabs.first!)
+            BottomTabBarView(tabs: tabs, selection: .constant(tabs.first!), localSelection: tabs.first!)
         }
     }
 }
 
 // MARK: - Extension
 
-extension CustomTabBarView {
+extension BottomTabBarView {
     
     // individual tab item
-    private func tabView(tab: TabBarItem) -> some View {
+    private func tabView(tab: BottomTabBarItem) -> some View {
         
         VStack {
             Image(systemName: tab.iconName)
@@ -86,7 +86,7 @@ extension CustomTabBarView {
     }
     
     // make tapped tab the selected tab
-    private func switchToTab(tab: TabBarItem) {
+    private func switchToTab(tab: BottomTabBarItem) {
         // uncomment to between animate screens
         // withAnimation(.easeInOut) {
             // selection = tab

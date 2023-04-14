@@ -1,5 +1,5 @@
 //
-//  TabBarItemsPreferenceKey.swift
+//  TopTabBarItemsPreferenceKey.swift
 //  SwiftUITwitterClone
 //
 //  Created by Max Valek on 4/14/23.
@@ -10,14 +10,11 @@ import SwiftUI
 
 // MARK: - TabBarItemsPreferenceKey
 
-// Preference Key
-// when a tab bar item is created with .tabBarItem, it gets added to the array in here
-// dont have to directly call this preference key all the time because of our view modifier
-struct TabBarItemsPreferenceKey: PreferenceKey {
+struct TopTabBarItemsPreferenceKey: PreferenceKey {
     
-    static var defaultValue: [TabBarItem] = []
+    static var defaultValue: [TopTabBarItem] = []
     
-    static func reduce(value: inout [TabBarItem], nextValue: () -> [TabBarItem]) {
+    static func reduce(value: inout [TopTabBarItem], nextValue: () -> [TopTabBarItem]) {
         // append new value (tab) to preference key so array keeps growing
         value += nextValue()
     }
@@ -29,18 +26,18 @@ struct TabBarItemsPreferenceKey: PreferenceKey {
 // With this, we dont have to directly call our preference key everytime
 // handles the tab's opacity based on if its selected, as well as the
 // preference that that tab is associated with
-struct TabBarItemViewModifier: ViewModifier {
+struct TopTabBarItemViewModifier: ViewModifier {
     // the TabBarItem enum case that is being created
-    let tab: TabBarItem
+    let tab: TopTabBarItem
     // the currently selected enum case
-    @Binding var selection: TabBarItem
+    @Binding var selection: TopTabBarItem
     
     // handle changing opacity and updating preference key
     func body(content: Content) -> some View {
         
         content
             .opacity(selection == tab ? 1.0 : 0.0)
-            .preference(key: TabBarItemsPreferenceKey.self, value: [tab])
+            .preference(key: TopTabBarItemsPreferenceKey.self, value: [tab])
     }
 }
 
@@ -52,8 +49,8 @@ struct TabBarItemViewModifier: ViewModifier {
 extension View {
     // tab: the TabBarItem enum case being created
     // selection: the currently selected TabBarItem enum case
-    func tabBarItem(tab: TabBarItem, selection: Binding<TabBarItem>) -> some View {
+    func topTabBarItem(tab: TopTabBarItem, selection: Binding<TopTabBarItem>) -> some View {
         
-        modifier(TabBarItemViewModifier(tab: tab, selection: selection))
+        modifier(TopTabBarItemViewModifier(tab: tab, selection: selection))
     }
 }

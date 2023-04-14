@@ -23,7 +23,7 @@ import SwiftUI
 // make it an enum since we already have all the data
 // use a model (struct) when you dont know what the data it.
 // if you have the data up front, use an enum
-enum TabBarItem: Hashable {
+enum BottomTabBarItem: Hashable {
     case home, search, spaces, notifications, messages
     
     var iconName: String {

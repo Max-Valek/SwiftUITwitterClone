@@ -9,9 +9,9 @@ import SwiftUI
 
 // Container for the tab bar view and the content
 // Puts any kind of view underneath the tab bar view
-struct CustomTabBarContainerView<Content: View>: View {
+struct BottomTabBarContainerView<Content: View>: View {
     // TabBarItem enum case that is currently selected (highlighted)
-    @Binding var selection: TabBarItem
+    @Binding var selection: BottomTabBarItem
     
     // All content created within the closure (they have the .tabBarItem modifiers)
     // in this case, just the background colors
@@ -19,9 +19,9 @@ struct CustomTabBarContainerView<Content: View>: View {
     
     // set to empty array - tabview doesnt have any items until .tabItem is called
     // on one of its child views. trying to replicate that
-    @State private var tabs: [TabBarItem] = []
+    @State private var tabs: [BottomTabBarItem] = []
     
-    public init(selection: Binding<TabBarItem>, @ViewBuilder content: () -> Content) {
+    public init(selection: Binding<BottomTabBarItem>, @ViewBuilder content: () -> Content) {
         // _ because we're referencing the actual binding/raw value of selection
         self._selection = selection
         // call the closure to get content
@@ -39,22 +39,22 @@ struct CustomTabBarContainerView<Content: View>: View {
             // tabs : the array of tabs
             // selection : selection bound to this view to handle content animation
             // localSelection : selection used in the tab bar to animate changing tabs
-            CustomTabBarView(tabs: tabs, selection: $selection, localSelection: selection)
+            BottomTabBarView(tabs: tabs, selection: $selection, localSelection: selection)
         }
         // watch the preference key
         // update the array of tabs when one is added to the preference key
-        .onPreferenceChange(TabBarItemsPreferenceKey.self) { value in
+        .onPreferenceChange(BottomTabBarItemsPreferenceKey.self) { value in
             self.tabs = value
         }
     }
 }
 
-struct CustomTabBarContainerView_Previews: PreviewProvider {
-    static let tabs: [TabBarItem] = [
+struct BottomTabBarContainerView_Previews: PreviewProvider {
+    static let tabs: [BottomTabBarItem] = [
         .home, .search, .spaces, .notifications, .messages
     ]
     static var previews: some View {
-        CustomTabBarContainerView(selection: .constant(tabs.first!)) {
+        BottomTabBarContainerView(selection: .constant(tabs.first!)) {
             Color.red
         }
     }
