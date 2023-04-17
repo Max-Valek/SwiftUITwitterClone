@@ -55,18 +55,18 @@ extension BottomTabBarView {
                 .font(.title3)
         }
         .fontWeight(localSelection == tab ? .semibold : .regular)
-        .foregroundColor(localSelection == tab ? Color.white.opacity(0.6) : Color.white.opacity(0.4))
+        .foregroundColor(localSelection == tab ? Color.white.opacity(0.8) : Color.white.opacity(0.6))
         .padding(.vertical, 8)
         .frame(maxWidth: .infinity)
-        .background(
-            ZStack {
-                if localSelection == tab {
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(Color.white.opacity(0.2))
-                        .matchedGeometryEffect(id: "background_rectangle", in: namespace)
-                }
-            }
-        )
+//        .background(
+//            ZStack {
+//                if localSelection == tab {
+//                    RoundedRectangle(cornerRadius: 4)
+//                        .fill(Color.white.opacity(0.2))
+//                        .matchedGeometryEffect(id: "background_rectangle", in: namespace)
+//                }
+//            }
+//        )
     }
     
     private var tabBar: some View {
