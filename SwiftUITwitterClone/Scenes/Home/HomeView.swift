@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var followingPressed: Bool = false
+    @Namespace private var topTabsNamespace
     
     var body: some View {
         
@@ -74,23 +75,55 @@ extension HomeView {
         HStack {
             Spacer()
             
-            Text("For You")
-                .foregroundColor(followingPressed ? .gray : .white)
-                .onTapGesture {
-                    withAnimation(.easeIn(duration: 0.25)) {
-                        followingPressed = false
+            VStack {
+                Text("For You")
+                    .foregroundColor(followingPressed ? .gray : .white)
+                    .onTapGesture {
+                        withAnimation(.easeIn(duration: 0.25)) {
+                            followingPressed = false
+                        }
                     }
+                
+                // tab underline
+                if !followingPressed {
+                    RoundedRectangle(cornerRadius: 5)
+                        .frame(width: 50, height: 3)
+                        .matchedGeometryEffect(id: "tab_underline", in: topTabsNamespace)
                 }
+                
+                if followingPressed {
+                    RoundedRectangle(cornerRadius: 5)
+                        .frame(width: 50, height: 3)
+                        .foregroundColor(.clear)
+                }
+                
+            }
+            
             
             Spacer()
             
-            Text("Following")
-                .foregroundColor(followingPressed ? .white : .gray)
-                .onTapGesture {
-                    withAnimation(.easeIn(duration: 0.25)) {
-                        followingPressed = true
-                    }
+            VStack {
+                Text("Following")
+                    .foregroundColor(followingPressed ? .white : .gray)
+                    .onTapGesture {
+                        withAnimation(.easeIn(duration: 0.25)) {
+                            followingPressed = true
+                        }
                 }
+                
+                // tab underline
+                if followingPressed {
+                    RoundedRectangle(cornerRadius: 5)
+                        .frame(width: 50, height: 3)
+                        .matchedGeometryEffect(id: "tab_underline", in: topTabsNamespace)
+                }
+                
+                if !followingPressed {
+                    RoundedRectangle(cornerRadius: 5)
+                        .frame(width: 50, height: 3)
+                        .foregroundColor(.clear)
+                }
+            }
             
             Spacer()
         }
