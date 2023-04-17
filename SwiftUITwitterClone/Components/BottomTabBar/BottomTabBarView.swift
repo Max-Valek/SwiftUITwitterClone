@@ -62,7 +62,7 @@ extension BottomTabBarView {
             ZStack {
                 if localSelection == tab {
                     RoundedRectangle(cornerRadius: 4)
-                        .fill(Color.white.opacity(0.05))
+                        .fill(Color.white.opacity(0.2))
                         .matchedGeometryEffect(id: "background_rectangle", in: namespace)
                 }
             }
@@ -79,7 +79,7 @@ extension BottomTabBarView {
             }
         }
         .padding(6)
-        .background(Color.white.opacity(0.03).ignoresSafeArea(edges: .bottom))
+        .background(Color.black.opacity(0.9).ignoresSafeArea(edges: .bottom))
         .cornerRadius(5)
         // .shadow(color: Color.white.opacity(0.4), radius: 10, x: 0, y: 5)
         .padding(.horizontal)

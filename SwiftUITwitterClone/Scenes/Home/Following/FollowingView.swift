@@ -13,8 +13,13 @@ struct FollowingView: View {
         
         ScrollView {
             ForEach(0..<10, id: \.self) { num in
-                Text("\(num)")
+                TweetView()
+                
+                RoundedRectangle(cornerRadius: 5)
+                    .frame(height: 0.5)
+                    .foregroundColor(.gray)
             }
+            .padding(.top, 50)
         }
     }
 }
