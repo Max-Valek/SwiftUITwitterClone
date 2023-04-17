@@ -21,30 +21,21 @@ struct HomeView: View {
                 
                 topImages
                 
-                HStack {
-                    Spacer()
-                    
-                    Text("For You")
-                        .foregroundColor(followingPressed ? .gray : .white)
-                        .onTapGesture {
-                            followingPressed = false
-                        }
-                    
-                    Spacer()
-                    
-                    Text("Following")
-                        .foregroundColor(followingPressed ? .white : .gray)
-                        .onTapGesture {
-                            followingPressed = true
-                        }
-                    
-                    Spacer()
+                topTabs
+                
+                if !followingPressed {
+                    ForYouView()
+                        .transition(.move(edge: .leading))
                 }
-                .font(.headline)
+                if followingPressed {
+                    FollowingView()
+                        .transition(.move(edge: .trailing))
+                }
                 
                 Spacer()
             }
             .padding(.horizontal)
+            .padding(.vertical, 40)
         }
         .foregroundColor(.white)
     }
@@ -77,5 +68,32 @@ extension HomeView {
                 .frame(width: 30, height: 30)
                 .opacity(0)
         }
+    }
+    
+    private var topTabs: some View {
+        HStack {
+            Spacer()
+            
+            Text("For You")
+                .foregroundColor(followingPressed ? .gray : .white)
+                .onTapGesture {
+                    withAnimation(.easeIn(duration: 0.25)) {
+                        followingPressed = false
+                    }
+                }
+            
+            Spacer()
+            
+            Text("Following")
+                .foregroundColor(followingPressed ? .white : .gray)
+                .onTapGesture {
+                    withAnimation(.easeIn(duration: 0.25)) {
+                        followingPressed = true
+                    }
+                }
+            
+            Spacer()
+        }
+        .font(.headline)
     }
 }

@@ -19,8 +19,8 @@ struct ForYouView: View {
                     .frame(height: 0.5)
                     .foregroundColor(.gray)
             }
-            .padding(.top, 50)
         }
+        .padding(.horizontal, 4)
     }
 }
 
