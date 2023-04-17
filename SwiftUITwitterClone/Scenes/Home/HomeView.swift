@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var tabSelection: TopTabBarItem = TopTabBarItem.forYou
+    @State private var followingPressed: Bool = false
     
     var body: some View {
         
@@ -21,16 +21,26 @@ struct HomeView: View {
                 
                 topImages
                 
-                TopTabBarContainerView(selection: $tabSelection) {
+                HStack {
+                    Spacer()
                     
-                    ForYouView()
-                    // add TabBarItem to TabBarItemsPreferenceKey array
-                        .topTabBarItem(tab: TopTabBarItem.forYou, selection: $tabSelection)
+                    Text("For You")
+                        .foregroundColor(followingPressed ? .gray : .white)
+                        .onTapGesture {
+                            followingPressed = false
+                        }
                     
-                    FollowingView()
-                        .topTabBarItem(tab: TopTabBarItem.following, selection: $tabSelection)
+                    Spacer()
                     
+                    Text("Following")
+                        .foregroundColor(followingPressed ? .white : .gray)
+                        .onTapGesture {
+                            followingPressed = true
+                        }
+                    
+                    Spacer()
                 }
+                .font(.headline)
                 
                 Spacer()
             }
