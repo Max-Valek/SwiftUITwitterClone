@@ -52,9 +52,9 @@ extension BottomTabBarView {
         
         VStack {
             Image(systemName: tab.iconName)
-                .font(.title3)
+                .font(.title2)
         }
-        .fontWeight(localSelection == tab ? .semibold : .regular)
+        .fontWeight(localSelection == tab ? .bold : .semibold)
         .foregroundColor(localSelection == tab ? Color.white.opacity(0.8) : Color.white.opacity(0.6))
         .padding(.vertical, 8)
         .frame(maxWidth: .infinity)

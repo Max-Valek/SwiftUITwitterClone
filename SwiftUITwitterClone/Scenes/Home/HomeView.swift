@@ -18,11 +18,15 @@ struct HomeView: View {
             
             Color.black.ignoresSafeArea()
         
+            
             VStack {
                 
-                topImages
-                
-                topTabs
+                VStack {
+                    topImages
+                    
+                    topTabs
+                }
+                .background(Color.black.opacity(0.95))
                 
                 if !followingPressed {
                     ForYouView()
@@ -37,6 +41,7 @@ struct HomeView: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 40)
+            
         }
         .foregroundColor(.white)
     }
@@ -88,6 +93,7 @@ extension HomeView {
                 if !followingPressed {
                     RoundedRectangle(cornerRadius: 5)
                         .frame(width: 50, height: 3)
+                        .foregroundColor(.blue)
                         .matchedGeometryEffect(id: "tab_underline", in: topTabsNamespace)
                 }
                 
@@ -115,6 +121,7 @@ extension HomeView {
                 if followingPressed {
                     RoundedRectangle(cornerRadius: 5)
                         .frame(width: 50, height: 3)
+                        .foregroundColor(.blue)
                         .matchedGeometryEffect(id: "tab_underline", in: topTabsNamespace)
                 }
                 
@@ -127,6 +134,7 @@ extension HomeView {
             
             Spacer()
         }
-        .font(.headline)
+        .fontWeight(.semibold)
+        .font(.title3)
     }
 }
