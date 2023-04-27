@@ -17,7 +17,7 @@ struct FollowingView: View {
                 
                 RoundedRectangle(cornerRadius: 5)
                     .frame(height: 0.5)
-                    .foregroundColor(Color.theme.text.opacity(0.4))
+                    .foregroundColor(Color.theme.text.opacity(0.2))
             }
         }
         .padding(.horizontal, 4)
@@ -27,5 +27,6 @@ struct FollowingView: View {
 struct FollowingView_Previews: PreviewProvider {
     static var previews: some View {
         FollowingView()
+            .preferredColorScheme(.dark)
     }
 }

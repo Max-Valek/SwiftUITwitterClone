@@ -55,19 +55,19 @@ extension HomeView {
         HStack {
             Image(systemName: "person.circle")
                 .resizable()
-                .frame(width: 35, height: 35)
+                .frame(width: 30, height: 30)
             
             Spacer()
             
             Image("twitter")
                 .resizable()
-                .frame(width: 45, height: 45)
+                .frame(width: 40, height: 40)
             
             Spacer()
             
             Image(systemName: "person.circle")
                 .resizable()
-                .frame(width: 35, height: 35)
+                .frame(width: 30, height: 30)
                 .opacity(0)
         }
     }
@@ -127,7 +127,7 @@ extension HomeView {
             Spacer()
         }
         .fontWeight(.semibold)
-        .font(.title3)
+        .font(.headline)
     }
     
     private var content: some View {

@@ -17,7 +17,7 @@ struct ForYouView: View {
                 
                 RoundedRectangle(cornerRadius: 5)
                     .frame(height: 0.5)
-                    .foregroundColor(Color.theme.text.opacity(0.4))
+                    .foregroundColor(Color.theme.text.opacity(0.2))
             }
         }
         .padding(.horizontal, 4)
@@ -27,5 +27,6 @@ struct ForYouView: View {
 struct ForYouView_Previews: PreviewProvider {
     static var previews: some View {
         ForYouView()
+            .preferredColorScheme(.dark)
     }
 }

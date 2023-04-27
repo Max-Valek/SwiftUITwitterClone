@@ -48,7 +48,7 @@ extension SpacesView {
         HStack(spacing: 8) {
             Image(systemName: "person.circle")
                 .resizable()
-                .frame(width: 35, height: 35)
+                .frame(width: 30, height: 30)
             
             Spacer()
             
@@ -59,7 +59,7 @@ extension SpacesView {
             
             Image(systemName: "person.circle")
                 .resizable()
-                .frame(width: 35, height: 35)
+                .frame(width: 30, height: 30)
                 .opacity(0)
             
         }
