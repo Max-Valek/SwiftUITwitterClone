@@ -55,19 +55,5 @@ enum BottomTabBarItem: Hashable {
             return "Messages"
         }
     }
-    
-    var color: Color {
-        switch self {
-        case .home:
-            return Color.black
-        case .search:
-            return Color.mint
-        case .spaces:
-            return Color.purple
-        case .notifications:
-            return Color.gray
-        case .messages:
-            return Color.blue
-        }
-    }
+
 }
