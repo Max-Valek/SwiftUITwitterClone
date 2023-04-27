@@ -26,7 +26,7 @@ struct TweetView: View {
                         .font(.title3)
                     
                     Text("@user • 1m")
-                        .font(.title3)
+                        .font(.headline)
                         .foregroundColor(Color.theme.text.opacity(0.4))
                     
                     Spacer()
@@ -57,7 +57,8 @@ struct TweetView: View {
                     } label: {
                         HStack {
                             Image(systemName: "arrow.triangle.2.circlepath")
-                                .foregroundColor(isRetweeted ? Color.theme.text : Color.theme.text.opacity(0.4))
+                                .fontWeight(isRetweeted ? .bold : .semibold)
+                                .foregroundColor(isRetweeted ? Color.green : Color.theme.text.opacity(0.4))
                             Text("71")
                         }
                     }
