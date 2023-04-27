@@ -24,12 +24,12 @@ struct TweetView: View {
                     
                     Text("@user • 1m")
                         .font(.title3)
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color.theme.text.opacity(0.4))
                     
                     Spacer()
                     
                     Text("•••")
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color.theme.text.opacity(0.4))
                 }
                 
                 Text("This is a sample tweet. It is not very pretty and this is just sample text.")
@@ -59,10 +59,11 @@ struct TweetView: View {
                 }
                 .font(.subheadline)
                 .fontWeight(.semibold)
-                .foregroundColor(.gray)
+                .foregroundColor(Color.theme.text.opacity(0.4))
                 
             }
         }
+        .foregroundColor(Color.theme.text)
     }
 }
 

@@ -15,7 +15,7 @@ struct SpacesView: View {
         
         ZStack {
             
-            Color.black.ignoresSafeArea()
+            Color.theme.background.ignoresSafeArea()
             
             VStack {
                 
@@ -29,8 +29,7 @@ struct SpacesView: View {
                 
                 Spacer()
             }
-            .foregroundColor(.white)
-            .padding(.vertical, 70)
+            .foregroundColor(Color.theme.text)
         }
     }
     
@@ -39,6 +38,7 @@ struct SpacesView: View {
 struct SpacesView_Previews: PreviewProvider {
     static var previews: some View {
         SpacesView()
+            .preferredColorScheme(.dark)
     }
 }
 
@@ -64,7 +64,7 @@ extension SpacesView {
             
         }
         .padding(.horizontal)
-        .foregroundColor(.white)
+        .foregroundColor(Color.theme.text)
     }
     
     private var searchBar: some View {
@@ -72,14 +72,14 @@ extension SpacesView {
             Image(systemName: "magnifyingglass")
             
             TextField("Search Twitter", text: $searchTxt)
-                .foregroundColor(.white)
+                .foregroundColor(Color.theme.text)
             
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 16)
         .background(
             RoundedRectangle(cornerRadius: 25)
-                .fill(Color.secondary)
+                .fill(Color.theme.text.opacity(0.2))
         )
         .padding(.horizontal)
     }

@@ -119,10 +119,10 @@
 		9D45A7B929E9D2BA0041C60A /* SwiftUITwitterClone */ = {
 			isa = PBXGroup;
 			children = (
+				9D45A7BA29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift */,
 				9D20C36D29FB244A00445463 /* Extensions */,
 				9D45A7C829E9D44A0041C60A /* Components */,
 				9D20C36C29FB244500445463 /* Core */,
-				9D45A7BA29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift */,
 				9D45A7BE29E9D2BB0041C60A /* Assets.xcassets */,
 				9D45A7C029E9D2BB0041C60A /* Preview Content */,
 			);

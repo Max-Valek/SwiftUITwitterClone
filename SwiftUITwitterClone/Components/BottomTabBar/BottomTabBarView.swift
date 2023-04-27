@@ -55,18 +55,9 @@ extension BottomTabBarView {
                 .font(.title2)
         }
         .fontWeight(localSelection == tab ? .bold : .semibold)
-        .foregroundColor(localSelection == tab ? Color.white.opacity(0.8) : Color.white.opacity(0.6))
+        .foregroundColor(localSelection == tab ? Color.theme.text.opacity(0.8) : Color.theme.text.opacity(0.6))
         .padding(.vertical, 8)
         .frame(maxWidth: .infinity)
-//        .background(
-//            ZStack {
-//                if localSelection == tab {
-//                    RoundedRectangle(cornerRadius: 4)
-//                        .fill(Color.white.opacity(0.2))
-//                        .matchedGeometryEffect(id: "background_rectangle", in: namespace)
-//                }
-//            }
-//        )
     }
     
     private var tabBar: some View {
@@ -79,18 +70,13 @@ extension BottomTabBarView {
             }
         }
         .padding(6)
-        .background(Color.black.opacity(0.9).ignoresSafeArea(edges: .bottom))
+        .background(Color.theme.background.opacity(0.95).ignoresSafeArea(edges: .bottom))
         .cornerRadius(5)
-        // .shadow(color: Color.white.opacity(0.4), radius: 10, x: 0, y: 5)
         .padding(.horizontal)
     }
     
     // make tapped tab the selected tab
     private func switchToTab(tab: BottomTabBarItem) {
-        // uncomment to between animate screens
-//         withAnimation(.easeInOut) {
-//             selection = tab
-//         }
         selection = tab
     }
 }

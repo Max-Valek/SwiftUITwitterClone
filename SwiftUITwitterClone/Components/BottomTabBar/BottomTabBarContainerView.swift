@@ -31,9 +31,13 @@ struct BottomTabBarContainerView<Content: View>: View {
     var body: some View {
         
         ZStack(alignment: .bottom) {
+            
+            Color.theme.background
+                .ignoresSafeArea()
+            
             // make background color cover entire screen
             content
-                .ignoresSafeArea()
+                .edgesIgnoringSafeArea([.leading, .trailing, .bottom])
             
             // Tab bar at the bottom
             // tabs : the array of tabs

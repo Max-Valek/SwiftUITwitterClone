@@ -14,7 +14,7 @@ struct SearchView: View {
         
         ZStack {
             
-            Color.black.ignoresSafeArea()
+            Color.theme.background.ignoresSafeArea()
             
             VStack {
                 
@@ -26,8 +26,7 @@ struct SearchView: View {
                 
                 Spacer()
             }
-            .foregroundColor(.white)
-            .padding(.vertical, 70)
+            .foregroundColor(Color.theme.text)
         }
     }
 }
@@ -35,6 +34,7 @@ struct SearchView: View {
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView()
+            .preferredColorScheme(.dark)
     }
 }
 
@@ -52,14 +52,14 @@ extension SearchView {
                 Image(systemName: "magnifyingglass")
                 
                 TextField("Search Twitter", text: $searchTxt)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color.theme.text)
                     
             }
             .padding(.vertical, 8)
             .padding(.horizontal, 16)
             .background(
                 RoundedRectangle(cornerRadius: 25)
-                    .fill(Color.secondary)
+                    .fill(Color.theme.text.opacity(0.2))
             )
             
             Spacer()
@@ -68,6 +68,6 @@ extension SearchView {
                 .frame(width: 35, height: 35)
         }
         .padding(.horizontal)
-        .foregroundColor(.white)
+        .foregroundColor(Color.theme.text)
     }
 }

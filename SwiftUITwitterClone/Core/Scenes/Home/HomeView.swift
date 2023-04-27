@@ -20,7 +20,7 @@ struct HomeView: View {
         
         ZStack {
             
-            Color.black.ignoresSafeArea()
+            Color.theme.background.ignoresSafeArea()
         
             VStack {
                 
@@ -29,14 +29,13 @@ struct HomeView: View {
                     
                     topTabs
                 }
-                .background(Color.black.opacity(0.95))
+                .background(Color.theme.background.opacity(0.95))
                 
                 content
                 
                 Spacer()
             }
             .padding(.horizontal)
-            .padding(.vertical, 40)
             
         }
         .foregroundColor(.white)
@@ -46,6 +45,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .preferredColorScheme(.dark)
     }
 }
 
@@ -78,7 +78,7 @@ extension HomeView {
             
             VStack {
                 Text("For You")
-                    .foregroundColor(selectedTab == .forYou ? .white : .gray)
+                    .foregroundColor(selectedTab == .forYou ? Color.theme.text : Color.theme.text.opacity(0.4))
                     .onTapGesture {
                         withAnimation(.easeIn(duration: 0.25)) {
                             selectedTab = .forYou
@@ -89,7 +89,7 @@ extension HomeView {
                 if selectedTab == .forYou {
                     RoundedRectangle(cornerRadius: 5)
                         .frame(width: 50, height: 3)
-                        .foregroundColor(.blue)
+                        .foregroundColor(Color.theme.twitter)
                         .matchedGeometryEffect(id: "tab_underline", in: topTabsNamespace)
                 } else {
                     RoundedRectangle(cornerRadius: 5)
@@ -104,7 +104,7 @@ extension HomeView {
             
             VStack {
                 Text("Following")
-                    .foregroundColor(selectedTab == .following ? .white : .gray)
+                    .foregroundColor(selectedTab == .following ? Color.theme.text : Color.theme.text.opacity(0.4))
                     .onTapGesture {
                         withAnimation(.easeIn(duration: 0.25)) {
                             selectedTab = .following
@@ -115,7 +115,7 @@ extension HomeView {
                 if selectedTab == .following {
                     RoundedRectangle(cornerRadius: 5)
                         .frame(width: 50, height: 3)
-                        .foregroundColor(.blue)
+                        .foregroundColor(Color.theme.twitter)
                         .matchedGeometryEffect(id: "tab_underline", in: topTabsNamespace)
                 } else {
                     RoundedRectangle(cornerRadius: 5)

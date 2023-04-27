@@ -17,7 +17,7 @@ struct ForYouView: View {
                 
                 RoundedRectangle(cornerRadius: 5)
                     .frame(height: 0.5)
-                    .foregroundColor(.gray)
+                    .foregroundColor(Color.theme.text.opacity(0.4))
             }
         }
         .padding(.horizontal, 4)

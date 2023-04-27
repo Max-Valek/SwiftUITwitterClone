@@ -20,7 +20,7 @@ struct NotificationsView: View {
         
         ZStack {
             
-            Color.black.ignoresSafeArea()
+            Color.theme.background.ignoresSafeArea()
             
             VStack {
                 
@@ -34,8 +34,7 @@ struct NotificationsView: View {
                 
                 Spacer()
             }
-            .foregroundColor(.white)
-            .padding(.vertical, 70)
+            .foregroundColor(Color.theme.text)
         }
     }
 }
@@ -43,6 +42,7 @@ struct NotificationsView: View {
 struct NotificationsView_Previews: PreviewProvider {
     static var previews: some View {
         NotificationsView()
+            .preferredColorScheme(.dark)
     }
 }
 
@@ -66,7 +66,7 @@ extension NotificationsView {
             
         }
         .padding(.horizontal)
-        .foregroundColor(.white)
+        .foregroundColor(Color.theme.text)
     }
     
     private var tabs: some View {
@@ -77,7 +77,7 @@ extension NotificationsView {
                 
                 VStack {
                     Text("All")
-                        .foregroundColor(selectedTab == .all ? .white : .gray)
+                        .foregroundColor(selectedTab == .all ? Color.theme.text : Color.theme.text.opacity(0.4))
                         .onTapGesture {
                             withAnimation(.easeIn(duration: 0.25)) {
                                 selectedTab = .all
@@ -88,7 +88,7 @@ extension NotificationsView {
                     if selectedTab == .all {
                         RoundedRectangle(cornerRadius: 5)
                             .frame(width: 50, height: 3)
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color.theme.twitter)
                             .matchedGeometryEffect(id: "tab_underline", in: notificationsNamespace)
                     } else {
                         RoundedRectangle(cornerRadius: 5)
@@ -103,7 +103,7 @@ extension NotificationsView {
                 
                 VStack {
                     Text("Verified")
-                        .foregroundColor(selectedTab == .verified ? .white : .gray)
+                        .foregroundColor(selectedTab == .verified ? Color.theme.text : Color.theme.text.opacity(0.4))
                         .onTapGesture {
                             withAnimation(.easeIn(duration: 0.25)) {
                                 selectedTab = .verified
@@ -114,7 +114,7 @@ extension NotificationsView {
                     if selectedTab == .verified {
                         RoundedRectangle(cornerRadius: 5)
                             .frame(width: 50, height: 3)
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color.theme.twitter)
                             .matchedGeometryEffect(id: "tab_underline", in: notificationsNamespace)
                     } else {
                         RoundedRectangle(cornerRadius: 5)
@@ -128,7 +128,7 @@ extension NotificationsView {
                 
                 VStack {
                     Text("Mentions")
-                        .foregroundColor(selectedTab == .mentions ? .white : .gray)
+                        .foregroundColor(selectedTab == .mentions ? Color.theme.text : Color.theme.text.opacity(0.4))
                         .onTapGesture {
                             withAnimation(.easeIn(duration: 0.25)) {
                                 selectedTab = .mentions
@@ -139,7 +139,7 @@ extension NotificationsView {
                     if selectedTab == .mentions {
                         RoundedRectangle(cornerRadius: 5)
                             .frame(width: 50, height: 3)
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color.theme.twitter)
                             .matchedGeometryEffect(id: "tab_underline", in: notificationsNamespace)
                     } else {
                         RoundedRectangle(cornerRadius: 5)

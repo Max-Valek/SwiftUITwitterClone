@@ -14,7 +14,7 @@ struct MessagesView: View {
     var body: some View {
         ZStack {
             
-            Color.black.ignoresSafeArea()
+            Color.theme.background.ignoresSafeArea()
             
             VStack {
                 
@@ -28,8 +28,7 @@ struct MessagesView: View {
                 
                 Spacer()
             }
-            .foregroundColor(.white)
-            .padding(.vertical, 70)
+            .foregroundColor(Color.theme.text)
         }
     }
 }
@@ -37,6 +36,7 @@ struct MessagesView: View {
 struct MessagesView_Previews: PreviewProvider {
     static var previews: some View {
         MessagesView()
+            .preferredColorScheme(.dark)
     }
 }
 
@@ -60,7 +60,7 @@ extension MessagesView {
             
         }
         .padding(.horizontal)
-        .foregroundColor(.white)
+        .foregroundColor(Color.theme.text)
     }
     
     private var searchBar: some View {
@@ -68,14 +68,14 @@ extension MessagesView {
             Image(systemName: "magnifyingglass")
             
             TextField("Search Twitter", text: $searchTxt)
-                .foregroundColor(.white)
+                .foregroundColor(Color.theme.text)
             
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 16)
         .background(
             RoundedRectangle(cornerRadius: 25)
-                .fill(Color.secondary)
+                .fill(Color.theme.text.opacity(0.2))
         )
         .padding(.horizontal)
     }

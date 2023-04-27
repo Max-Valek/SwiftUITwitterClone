@@ -13,11 +13,11 @@ extension Color {
 }
 
 struct ColorTheme {
-    
-    static let background = Color("background")
-    static let text = Color("text")
-    static let twitter = Color("twitter")
-    static let twitterLight = Color("twitter-light")
-    static let twitterDark = Color("twitter-dark")
+
+    let background = Color("background")
+    let text = Color("text")
+    let twitter = Color("twitter")
+    let twitterLight = Color("twitter-light")
+    let twitterDark = Color("twitter-dark")
     
 }
