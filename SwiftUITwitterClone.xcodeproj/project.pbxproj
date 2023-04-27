@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D20C36529FB17A300445463 /* SpacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20C36429FB17A300445463 /* SpacesView.swift */; };
 		9D45A7BB29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7BA29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift */; };
 		9D45A7BF29E9D2BB0041C60A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D45A7BE29E9D2BB0041C60A /* Assets.xcassets */; };
 		9D45A7C229E9D2BB0041C60A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D45A7C129E9D2BB0041C60A /* Preview Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D20C36429FB17A300445463 /* SpacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacesView.swift; sourceTree = "<group>"; };
 		9D45A7B729E9D2BA0041C60A /* SwiftUITwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D45A7BA29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITwitterCloneApp.swift; sourceTree = "<group>"; };
 		9D45A7BE29E9D2BB0041C60A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D20C36329FB178B00445463 /* Spaces */ = {
+			isa = PBXGroup;
+			children = (
+				9D20C36429FB17A300445463 /* SpacesView.swift */,
+			);
+			path = Spaces;
+			sourceTree = "<group>";
+		};
 		9D45A7AE29E9D2B90041C60A = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 				9D45A7E229E9DAA00041C60A /* Main */,
 				9D45A7E629E9DF3D0041C60A /* Home */,
 				9DE09BCB29EF3F5E0079F501 /* Search */,
+				9D20C36329FB178B00445463 /* Spaces */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -240,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D45A7CD29E9D4D90041C60A /* BottomTabBarView.swift in Sources */,
+				9D20C36529FB17A300445463 /* SpacesView.swift in Sources */,
 				9D45A7E429E9DAB20041C60A /* MainView.swift in Sources */,
 				9D45A7CF29E9D55A0041C60A /* BottomTabBarSampleView.swift in Sources */,
 				9D45A7D329E9D5C30041C60A /* BottomTabBarItemsPreferenceKey.swift in Sources */,
