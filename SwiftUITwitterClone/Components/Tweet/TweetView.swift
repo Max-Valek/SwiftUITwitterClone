@@ -9,12 +9,15 @@ import SwiftUI
 
 struct TweetView: View {
     
+    @State private var isLiked: Bool = false
+    @State private var isRetweeted: Bool = false
+    
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
             
             Image(systemName: "person.circle")
                 .resizable()
-                .frame(width: 40, height: 40)
+                .frame(width: 38, height: 38)
             
             VStack(alignment: .leading, spacing: 8) {
                 
@@ -48,10 +51,13 @@ struct TweetView: View {
                     Spacer()
                     
                     Button {
-                        // retweet pressed
+                        withAnimation {
+                            isRetweeted.toggle()
+                        }
                     } label: {
                         HStack {
                             Image(systemName: "arrow.triangle.2.circlepath")
+                                .foregroundColor(isRetweeted ? Color.theme.text : Color.theme.text.opacity(0.4))
                             Text("71")
                         }
                     }
@@ -60,10 +66,13 @@ struct TweetView: View {
                     Spacer()
                     
                     Button {
-                        // like pressed
+                        withAnimation {
+                            isLiked.toggle()
+                        }
                     } label: {
                         HStack {
-                            Image(systemName: "heart")
+                            Image(systemName: isLiked ? "heart.fill" : "heart")
+                                .foregroundColor(isLiked ? Color.red : Color.theme.text.opacity(0.4))
                             Text("1,538")
                         }
                     }
