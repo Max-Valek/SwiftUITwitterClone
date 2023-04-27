@@ -46,7 +46,7 @@ extension MessagesView {
         HStack(spacing: 8) {
             Image(systemName: "person.circle")
                 .resizable()
-                .frame(width: 35, height: 35)
+                .frame(width: 30, height: 30)
             
             Spacer()
             
@@ -56,7 +56,8 @@ extension MessagesView {
             Spacer()
             
             Image(systemName: "gearshape")
-                .frame(width: 35, height: 35)
+                .font(.title3)
+                .frame(width: 30, height: 30)
             
         }
         .padding(.horizontal)

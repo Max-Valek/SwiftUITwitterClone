@@ -35,27 +35,53 @@ struct TweetView: View {
                 Text("This is a sample tweet. It is not very pretty and this is just sample text.")
                 
                 HStack {
-                    HStack {
-                        Image(systemName: "bubble.left")
-                        Text("82")
+                    Button {
+                        // comment pressed
+                    } label: {
+                        HStack {
+                            Image(systemName: "bubble.left")
+                            Text("82")
+                        }
                     }
+
+                    
                     Spacer()
-                    HStack {
-                        Image(systemName: "arrow.triangle.2.circlepath")
-                        Text("71")
+                    
+                    Button {
+                        // retweet pressed
+                    } label: {
+                        HStack {
+                            Image(systemName: "arrow.triangle.2.circlepath")
+                            Text("71")
+                        }
                     }
+
+                    
                     Spacer()
-                    HStack {
-                        Image(systemName: "heart")
-                        Text("1,538")
+                    
+                    Button {
+                        // like pressed
+                    } label: {
+                        HStack {
+                            Image(systemName: "heart")
+                            Text("1,538")
+                        }
                     }
+
+                    
                     Spacer()
+                    
                     HStack {
                         Image(systemName: "chart.bar")
                         Text("182K")
                     }
                     Spacer()
-                    Image(systemName: "square.and.arrow.up")
+                    
+                    Button {
+                        // share pressed
+                    } label: {
+                        Image(systemName: "square.and.arrow.up")
+                    }
                 }
                 .font(.subheadline)
                 .fontWeight(.semibold)
