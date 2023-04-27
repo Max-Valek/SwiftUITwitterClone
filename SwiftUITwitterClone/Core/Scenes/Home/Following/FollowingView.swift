@@ -11,7 +11,7 @@ struct FollowingView: View {
     
     var body: some View {
         
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             ForEach(0..<10, id: \.self) { num in
                 TweetView()
                 
