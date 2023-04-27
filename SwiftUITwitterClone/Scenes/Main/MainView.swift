@@ -29,7 +29,7 @@ struct MainView: View {
                 // add TabBarItem to TabBarItemsPreferenceKey array
                 .bottomTabBarItem(tab: BottomTabBarItem.home, selection: $tabSelection)
             
-            Color.black
+            SearchView()
                 .bottomTabBarItem(tab: BottomTabBarItem.search, selection: $tabSelection)
             
             Color.black

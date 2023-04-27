@@ -53,6 +53,7 @@ struct SearchView: View {
                 Spacer()
             }
             .foregroundColor(.white)
+            .padding(.vertical, 70)
         }
     }
 }
