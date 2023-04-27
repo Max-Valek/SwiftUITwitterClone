@@ -10,6 +10,7 @@ import SwiftUI
 struct SpacesView: View {
     
     @State private var searchTxt: String = ""
+    
     var body: some View {
         
         ZStack {
