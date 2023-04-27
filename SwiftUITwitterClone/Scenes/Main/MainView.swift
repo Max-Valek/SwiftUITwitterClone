@@ -32,13 +32,13 @@ struct MainView: View {
             SearchView()
                 .bottomTabBarItem(tab: BottomTabBarItem.search, selection: $tabSelection)
             
-            Color.black
+            SpacesView()
                 .bottomTabBarItem(tab: BottomTabBarItem.spaces, selection: $tabSelection)
             
-            Color.black
+            NotificationsView()
                 .bottomTabBarItem(tab: BottomTabBarItem.notifications, selection: $tabSelection)
             
-            Color.black
+            MessagesView()
                 .bottomTabBarItem(tab: BottomTabBarItem.messages, selection: $tabSelection)
         }
         
