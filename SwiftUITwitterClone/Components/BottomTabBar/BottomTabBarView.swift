@@ -69,10 +69,10 @@ extension BottomTabBarView {
                     }
             }
         }
-        .padding(6)
-        .background(Color.theme.background.opacity(0.95).ignoresSafeArea(edges: .bottom))
-        .cornerRadius(5)
+        .frame(maxWidth: .infinity)
+        //.padding(6)
         .padding(.horizontal)
+        .background(Color.theme.background.opacity(0.95).ignoresSafeArea(edges: .bottom))
     }
     
     // make tapped tab the selected tab
