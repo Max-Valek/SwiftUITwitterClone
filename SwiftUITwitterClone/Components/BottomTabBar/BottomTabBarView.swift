@@ -88,9 +88,9 @@ extension BottomTabBarView {
     // make tapped tab the selected tab
     private func switchToTab(tab: BottomTabBarItem) {
         // uncomment to between animate screens
-        // withAnimation(.easeInOut) {
-            // selection = tab
-        // }
+//         withAnimation(.easeInOut) {
+//             selection = tab
+//         }
         selection = tab
     }
 }
