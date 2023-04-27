@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+enum HomeTab {
+    case forYou, following
+}
+
 struct HomeView: View {
     
-    @State private var followingPressed: Bool = false
+    @State private var selectedTab: HomeTab = .forYou
     @Namespace private var topTabsNamespace
     
     var body: some View {
@@ -28,14 +32,7 @@ struct HomeView: View {
                 }
                 .background(Color.black.opacity(0.95))
                 
-                if !followingPressed {
-                    ForYouView()
-                        .transition(.move(edge: .leading))
-                }
-                if followingPressed {
-                    FollowingView()
-                        .transition(.move(edge: .trailing))
-                }
+                content
                 
                 Spacer()
             }
@@ -71,7 +68,7 @@ extension HomeView {
             
             Image(systemName: "person.circle")
                 .resizable()
-                .frame(width: 30, height: 30)
+                .frame(width: 35, height: 35)
                 .opacity(0)
         }
     }
@@ -82,22 +79,20 @@ extension HomeView {
             
             VStack {
                 Text("For You")
-                    .foregroundColor(followingPressed ? .gray : .white)
+                    .foregroundColor(selectedTab == .forYou ? .white : .gray)
                     .onTapGesture {
                         withAnimation(.easeIn(duration: 0.25)) {
-                            followingPressed = false
+                            selectedTab = .forYou
                         }
                     }
                 
                 // tab underline
-                if !followingPressed {
+                if selectedTab == .forYou {
                     RoundedRectangle(cornerRadius: 5)
                         .frame(width: 50, height: 3)
                         .foregroundColor(.blue)
                         .matchedGeometryEffect(id: "tab_underline", in: topTabsNamespace)
-                }
-                
-                if followingPressed {
+                } else {
                     RoundedRectangle(cornerRadius: 5)
                         .frame(width: 50, height: 3)
                         .foregroundColor(.clear)
@@ -110,22 +105,20 @@ extension HomeView {
             
             VStack {
                 Text("Following")
-                    .foregroundColor(followingPressed ? .white : .gray)
+                    .foregroundColor(selectedTab == .following ? .white : .gray)
                     .onTapGesture {
                         withAnimation(.easeIn(duration: 0.25)) {
-                            followingPressed = true
+                            selectedTab = .following
                         }
                 }
                 
                 // tab underline
-                if followingPressed {
+                if selectedTab == .following {
                     RoundedRectangle(cornerRadius: 5)
                         .frame(width: 50, height: 3)
                         .foregroundColor(.blue)
                         .matchedGeometryEffect(id: "tab_underline", in: topTabsNamespace)
-                }
-                
-                if !followingPressed {
+                } else {
                     RoundedRectangle(cornerRadius: 5)
                         .frame(width: 50, height: 3)
                         .foregroundColor(.clear)
@@ -136,5 +129,18 @@ extension HomeView {
         }
         .fontWeight(.semibold)
         .font(.title3)
+    }
+    
+    private var content: some View {
+        VStack {
+            switch selectedTab {
+            case .forYou:
+                ForYouView()
+                    .transition(.move(edge: .leading))
+            case .following:
+                FollowingView()
+                    .transition(.move(edge: .trailing))
+            }
+        }
     }
 }

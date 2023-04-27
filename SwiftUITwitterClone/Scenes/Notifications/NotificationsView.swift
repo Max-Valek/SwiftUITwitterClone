@@ -37,6 +37,7 @@ struct NotificationsView: View {
                     Spacer()
                     
                     Image(systemName: "gearshape")
+                        .frame(width: 35, height: 35)
                     
                 }
                 .padding(.horizontal)
