@@ -24,24 +24,7 @@ struct NotificationsView: View {
             
             VStack {
                 
-                HStack(spacing: 8) {
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                    
-                    Spacer()
-                    
-                    Text("Notifications")
-                        .font(.headline)
-                    
-                    Spacer()
-                    
-                    Image(systemName: "gearshape")
-                        .frame(width: 35, height: 35)
-                    
-                }
-                .padding(.horizontal)
-                .foregroundColor(.white)
+                topItems
                 
                 tabs
                 
@@ -64,6 +47,27 @@ struct NotificationsView_Previews: PreviewProvider {
 }
 
 extension NotificationsView {
+    
+    private var topItems: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 35, height: 35)
+            
+            Spacer()
+            
+            Text("Notifications")
+                .font(.headline)
+            
+            Spacer()
+            
+            Image(systemName: "gearshape")
+                .frame(width: 35, height: 35)
+            
+        }
+        .padding(.horizontal)
+        .foregroundColor(.white)
+    }
     
     private var tabs: some View {
         HStack(spacing: 8) {

@@ -19,41 +19,9 @@ struct SpacesView: View {
             
             VStack {
                 
-                HStack(spacing: 8) {
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                    
-                    Spacer()
-                    
-                    Text("Spaces")
-                        .font(.headline)
-                    
-                    Spacer()
-                    
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                        .opacity(0)
-                    
-                }
-                .padding(.horizontal)
-                .foregroundColor(.white)
+                topItems
                 
-                HStack(spacing: 8) {
-                    Image(systemName: "magnifyingglass")
-                    
-                    TextField("Search Twitter", text: $searchTxt)
-                        .foregroundColor(.white)
-                    
-                }
-                .padding(.vertical, 8)
-                .padding(.horizontal, 16)
-                .background(
-                    RoundedRectangle(cornerRadius: 25)
-                        .fill(Color.secondary)
-                )
-                .padding(.horizontal)
+                searchBar
                 
                 Spacer()
                 
@@ -71,5 +39,48 @@ struct SpacesView: View {
 struct SpacesView_Previews: PreviewProvider {
     static var previews: some View {
         SpacesView()
+    }
+}
+
+extension SpacesView {
+    
+    private var topItems: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 35, height: 35)
+            
+            Spacer()
+            
+            Text("Spaces")
+                .font(.headline)
+            
+            Spacer()
+            
+            Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 35, height: 35)
+                .opacity(0)
+            
+        }
+        .padding(.horizontal)
+        .foregroundColor(.white)
+    }
+    
+    private var searchBar: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "magnifyingglass")
+            
+            TextField("Search Twitter", text: $searchTxt)
+                .foregroundColor(.white)
+            
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 16)
+        .background(
+            RoundedRectangle(cornerRadius: 25)
+                .fill(Color.secondary)
+        )
+        .padding(.horizontal)
     }
 }

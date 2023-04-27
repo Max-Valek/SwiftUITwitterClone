@@ -18,34 +18,7 @@ struct SearchView: View {
             
             VStack {
                 
-                HStack(spacing: 8) {
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                    
-                    Spacer()
-                    
-                    HStack(spacing: 8) {
-                        Image(systemName: "magnifyingglass")
-                        
-                        TextField("Search Twitter", text: $searchTxt)
-                            .foregroundColor(.white)
-                            
-                    }
-                    .padding(.vertical, 8)
-                    .padding(.horizontal, 16)
-                    .background(
-                        RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.secondary)
-                    )
-                    
-                    Spacer()
-                    
-                    Image(systemName: "gearshape")
-                        .frame(width: 35, height: 35)
-                }
-                .padding(.horizontal)
-                .foregroundColor(.white)
+                topItems
                 
                 Spacer()
                 
@@ -62,5 +35,39 @@ struct SearchView: View {
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView()
+    }
+}
+
+extension SearchView {
+    
+    private var topItems: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 35, height: 35)
+            
+            Spacer()
+            
+            HStack(spacing: 8) {
+                Image(systemName: "magnifyingglass")
+                
+                TextField("Search Twitter", text: $searchTxt)
+                    .foregroundColor(.white)
+                    
+            }
+            .padding(.vertical, 8)
+            .padding(.horizontal, 16)
+            .background(
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(Color.secondary)
+            )
+            
+            Spacer()
+            
+            Image(systemName: "gearshape")
+                .frame(width: 35, height: 35)
+        }
+        .padding(.horizontal)
+        .foregroundColor(.white)
     }
 }
