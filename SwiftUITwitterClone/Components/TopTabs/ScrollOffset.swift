@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+/*
+ this code defines a new modifier that allows developers to get the scroll offset of a view by
+ providing a closure that's called whenever the scroll offset changes. The OffsetKey preference
+ key is used to store and pass the scroll offset value between views.
+ */
+
 // TabView Content Scroll Offset
 extension View {
     
@@ -34,3 +40,6 @@ struct OffsetKey: PreferenceKey {
         value = nextValue()
     }
 }
+
+
+

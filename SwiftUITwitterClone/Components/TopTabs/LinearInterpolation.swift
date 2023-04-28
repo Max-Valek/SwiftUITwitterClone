@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+/*
+ this code defines a helper class that performs linear interpolation for tab animation.
+ The class is initialized with input and output ranges, and the calculate(for:) method
+ performs linear interpolation for a given input value using these ranges.
+ */
+
 // Class for helping with linear interp. for tab animation
 class LinearInterpolation {
     private var length: Int
@@ -23,7 +29,7 @@ class LinearInterpolation {
     }
     
     func calculate(for x: CGFloat) -> CGFloat {
-        // if value less that its initial input range
+        // if value less that its initial input range (if left most tab)
         if x <= inputRange[0] { return outputRange[0] }
         
         // starting range is 1, because need previous value

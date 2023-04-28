@@ -18,6 +18,8 @@ struct SampleTabsView: View {
     @State private var indicatorWidth: CGFloat = 0
     @State private var indicatorPosition: CGFloat = 0
     
+    @Namespace private var namespace
+    
     var body: some View {
         
         TabView(selection: $currentTab) {
@@ -90,20 +92,20 @@ struct SampleTabsView: View {
     func TabsView() -> some View {
         HStack(spacing: 0) {
             ForEach($tabs) { $tab in
-                Text(tab.title)
-                    .fontWeight(.semibold)
-                    .onTapGesture {
-                        withAnimation {
-                            currentTab = tab
+                
+                Button {
+                    withAnimation {
+                        currentTab = tab
+                    }
+                } label: {
+                    Text(tab.title)
+                        .fontWeight(.semibold)
+                        // save tab's min x and width for calculations
+                        .offsetX { rect in
+                            tab.minX = rect.minX
+                            tab.width = rect.width
                         }
-                        
-                    }
-                    // save tab's min x and width for calculations
-                    .offsetX { rect in
-                        tab.minX = rect.minX
-                        tab.width = rect.width
-                    }
-                    
+                }
                 
                 if tab != tabs.last {
                     Spacer(minLength: 0)
@@ -115,6 +117,7 @@ struct SampleTabsView: View {
             Rectangle()
                 .frame(width: indicatorWidth, height: 4)
                 .offset(x: indicatorPosition, y: 10)
+                
         }
     }
 }
