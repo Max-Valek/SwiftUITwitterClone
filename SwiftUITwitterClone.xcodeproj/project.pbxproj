@@ -27,6 +27,7 @@
 		9D7C0DB429FC70BD00650BEB /* ScrollOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C0DB329FC70BD00650BEB /* ScrollOffset.swift */; };
 		9D7C0DB629FC70DB00650BEB /* LinearInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C0DB529FC70DB00650BEB /* LinearInterpolation.swift */; };
 		9D7C0DB829FC710100650BEB /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C0DB729FC710100650BEB /* Tab.swift */; };
+		9D7C0DBA29FC722F00650BEB /* SampleTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C0DB929FC722F00650BEB /* SampleTabsView.swift */; };
 		9DE09BCD29EF3F770079F501 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE09BCC29EF3F770079F501 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		9D7C0DB329FC70BD00650BEB /* ScrollOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffset.swift; sourceTree = "<group>"; };
 		9D7C0DB529FC70DB00650BEB /* LinearInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearInterpolation.swift; sourceTree = "<group>"; };
 		9D7C0DB729FC710100650BEB /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		9D7C0DB929FC722F00650BEB /* SampleTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTabsView.swift; sourceTree = "<group>"; };
 		9DE09BCC29EF3F770079F501 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,6 +236,7 @@
 				9D7C0DB329FC70BD00650BEB /* ScrollOffset.swift */,
 				9D7C0DB529FC70DB00650BEB /* LinearInterpolation.swift */,
 				9D7C0DB729FC710100650BEB /* Tab.swift */,
+				9D7C0DB929FC722F00650BEB /* SampleTabsView.swift */,
 			);
 			path = TopTabs;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				9D45A7FC29E9FCEE0041C60A /* ForYouView.swift in Sources */,
 				9D20C37229FB372E00445463 /* ProfileView.swift in Sources */,
 				9D7C0DB429FC70BD00650BEB /* ScrollOffset.swift in Sources */,
+				9D7C0DBA29FC722F00650BEB /* SampleTabsView.swift in Sources */,
 				9D45A7D529E9D5D90041C60A /* BottomTabBarItem.swift in Sources */,
 				9D7C0DB829FC710100650BEB /* Tab.swift in Sources */,
 				9D45A7E929E9DF660041C60A /* HomeView.swift in Sources */,
