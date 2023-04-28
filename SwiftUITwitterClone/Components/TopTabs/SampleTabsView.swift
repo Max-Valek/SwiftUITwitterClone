@@ -92,17 +92,18 @@ struct SampleTabsView: View {
             ForEach($tabs) { $tab in
                 Text(tab.title)
                     .fontWeight(.semibold)
-                    // save tab's min x and width for calculations
-                    .offsetX { rect in
-                        tab.minX = rect.minX
-                        tab.width = rect.width
-                    }
                     .onTapGesture {
                         withAnimation {
                             currentTab = tab
                         }
                         
                     }
+                    // save tab's min x and width for calculations
+                    .offsetX { rect in
+                        tab.minX = rect.minX
+                        tab.width = rect.width
+                    }
+                    
                 
                 if tab != tabs.last {
                     Spacer(minLength: 0)
