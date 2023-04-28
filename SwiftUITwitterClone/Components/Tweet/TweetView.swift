@@ -100,6 +100,7 @@ struct TweetView: View {
             }
         }
         .foregroundColor(Color.theme.text)
+        .padding(.top, 8)
     }
 }
 

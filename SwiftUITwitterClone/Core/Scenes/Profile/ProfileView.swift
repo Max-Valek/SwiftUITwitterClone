@@ -42,14 +42,14 @@ struct ProfileView: View {
                     .frame(height: 0.5)
                     .foregroundColor(Color.theme.text.opacity(0.2))
                 
-                VStack {
-                    Text("tweets")
+                ScrollView(showsIndicators: false) {
+                    ForYouView()
                 }
+                .padding(.horizontal, 4)
+                
                 Spacer()
             }
             .foregroundColor(Color.theme.text)
-            
-            
             
         }
         
