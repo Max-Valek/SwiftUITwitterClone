@@ -96,8 +96,10 @@ extension ProfileView {
                 .resizable()
                 .frame(width: 40, height: 40)
                 .padding()
-                .background(Color.black)
+                .background(Color.theme.background)
                 .clipShape(Circle())
+                .padding(1)
+                .background(Color.white, in: Circle())
                 .offset(y: -20)
                 
             Spacer()
@@ -109,9 +111,10 @@ extension ProfileView {
                     .font(.subheadline)
                     .padding(4)
                     .padding(.horizontal, 4)
-                    .background(RoundedRectangle(cornerRadius: 20).stroke(Color.theme.text, lineWidth: 1))
+                    .background(RoundedRectangle(cornerRadius: 20).stroke(Color.theme.text.opacity(0.4), lineWidth: 1))
                 
             }
+            .offset(y: -16)
         }
         .padding(.horizontal)
     }
@@ -153,7 +156,7 @@ extension ProfileView {
             .foregroundColor(Color.theme.text.opacity(0.65))
             
             HStack(spacing: 16) {
-                HStack(spacing: 2) {
+                HStack(alignment: .bottom, spacing: 4) {
                     Text("100")
                         .font(.headline)
                         .fontWeight(.bold)
@@ -161,7 +164,7 @@ extension ProfileView {
                         .font(.subheadline)
                         .foregroundColor(Color.theme.text.opacity(0.65))
                 }
-                HStack(spacing: 2) {
+                HStack(alignment: .bottom, spacing: 4) {
                     Text("100")
                         .font(.headline)
                         .fontWeight(.bold)
@@ -183,6 +186,8 @@ extension ProfileView {
             ForEach(ProfileTab.allCases, id: \.self) { tab in
                 VStack {
                     Text(tab.rawValue)
+                        .font(.headline)
+                        .fontWeight(.semibold)
                         .foregroundColor(selectedTab == tab ? Color.theme.text : Color.theme.text.opacity(0.4))
                         .onTapGesture {
                             withAnimation(.easeIn(duration: 0.25)) {
