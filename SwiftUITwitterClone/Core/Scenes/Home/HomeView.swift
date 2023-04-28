@@ -28,6 +28,10 @@ struct HomeView: View {
                     topImages
                     
                     topTabs
+                    
+                    RoundedRectangle(cornerRadius: 5)
+                        .frame(height: 0.5)
+                        .foregroundColor(Color.theme.text.opacity(0.2))
                 }
                 .background(Color.theme.background.opacity(0.95))
                 

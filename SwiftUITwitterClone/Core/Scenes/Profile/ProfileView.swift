@@ -7,7 +7,19 @@
 
 import SwiftUI
 
+enum ProfileTab: String, CaseIterable {
+    case tweets = "Tweets"
+    case replies = "Replies"
+    case media = "Media"
+    case likes = "Likes"
+}
+
 struct ProfileView: View {
+    
+    @State private var selectedTab: ProfileTab = .tweets
+    
+    @Namespace private var profileNamespace
+    
     var body: some View {
         
         ZStack {
@@ -22,47 +34,13 @@ struct ProfileView: View {
                 
                 nameAndUsername
                 
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack(spacing: 16) {
-                        HStack(spacing: 2) {
-                            Image(systemName: "location.north.circle")
-                            Text("Location")
-                        }
-                        
-                        HStack(spacing: 2) {
-                            Image(systemName: "calendar")
-                            Text("Joined April 2023")
-                        }
-                        Spacer()
-                    }
-                    .font(.subheadline)
-                    .foregroundColor(Color.theme.text.opacity(0.65))
-                    
-                    HStack(spacing: 16) {
-                        HStack(spacing: 2) {
-                            Text("100")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                            Text("Following")
-                                .font(.subheadline)
-                                .foregroundColor(Color.theme.text.opacity(0.65))
-                        }
-                        HStack(spacing: 2) {
-                            Text("100")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                            Text("Followers")
-                                .font(.subheadline)
-                                .foregroundColor(Color.theme.text.opacity(0.65))
-                        }
-                    }
-                    
-                }
-                .padding(.horizontal, 25)
+                info
                 
-                HStack {
-                    Text("tabs")
-                }
+                tabs
+                
+                RoundedRectangle(cornerRadius: 5)
+                    .frame(height: 0.5)
+                    .foregroundColor(Color.theme.text.opacity(0.2))
                 
                 VStack {
                     Text("tweets")
@@ -155,5 +133,78 @@ extension ProfileView {
         .padding(.horizontal, 25)
         .padding(.bottom, -10)
         .offset(y: -20)
+    }
+    
+    private var info: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 16) {
+                HStack(spacing: 2) {
+                    Image(systemName: "location.north.circle")
+                    Text("Location")
+                }
+                
+                HStack(spacing: 2) {
+                    Image(systemName: "calendar")
+                    Text("Joined April 2023")
+                }
+                Spacer()
+            }
+            .font(.subheadline)
+            .foregroundColor(Color.theme.text.opacity(0.65))
+            
+            HStack(spacing: 16) {
+                HStack(spacing: 2) {
+                    Text("100")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                    Text("Following")
+                        .font(.subheadline)
+                        .foregroundColor(Color.theme.text.opacity(0.65))
+                }
+                HStack(spacing: 2) {
+                    Text("100")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                    Text("Followers")
+                        .font(.subheadline)
+                        .foregroundColor(Color.theme.text.opacity(0.65))
+                }
+            }
+            
+        }
+        .padding(.horizontal, 25)
+    }
+    
+    private var tabs: some View {
+        HStack {
+            
+            Spacer()
+            
+            ForEach(ProfileTab.allCases, id: \.self) { tab in
+                VStack {
+                    Text(tab.rawValue)
+                        .foregroundColor(selectedTab == tab ? Color.theme.text : Color.theme.text.opacity(0.4))
+                        .onTapGesture {
+                            withAnimation(.easeIn(duration: 0.25)) {
+                                selectedTab = tab
+                            }
+                        }
+                    
+                    // tab underline
+                    if selectedTab == tab {
+                        RoundedRectangle(cornerRadius: 5)
+                            .frame(width: 50, height: 3)
+                            .foregroundColor(Color.theme.twitter)
+                            .matchedGeometryEffect(id: "tab_underline", in: profileNamespace)
+                    } else {
+                        RoundedRectangle(cornerRadius: 5)
+                            .frame(width: 50, height: 3)
+                            .foregroundColor(.clear)
+                    }
+                }
+                Spacer()
+            }
+        }
+        .padding(.top)
     }
 }
