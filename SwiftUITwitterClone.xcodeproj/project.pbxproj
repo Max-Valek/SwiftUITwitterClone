@@ -24,6 +24,8 @@
 		9D45A7FC29E9FCEE0041C60A /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7FB29E9FCEE0041C60A /* ForYouView.swift */; };
 		9D45A7FE29E9FD560041C60A /* FollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7FD29E9FD560041C60A /* FollowingView.swift */; };
 		9D45A80129E9FDAC0041C60A /* TweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A80029E9FDAC0041C60A /* TweetView.swift */; };
+		9D73CD432A002A3000CA6211 /* ParticleEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D73CD422A002A3000CA6211 /* ParticleEffect.swift */; };
+		9D73CD462A002A7D00CA6211 /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D73CD452A002A7D00CA6211 /* Particle.swift */; };
 		9D7C0DB429FC70BD00650BEB /* ScrollOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C0DB329FC70BD00650BEB /* ScrollOffset.swift */; };
 		9D7C0DB629FC70DB00650BEB /* LinearInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C0DB529FC70DB00650BEB /* LinearInterpolation.swift */; };
 		9D7C0DB829FC710100650BEB /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C0DB729FC710100650BEB /* Tab.swift */; };
@@ -50,6 +52,8 @@
 		9D45A7FB29E9FCEE0041C60A /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
 		9D45A7FD29E9FD560041C60A /* FollowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingView.swift; sourceTree = "<group>"; };
 		9D45A80029E9FDAC0041C60A /* TweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetView.swift; sourceTree = "<group>"; };
+		9D73CD422A002A3000CA6211 /* ParticleEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEffect.swift; sourceTree = "<group>"; };
+		9D73CD452A002A7D00CA6211 /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 		9D7C0DB329FC70BD00650BEB /* ScrollOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffset.swift; sourceTree = "<group>"; };
 		9D7C0DB529FC70DB00650BEB /* LinearInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearInterpolation.swift; sourceTree = "<group>"; };
 		9D7C0DB729FC710100650BEB /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				9D20C36E29FB25F600445463 /* Color.swift */,
+				9D73CD422A002A3000CA6211 /* ParticleEffect.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				9D45A7BA29E9D2BA0041C60A /* SwiftUITwitterCloneApp.swift */,
 				9D20C36D29FB244A00445463 /* Extensions */,
 				9D45A7C829E9D44A0041C60A /* Components */,
+				9D73CD442A002A6800CA6211 /* Model */,
 				9D20C36C29FB244500445463 /* Core */,
 				9D45A7BE29E9D2BB0041C60A /* Assets.xcassets */,
 				9D45A7C029E9D2BB0041C60A /* Preview Content */,
@@ -228,6 +234,14 @@
 				9D45A80029E9FDAC0041C60A /* TweetView.swift */,
 			);
 			path = Tweet;
+			sourceTree = "<group>";
+		};
+		9D73CD442A002A6800CA6211 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9D73CD452A002A7D00CA6211 /* Particle.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9D7C0DB229FC708300650BEB /* TopTabs */ = {
@@ -324,9 +338,11 @@
 				9D45A7E429E9DAB20041C60A /* MainView.swift in Sources */,
 				9D45A7D329E9D5C30041C60A /* BottomTabBarItemsPreferenceKey.swift in Sources */,
 				9D20C36F29FB25F600445463 /* Color.swift in Sources */,
+				9D73CD462A002A7D00CA6211 /* Particle.swift in Sources */,
 				9D20C36B29FB1C0900445463 /* MessagesView.swift in Sources */,
 				9DE09BCD29EF3F770079F501 /* SearchView.swift in Sources */,
 				9D45A7FC29E9FCEE0041C60A /* ForYouView.swift in Sources */,
+				9D73CD432A002A3000CA6211 /* ParticleEffect.swift in Sources */,
 				9D20C37229FB372E00445463 /* ProfileView.swift in Sources */,
 				9D7C0DB429FC70BD00650BEB /* ScrollOffset.swift in Sources */,
 				9D7C0DBA29FC722F00650BEB /* SampleTabsView.swift in Sources */,
