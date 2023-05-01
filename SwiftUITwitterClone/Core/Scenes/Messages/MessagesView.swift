@@ -43,7 +43,6 @@ struct MessagesView: View {
                         
                         Spacer()
                     }
-                    .padding(.horizontal)
                     
                     ForEach(0...5, id: \.self) { _ in
                         HStack {
@@ -78,9 +77,10 @@ struct MessagesView: View {
                             
                             Spacer()
                         }
-                        .padding(.horizontal)
                     }
+                    
                 }
+                .padding(.horizontal)
                 
                 Spacer()
             }

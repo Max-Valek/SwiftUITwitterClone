@@ -46,13 +46,8 @@ struct ProfileView: View {
                     .frame(height: 0.5)
                     .foregroundColor(Color.theme.text.opacity(0.2))
                 
-                ScrollView(showsIndicators: false) {
-                    ForEach(tweets) { tweet in
-                        TweetView(tweet: tweet)
-                    }
-                    .padding(.horizontal)
-                }
-                .padding(.horizontal, 4)
+                TweetsListView(tweets: tweets)
+                    .padding(.horizontal, 8)
                 
                 Spacer()
             }
@@ -103,12 +98,11 @@ extension ProfileView {
     
     private var photoAndEditProfile: some View {
         HStack(alignment: .center) {
-            Image(systemName: "person")
+            Image("doge")
                 .resizable()
-                .frame(width: 40, height: 40)
-                .padding()
-                .background(Color.theme.background)
+                .scaledToFill()
                 .clipShape(Circle())
+                .frame(width: 75, height: 75)
                 .padding(1)
                 .background(Color.white, in: Circle())
                 .offset(y: -20)
@@ -134,10 +128,10 @@ extension ProfileView {
         HStack {
             
             VStack(alignment: .leading) {
-                Text("User")
+                Text("Doge")
                     .font(.title2)
                     .fontWeight(.black)
-                Text("@user")
+                Text("@doge")
                     .font(.headline)
                     .foregroundColor(Color.theme.text.opacity(0.5))
             }
@@ -146,7 +140,7 @@ extension ProfileView {
         }
         .padding(.horizontal, 25)
         .padding(.bottom, -10)
-        .offset(y: -20)
+        .offset(y: -16)
     }
     
     private var info: some View {

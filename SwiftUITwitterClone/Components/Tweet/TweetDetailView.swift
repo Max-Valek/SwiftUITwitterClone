@@ -57,14 +57,16 @@ struct TweetDetailView: View {
                         VStack(alignment: .leading, spacing: 8) {
                             
                             HStack {
-                                Image(systemName: "person.circle")
+                                Image("doge")
                                     .resizable()
+                                    .scaledToFill()
+                                    .clipShape(Circle())
                                     .frame(width: 30, height: 30)
                                 
-                                Text("User")
+                                Text("Doge")
                                     .font(.title3)
                                 
-                                Text("@user • 1m")
+                                Text("@doge • 1m")
                                     .font(.headline)
                                     .foregroundColor(Color.theme.text.opacity(0.4))
                                 

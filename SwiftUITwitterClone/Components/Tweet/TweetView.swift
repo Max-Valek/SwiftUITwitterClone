@@ -18,17 +18,19 @@ struct TweetView: View {
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
             
-            Image(systemName: "person.circle")
+            Image("doge")
                 .resizable()
+                .scaledToFill()
+                .clipShape(Circle())
                 .frame(width: 38, height: 38)
             
             VStack(alignment: .leading, spacing: 8) {
                 
                 HStack {
-                    Text("User")
+                    Text("Doge")
                         .font(.title3)
                     
-                    Text("@user • 1m")
+                    Text("@doge • 1m")
                         .font(.headline)
                         .foregroundColor(Color.theme.text.opacity(0.4))
                     
@@ -85,9 +87,6 @@ struct TweetView: View {
                         }
                     }
 
-//                    CustomButton(systemImage: isLiked ? "heart.fill" : "heart", status: isLiked, activeTint: Color.theme.text.opacity(0.4), inactiveTint: Color.clear) {
-//                        isLiked.toggle()
-//                    }
                     Spacer()
                     
                     HStack {
@@ -116,31 +115,6 @@ struct TweetView: View {
         }
     }
     
-    // custom button
-//    @ViewBuilder
-//    func CustomButton(systemImage: String, status: Bool, activeTint: Color, inactiveTint: Color, onTap: @escaping () -> ()) -> some View {
-//
-//        Button {
-//            onTap()
-//        } label: {
-//            Image(systemName: systemImage)
-//                .font(.title2)
-//                .particleEffect(
-//                    systemImage: systemImage,
-//                    font: .title2,
-//                    status: status,
-//                    activeTint: activeTint,
-//                    inactiveTint: inactiveTint)
-//                .foregroundColor(status ? activeTint : inactiveTint)
-//                .padding(.horizontal, 18)
-//                .padding(.vertical, 8)
-//                .background(
-//                    Capsule()
-//                        .fill(status ? activeTint.opacity(0.25) : Color("ButtonColor"))
-//                )
-//        }
-//
-//    }
 }
 
 struct TweetView_Previews: PreviewProvider {

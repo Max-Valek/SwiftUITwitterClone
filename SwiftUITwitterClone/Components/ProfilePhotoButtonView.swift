@@ -15,8 +15,10 @@ struct ProfilePhotoButtonView: View {
         Button {
             showProfile.toggle()
         } label: {
-            Image(systemName: "person.circle")
+            Image("doge")
                 .resizable()
+                .scaledToFill()
+                .clipShape(Circle())
                 .frame(width: 30, height: 30)
         }
     }

@@ -170,6 +170,7 @@
 		9D45A7C829E9D44A0041C60A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9D73CD502A00413400CA6211 /* NewTweet */,
 				9D73CD472A002ACB00CA6211 /* CustomButton */,
 				9D7C0DB229FC708300650BEB /* TopTabs */,
 				9D45A7FF29E9FD9D0041C60A /* Tweet */,
@@ -183,7 +184,7 @@
 		9D45A7C929E9D44D0041C60A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				9D45A7E229E9DAA00041C60A /* Main */,
+				9D45A7E329E9DAB20041C60A /* MainView.swift */,
 				9D45A7E629E9DF3D0041C60A /* Home */,
 				9D20C37029FB371200445463 /* Profile */,
 				9DE09BCB29EF3F5E0079F501 /* Search */,
@@ -205,18 +206,9 @@
 			path = BottomTabBar;
 			sourceTree = "<group>";
 		};
-		9D45A7E229E9DAA00041C60A /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				9D45A7E329E9DAB20041C60A /* MainView.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		9D45A7E629E9DF3D0041C60A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				9D73CD502A00413400CA6211 /* NewTweet */,
 				9D45A7E829E9DF660041C60A /* HomeView.swift */,
 			);
 			path = Home;

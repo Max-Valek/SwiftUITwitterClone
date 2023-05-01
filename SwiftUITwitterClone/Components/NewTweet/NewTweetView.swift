@@ -23,9 +23,11 @@ struct NewTweetView: View {
                 
                 HStack(spacing: 16) {
                     VStack {
-                        Image(systemName: "person.circle")
+                        Image("doge")
                             .resizable()
-                        .frame(width: 38, height: 38)
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .frame(width: 38, height: 38)
                         
                         Spacer()
                     }
