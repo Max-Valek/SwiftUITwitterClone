@@ -75,6 +75,7 @@ struct TweetView: View {
                     Button {
                         withAnimation {
                             isLiked.toggle()
+                            
                         }
                     } label: {
                         HStack {
@@ -111,7 +112,7 @@ struct TweetView: View {
         .padding(.top, 8)
         .preferredColorScheme(.dark)
         .fullScreenCover(isPresented: $showTweetDetail) {
-            TweetDetailView(showTweetDetail: $showTweetDetail)
+            TweetDetailView(showTweetDetail: $showTweetDetail, tweet: tweet)
         }
     }
     
