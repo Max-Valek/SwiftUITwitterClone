@@ -29,7 +29,7 @@ struct MessagesView: View {
                     .foregroundColor(Color.theme.text.opacity(0.2))
                 
                 ScrollView {
-                    HStack {
+                    HStack(spacing: 2) {
                         Image(systemName: "envelope")
                             .font(.title)
                             .padding(12)
@@ -77,10 +77,11 @@ struct MessagesView: View {
                             
                             Spacer()
                         }
+                        .padding(.leading, 2)
                     }
                     
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 8)
                 
                 Spacer()
             }
