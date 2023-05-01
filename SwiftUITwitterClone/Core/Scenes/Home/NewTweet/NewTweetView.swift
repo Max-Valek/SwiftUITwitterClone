@@ -10,6 +10,7 @@ import SwiftUI
 struct NewTweetView: View {
     
     @Binding var showNewTweetView: Bool
+    @State private var newTweetText: String = ""
     
     var body: some View {
         
@@ -19,6 +20,23 @@ struct NewTweetView: View {
             
             VStack {
                 topItems
+                
+                HStack(spacing: 16) {
+                    VStack {
+                        Image(systemName: "person.circle")
+                            .resizable()
+                        .frame(width: 38, height: 38)
+                        
+                        Spacer()
+                    }
+                    
+                    VStack {
+                        TextField("What's Happening?", text: $newTweetText, axis: .vertical)
+                            .padding(.top)
+                        
+                        Spacer()
+                    }
+                }
                 
                 Spacer()
             }
