@@ -14,4 +14,6 @@ struct Tweet: Identifiable {
     let images: [Image]?
     var likes: Int
     var retweets: Int
+    var bookmarks: Int
+    var views: Int
 }
