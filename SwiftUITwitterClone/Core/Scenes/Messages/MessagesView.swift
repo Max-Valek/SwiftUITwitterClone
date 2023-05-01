@@ -42,6 +42,42 @@ struct MessagesView: View {
                 }
                 .padding(.horizontal)
                 
+                ForEach(0...5, id: \.self) { _ in
+                    HStack {
+                        Image(systemName: "person")
+                            .font(.title)
+                            .padding(12)
+                            .background(Circle().fill(Color.theme.background))
+                            .padding(1)
+                            .background(Color.theme.text.opacity(0.4), in: Circle())
+                        
+                        VStack {
+                            HStack(spacing: 2) {
+                                Text("Group")
+                                    .font(.subheadline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.theme.text)
+                                
+                                Text("•")
+                                
+                                Text("20m")
+                                
+                                Spacer()
+                            }
+                            
+                            HStack {
+                                Text("User sent @user's Tweet")
+                                
+                                Spacer()
+                            }
+                        }
+                        .foregroundColor(Color.theme.text.opacity(0.4))
+                        
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                }
+                
                 Spacer()
                 
                 Text("Messages")
