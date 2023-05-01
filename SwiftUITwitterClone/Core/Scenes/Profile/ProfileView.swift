@@ -20,6 +20,8 @@ struct ProfileView: View {
     
     @Namespace private var profileNamespace
     
+    @Binding var showProfile: Bool
+    
     var body: some View {
         
         ZStack {
@@ -58,7 +60,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(showProfile: .constant(true))
             .preferredColorScheme(.dark)
     }
 }
@@ -76,7 +78,11 @@ extension ProfileView {
                 
                 VStack {
                     HStack {
-                        Image(systemName: "arrow.left")
+                        Button {
+                            showProfile.toggle()
+                        } label: {
+                            Image(systemName: "arrow.left")
+                        }
                         
                         Spacer()
                         

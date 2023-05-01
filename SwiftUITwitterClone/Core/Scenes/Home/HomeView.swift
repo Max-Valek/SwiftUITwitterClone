@@ -16,6 +16,8 @@ struct HomeView: View {
     @State private var selectedTab: HomeTab = .forYou
     @Namespace private var topTabsNamespace
     
+    @State private var showProfile: Bool = false
+    
     var body: some View {
         
         ZStack {
@@ -40,6 +42,10 @@ struct HomeView: View {
                 Spacer()
             }
             .padding(.horizontal)
+            .fullScreenCover(isPresented: $showProfile) {
+                ProfileView(showProfile: $showProfile)
+                    .preferredColorScheme(.dark)
+            }
             
         }
         .foregroundColor(.white)
@@ -57,9 +63,14 @@ extension HomeView {
     
     private var topImages: some View {
         HStack {
-            Image(systemName: "person.circle")
-                .resizable()
-                .frame(width: 30, height: 30)
+            
+            Button {
+                showProfile.toggle()
+            } label: {
+                Image(systemName: "person.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+            }
             
             Spacer()
             
