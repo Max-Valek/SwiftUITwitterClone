@@ -11,6 +11,8 @@ struct MessagesView: View {
     
     @State private var searchTxt: String = ""
     
+    @State private var showProfile: Bool = false
+    
     var body: some View {
         ZStack {
             
@@ -83,6 +85,10 @@ struct MessagesView: View {
                 Spacer()
             }
             .foregroundColor(Color.theme.text)
+            .fullScreenCover(isPresented: $showProfile) {
+                ProfileView(showProfile: $showProfile)
+                    .preferredColorScheme(.dark)
+            }
         }
     }
 }
@@ -98,9 +104,8 @@ extension MessagesView {
     
     private var topItems: some View {
         HStack(spacing: 8) {
-            Image(systemName: "person.circle")
-                .resizable()
-                .frame(width: 30, height: 30)
+            
+            ProfilePhotoButtonView(showProfile: $showProfile)
             
             Spacer()
             
