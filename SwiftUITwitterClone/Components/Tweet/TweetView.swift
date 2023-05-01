@@ -11,8 +11,9 @@ struct TweetView: View {
     
     @State private var isLiked: Bool = false
     @State private var isRetweeted: Bool = false
-    
     @State private var showTweetDetail: Bool = false
+    
+    let tweet: Tweet
     
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
@@ -37,7 +38,7 @@ struct TweetView: View {
                         .foregroundColor(Color.theme.text.opacity(0.4))
                 }
                 
-                Text("This is a sample tweet. It is not very pretty and this is just sample text.")
+                Text(tweet.text)
                     .onTapGesture {
                         showTweetDetail.toggle()
                     }
@@ -48,7 +49,7 @@ struct TweetView: View {
                     } label: {
                         HStack {
                             Image(systemName: "bubble.left")
-                            Text("82")
+                            Text("0")
                         }
                     }
 
@@ -64,7 +65,7 @@ struct TweetView: View {
                             Image(systemName: "arrow.triangle.2.circlepath")
                                 .fontWeight(isRetweeted ? .bold : .semibold)
                                 .foregroundColor(isRetweeted ? Color.green : Color.theme.text.opacity(0.4))
-                            Text("71")
+                            Text("\(tweet.retweets)")
                         }
                     }
 
@@ -79,7 +80,7 @@ struct TweetView: View {
                         HStack {
                             Image(systemName: isLiked ? "heart.fill" : "heart")
                                 .foregroundColor(isLiked ? Color.red : Color.theme.text.opacity(0.4))
-                            Text("1,538")
+                            Text("\(tweet.likes)")
                         }
                     }
 
@@ -90,7 +91,7 @@ struct TweetView: View {
                     
                     HStack {
                         Image(systemName: "chart.bar")
-                        Text("182K")
+                        Text("\(tweet.views)")
                     }
                     Spacer()
                     
@@ -115,34 +116,34 @@ struct TweetView: View {
     }
     
     // custom button
-    @ViewBuilder
-    func CustomButton(systemImage: String, status: Bool, activeTint: Color, inactiveTint: Color, onTap: @escaping () -> ()) -> some View {
-        
-        Button {
-            onTap()
-        } label: {
-            Image(systemName: systemImage)
-                .font(.title2)
-                .particleEffect(
-                    systemImage: systemImage,
-                    font: .title2,
-                    status: status,
-                    activeTint: activeTint,
-                    inactiveTint: inactiveTint)
-                .foregroundColor(status ? activeTint : inactiveTint)
-                .padding(.horizontal, 18)
-                .padding(.vertical, 8)
-                .background(
-                    Capsule()
-                        .fill(status ? activeTint.opacity(0.25) : Color("ButtonColor"))
-                )
-        }
-
-    }
+//    @ViewBuilder
+//    func CustomButton(systemImage: String, status: Bool, activeTint: Color, inactiveTint: Color, onTap: @escaping () -> ()) -> some View {
+//
+//        Button {
+//            onTap()
+//        } label: {
+//            Image(systemName: systemImage)
+//                .font(.title2)
+//                .particleEffect(
+//                    systemImage: systemImage,
+//                    font: .title2,
+//                    status: status,
+//                    activeTint: activeTint,
+//                    inactiveTint: inactiveTint)
+//                .foregroundColor(status ? activeTint : inactiveTint)
+//                .padding(.horizontal, 18)
+//                .padding(.vertical, 8)
+//                .background(
+//                    Capsule()
+//                        .fill(status ? activeTint.opacity(0.25) : Color("ButtonColor"))
+//                )
+//        }
+//
+//    }
 }
 
 struct TweetView_Previews: PreviewProvider {
     static var previews: some View {
-        TweetView()
+        TweetView(tweet: Tweet(date: "1m", text: "This is a sample tweet", images: nil, likes: 585, retweets: 24, bookmarks: 7, views: 2525))
     }
 }

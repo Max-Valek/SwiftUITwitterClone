@@ -9,11 +9,13 @@ import SwiftUI
 
 struct FollowingView: View {
     
+    let tweets: [Tweet] = Tweet.followingTweets
+    
     var body: some View {
         
         ScrollView(showsIndicators: false) {
-            ForEach(0..<10, id: \.self) { num in
-                TweetView()
+            ForEach(tweets) { tweet in
+                TweetView(tweet: tweet)
                 
                 RoundedRectangle(cornerRadius: 5)
                     .frame(height: 0.5)
