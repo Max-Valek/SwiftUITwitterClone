@@ -32,9 +32,11 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        Image(systemName: "square.and.pencil.circle.fill")
-                            .font(.system(size: 55))
-                        .foregroundColor(Color.theme.twitter)
+                        Image(systemName: "plus")
+                            .font(.system(size: 35))
+                        .foregroundColor(Color.theme.text)
+                        .padding()
+                        .background(Color.theme.twitter, in: Circle())
                         
                     }
                 }
