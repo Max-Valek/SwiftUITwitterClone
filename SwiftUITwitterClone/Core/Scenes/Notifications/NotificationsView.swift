@@ -16,6 +16,8 @@ struct NotificationsView: View {
     @State private var selectedTab: NotificationTab = .all
     @Namespace var notificationsNamespace
     
+    @State private var showProfile: Bool = false
+    
     var body: some View {
         
         ZStack {
@@ -35,6 +37,10 @@ struct NotificationsView: View {
                 Spacer()
             }
             .foregroundColor(Color.theme.text)
+            .fullScreenCover(isPresented: $showProfile) {
+                ProfileView(showProfile: $showProfile)
+                    .preferredColorScheme(.dark)
+            }
         }
     }
 }
@@ -50,9 +56,8 @@ extension NotificationsView {
     
     private var topItems: some View {
         HStack(spacing: 8) {
-            Image(systemName: "person.circle")
-                .resizable()
-                .frame(width: 30, height: 30)
+            
+            ProfilePhotoButtonView(showProfile: $showProfile)
             
             Spacer()
             
