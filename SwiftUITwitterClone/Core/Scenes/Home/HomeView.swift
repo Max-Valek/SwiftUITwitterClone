@@ -64,13 +64,7 @@ extension HomeView {
     private var topImages: some View {
         HStack {
             
-            Button {
-                showProfile.toggle()
-            } label: {
-                Image(systemName: "person.circle")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-            }
+            ProfilePhotoButtonView(showProfile: $showProfile)
             
             Spacer()
             
