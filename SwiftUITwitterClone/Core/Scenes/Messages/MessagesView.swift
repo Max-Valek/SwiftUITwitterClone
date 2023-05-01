@@ -26,56 +26,58 @@ struct MessagesView: View {
                     .frame(height: 0.5)
                     .foregroundColor(Color.theme.text.opacity(0.2))
                 
-                HStack {
-                    Image(systemName: "envelope")
-                        .font(.title)
-                        .padding(12)
-                        .background(Circle().fill(Color.theme.background))
-                        .padding(1)
-                        .background(Color.theme.text.opacity(0.4), in: Circle())
-                    
-                    Text("Message Requests")
-                        .font(.subheadline)
-                        .fontWeight(.bold)
-                    
-                    Spacer()
-                }
-                .padding(.horizontal)
-                
-                ForEach(0...5, id: \.self) { _ in
+                ScrollView {
                     HStack {
-                        Image(systemName: "person")
+                        Image(systemName: "envelope")
                             .font(.title)
                             .padding(12)
                             .background(Circle().fill(Color.theme.background))
                             .padding(1)
                             .background(Color.theme.text.opacity(0.4), in: Circle())
                         
-                        VStack {
-                            HStack(spacing: 2) {
-                                Text("Group")
-                                    .font(.subheadline)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color.theme.text)
-                                
-                                Text("•")
-                                
-                                Text("20m")
-                                
-                                Spacer()
-                            }
-                            
-                            HStack {
-                                Text("User sent @user's Tweet")
-                                
-                                Spacer()
-                            }
-                        }
-                        .foregroundColor(Color.theme.text.opacity(0.4))
+                        Text("Message Requests")
+                            .font(.subheadline)
+                            .fontWeight(.bold)
                         
                         Spacer()
                     }
                     .padding(.horizontal)
+                    
+                    ForEach(0...5, id: \.self) { _ in
+                        HStack {
+                            Image(systemName: "person")
+                                .font(.title)
+                                .padding(12)
+                                .background(Circle().fill(Color.theme.background))
+                                .padding(1)
+                                .background(Color.theme.text.opacity(0.4), in: Circle())
+                            
+                            VStack {
+                                HStack(spacing: 2) {
+                                    Text("Group")
+                                        .font(.subheadline)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.theme.text)
+                                    
+                                    Text("•")
+                                    
+                                    Text("20m")
+                                    
+                                    Spacer()
+                                }
+                                
+                                HStack {
+                                    Text("User sent @user's Tweet")
+                                    
+                                    Spacer()
+                                }
+                            }
+                            .foregroundColor(Color.theme.text.opacity(0.4))
+                            
+                            Spacer()
+                        }
+                        .padding(.horizontal)
+                    }
                 }
                 
                 Spacer()
