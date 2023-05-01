@@ -50,35 +50,98 @@ struct TweetDetailView: View {
                         .foregroundColor(Color.theme.text.opacity(0.2))
                 }
                 
-                HStack(alignment: .top, spacing: 16) {
+                VStack {
                     
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 38, height: 38)
-                    
-                    VStack(alignment: .leading, spacing: 8) {
+                    HStack(alignment: .top, spacing: 16) {
                         
-                        HStack {
-                            Text("User")
-                                .font(.title3)
+                        VStack(alignment: .leading, spacing: 8) {
                             
-                            Text("@user • 1m")
-                                .font(.headline)
-                                .foregroundColor(Color.theme.text.opacity(0.4))
-                            
-                            Spacer()
-                            
-                            Text("•••")
-                                .foregroundColor(Color.theme.text.opacity(0.4))
-                        }
-                        
-                        Text(tweet.text)
-                            .onTapGesture {
-                                showTweetDetail.toggle()
+                            HStack {
+                                Image(systemName: "person.circle")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                
+                                Text("User")
+                                    .font(.title3)
+                                
+                                Text("@user • 1m")
+                                    .font(.headline)
+                                    .foregroundColor(Color.theme.text.opacity(0.4))
+                                
+                                Spacer()
+                                
+                                Text("•••")
+                                    .foregroundColor(Color.theme.text.opacity(0.4))
                             }
+                            
+                            Text(tweet.text)
+                                .onTapGesture {
+                                    showTweetDetail.toggle()
+                                }
+                            
+                            HStack(spacing: 4) {
+                                Text("12:00 PM • 5/1/23 •")
+                                Text("\(tweet.views)")
+                                    .foregroundColor(Color.theme.text)
+                                    .fontWeight(.bold)
+                                Text("Views")
+                            }
+                            .padding(.top)
+                            .font(.caption)
+                            .foregroundColor(Color.theme.text.opacity(0.5))
+                            
+                            RoundedRectangle(cornerRadius: 5)
+                                .frame(height: 0.5)
+                                .foregroundColor(Color.theme.text.opacity(0.2))
+                            
+                            HStack(spacing: 4) {
+                                Text("\(tweet.retweets)")
+                                    .foregroundColor(Color.theme.text)
+                                    .fontWeight(.bold)
+                                Text("Retweets")
+                                Text("0")
+                                    .foregroundColor(Color.theme.text)
+                                    .fontWeight(.bold)
+                                Text("Quotes")
+                                Text("\(tweet.likes)")
+                                    .foregroundColor(Color.theme.text)
+                                    .fontWeight(.bold)
+                                Text("Likes")
+                                Text("\(tweet.bookmarks)")
+                                    .foregroundColor(Color.theme.text)
+                                    .fontWeight(.bold)
+                                Text("Bookmarks")
+                            }
+                            .font(.caption)
+                            .foregroundColor(Color.theme.text.opacity(0.5))
+                            
+                            RoundedRectangle(cornerRadius: 5)
+                                .frame(height: 0.5)
+                                .foregroundColor(Color.theme.text.opacity(0.2))
+                            
+                            HStack {
+                                Image(systemName: "bubble.left")
+                                Spacer()
+                                Image(systemName: "arrow.triangle.2.circlepath")
+                                Spacer()
+                                Image(systemName: "heart")
+                                Spacer()
+                                Image(systemName: "bookmark")
+                                Spacer()
+                                Image(systemName: "square.and.arrow.up")
+                            }
+                            .padding(.horizontal, 24)
+                            .font(.subheadline)
+                            .foregroundColor(Color.theme.text.opacity(0.5))
+                            
+                            RoundedRectangle(cornerRadius: 5)
+                                .frame(height: 0.5)
+                                .foregroundColor(Color.theme.text.opacity(0.2))
+                            
+                        }
                     }
+                    .padding()
                 }
-                .padding()
                 
                 Spacer()
             }
