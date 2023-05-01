@@ -12,6 +12,8 @@ struct TweetView: View {
     @State private var isLiked: Bool = false
     @State private var isRetweeted: Bool = false
     
+    @State private var showTweetDetail: Bool = false
+    
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
             
@@ -36,6 +38,9 @@ struct TweetView: View {
                 }
                 
                 Text("This is a sample tweet. It is not very pretty and this is just sample text.")
+                    .onTapGesture {
+                        showTweetDetail.toggle()
+                    }
                 
                 HStack {
                     Button {
@@ -103,6 +108,10 @@ struct TweetView: View {
         }
         .foregroundColor(Color.theme.text)
         .padding(.top, 8)
+        .preferredColorScheme(.dark)
+        .fullScreenCover(isPresented: $showTweetDetail) {
+            TweetDetailView(showTweetDetail: $showTweetDetail)
+        }
     }
     
     // custom button
