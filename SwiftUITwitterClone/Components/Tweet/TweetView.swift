@@ -102,6 +102,32 @@ struct TweetView: View {
         .foregroundColor(Color.theme.text)
         .padding(.top, 8)
     }
+    
+    // custom button
+    @ViewBuilder
+    func CustomButton(systemImage: String, status: Bool, activeTint: Color, inactiveTint: Color, onTap: @escaping () -> ()) -> some View {
+        
+        Button {
+            onTap()
+        } label: {
+            Image(systemName: systemImage)
+                .font(.title2)
+                .particleEffect(
+                    systemImage: systemImage,
+                    font: .title2,
+                    status: status,
+                    activeTint: activeTint,
+                    inactiveTint: inactiveTint)
+                .foregroundColor(status ? activeTint : inactiveTint)
+                .padding(.horizontal, 18)
+                .padding(.vertical, 8)
+                .background(
+                    Capsule()
+                        .fill(status ? activeTint.opacity(0.25) : Color("ButtonColor"))
+                )
+        }
+
+    }
 }
 
 struct TweetView_Previews: PreviewProvider {
