@@ -17,6 +17,7 @@ struct HomeView: View {
     @Namespace private var topTabsNamespace
     
     @State private var showProfile: Bool = false
+    @State private var showNewTweetView: Bool = false
     
     var body: some View {
         
@@ -32,12 +33,15 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        Image(systemName: "plus")
-                            .font(.system(size: 35, weight: .semibold))
-                        .foregroundColor(Color.theme.text)
-                        .padding()
-                        .background(Color.theme.twitter, in: Circle())
-                        
+                        Button {
+                            showNewTweetView.toggle()
+                        } label: {
+                            Image(systemName: "plus")
+                                .font(.system(size: 24, weight: .semibold))
+                            .foregroundColor(Color.theme.text)
+                            .padding()
+                            .background(Color.theme.twitter, in: Circle())
+                        }
                     }
                 }
                 
@@ -69,6 +73,9 @@ struct HomeView: View {
             .fullScreenCover(isPresented: $showProfile) {
                 ProfileView(showProfile: $showProfile)
                     .preferredColorScheme(.dark)
+            }
+            .fullScreenCover(isPresented: $showNewTweetView) {
+                NewTweetView(showNewTweetView: $showNewTweetView)
             }
             
         }

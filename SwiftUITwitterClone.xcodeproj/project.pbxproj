@@ -30,6 +30,7 @@
 		9D73CD4B2A0031EF00CA6211 /* TweetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D73CD4A2A0031EF00CA6211 /* TweetDetailView.swift */; };
 		9D73CD4D2A00361A00CA6211 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D73CD4C2A00361A00CA6211 /* User.swift */; };
 		9D73CD4F2A00362300CA6211 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D73CD4E2A00362300CA6211 /* Tweet.swift */; };
+		9D73CD522A00414500CA6211 /* NewTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D73CD512A00414500CA6211 /* NewTweetView.swift */; };
 		9D7C0DB429FC70BD00650BEB /* ScrollOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C0DB329FC70BD00650BEB /* ScrollOffset.swift */; };
 		9D7C0DB629FC70DB00650BEB /* LinearInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C0DB529FC70DB00650BEB /* LinearInterpolation.swift */; };
 		9D7C0DB829FC710100650BEB /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C0DB729FC710100650BEB /* Tab.swift */; };
@@ -62,6 +63,7 @@
 		9D73CD4A2A0031EF00CA6211 /* TweetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailView.swift; sourceTree = "<group>"; };
 		9D73CD4C2A00361A00CA6211 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9D73CD4E2A00362300CA6211 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		9D73CD512A00414500CA6211 /* NewTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetView.swift; sourceTree = "<group>"; };
 		9D7C0DB329FC70BD00650BEB /* ScrollOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffset.swift; sourceTree = "<group>"; };
 		9D7C0DB529FC70DB00650BEB /* LinearInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearInterpolation.swift; sourceTree = "<group>"; };
 		9D7C0DB729FC710100650BEB /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		9D45A7E629E9DF3D0041C60A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9D73CD502A00413400CA6211 /* NewTweet */,
 				9D45A7F929E9FCD30041C60A /* ForYou */,
 				9D45A7FA29E9FCDD0041C60A /* Following */,
 				9D45A7E829E9DF660041C60A /* HomeView.swift */,
@@ -262,6 +265,14 @@
 			children = (
 			);
 			path = CustomButton;
+			sourceTree = "<group>";
+		};
+		9D73CD502A00413400CA6211 /* NewTweet */ = {
+			isa = PBXGroup;
+			children = (
+				9D73CD512A00414500CA6211 /* NewTweetView.swift */,
+			);
+			path = NewTweet;
 			sourceTree = "<group>";
 		};
 		9D7C0DB229FC708300650BEB /* TopTabs */ = {
@@ -357,6 +368,7 @@
 				9D20C36529FB17A300445463 /* SpacesView.swift in Sources */,
 				9D45A7E429E9DAB20041C60A /* MainView.swift in Sources */,
 				9D73CD4D2A00361A00CA6211 /* User.swift in Sources */,
+				9D73CD522A00414500CA6211 /* NewTweetView.swift in Sources */,
 				9D45A7D329E9D5C30041C60A /* BottomTabBarItemsPreferenceKey.swift in Sources */,
 				9D73CD4F2A00362300CA6211 /* Tweet.swift in Sources */,
 				9D20C36F29FB25F600445463 /* Color.swift in Sources */,
