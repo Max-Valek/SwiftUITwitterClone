@@ -33,7 +33,7 @@ struct HomeView: View {
                         Spacer()
                         
                         Image(systemName: "plus")
-                            .font(.system(size: 35))
+                            .font(.system(size: 35, weight: .semibold))
                         .foregroundColor(Color.theme.text)
                         .padding()
                         .background(Color.theme.twitter, in: Circle())
@@ -42,7 +42,7 @@ struct HomeView: View {
                 }
                 
             }
-            .padding(.bottom, 80)
+            .padding(.bottom, 85)
             .padding(.trailing)
             .zIndex(2)
             
