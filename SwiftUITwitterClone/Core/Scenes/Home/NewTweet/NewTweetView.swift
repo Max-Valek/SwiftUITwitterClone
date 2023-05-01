@@ -51,6 +51,10 @@ extension NewTweetView {
                 //
             } label: {
                 Text("Tweet")
+                    .fontWeight(.semibold)
+                    .padding(.horizontal)
+                    .padding(.vertical, 8)
+                    .background(Color.theme.twitter, in: Capsule())
             }
 
         }
