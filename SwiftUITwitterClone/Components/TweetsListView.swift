@@ -1,15 +1,15 @@
 //
-//  FollowingView.swift
+//  TweetsListView.swift
 //  SwiftUITwitterClone
 //
-//  Created by Max Valek on 4/14/23.
+//  Created by Max Valek on 5/1/23.
 //
 
 import SwiftUI
 
-struct FollowingView: View {
+struct TweetsListView: View {
     
-    let tweets: [Tweet] = Tweet.followingTweets
+    let tweets: [Tweet]
     
     var body: some View {
         
@@ -26,9 +26,9 @@ struct FollowingView: View {
     }
 }
 
-struct FollowingView_Previews: PreviewProvider {
+struct TweetsListView_Previews: PreviewProvider {
     static var previews: some View {
-        FollowingView()
+        TweetsListView(tweets: Tweet.forYouTweets)
             .preferredColorScheme(.dark)
     }
 }

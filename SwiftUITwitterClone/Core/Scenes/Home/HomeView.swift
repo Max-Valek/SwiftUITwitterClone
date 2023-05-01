@@ -174,10 +174,10 @@ extension HomeView {
         VStack {
             switch selectedTab {
             case .forYou:
-                ForYouView()
+                TweetsListView(tweets: Tweet.forYouTweets)
                     .transition(.move(edge: .leading))
             case .following:
-                FollowingView()
+                TweetsListView(tweets: Tweet.followingTweets)
                     .transition(.move(edge: .trailing))
             }
         }
