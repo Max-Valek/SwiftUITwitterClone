@@ -78,7 +78,9 @@ struct TweetView: View {
                         }
                     }
 
-                    
+//                    CustomButton(systemImage: isLiked ? "heart.fill" : "heart", status: isLiked, activeTint: Color.theme.text.opacity(0.4), inactiveTint: Color.clear) {
+//                        isLiked.toggle()
+//                    }
                     Spacer()
                     
                     HStack {
