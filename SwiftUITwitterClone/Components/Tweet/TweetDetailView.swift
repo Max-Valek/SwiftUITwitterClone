@@ -11,7 +11,7 @@ struct TweetDetailView: View {
     
     @Binding var showTweetDetail: Bool
     
-    let tweet: Tweet
+    var tweet: Tweet
     
     var body: some View {
         

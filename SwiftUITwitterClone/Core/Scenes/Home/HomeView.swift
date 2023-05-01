@@ -19,6 +19,8 @@ struct HomeView: View {
     @State private var showProfile: Bool = false
     @State private var showNewTweetView: Bool = false
     
+    //@State private var showHeader: Bool = true
+    
     var body: some View {
         
         ZStack {
@@ -55,6 +57,13 @@ struct HomeView: View {
             VStack {
                 
                 VStack {
+                    
+//                    if showHeader {
+//                        topImages
+//
+//                        topTabs
+//                    }
+                    
                     topImages
                     
                     topTabs
@@ -174,8 +183,32 @@ extension HomeView {
         VStack {
             switch selectedTab {
             case .forYou:
-                TweetsListView(tweets: Tweet.forYouTweets)
-                    .transition(.move(edge: .leading))
+//                TweetsListView(tweets: Tweet.forYouTweets)
+//                    .transition(.move(edge: .leading))
+                
+                ScrollView(showsIndicators: false) {
+                    ForEach(Tweet.forYouTweets) { tweet in
+                        TweetView(tweet: tweet)
+                        
+                        RoundedRectangle(cornerRadius: 5)
+                            .frame(height: 0.5)
+                            .foregroundColor(Color.theme.text.opacity(0.2))
+                    }
+                }
+                .padding(.horizontal, 4)
+                .transition(.move(edge: .leading))
+                .gesture(
+                    DragGesture().onChanged { value in
+                        if value.translation.height > 0 {
+                            print("Scroll up")
+                            // showHeader = false
+                        } else {
+                            print("Scroll down")
+                            // showHeader = true
+                        }
+                    }
+                )
+                
             case .following:
                 TweetsListView(tweets: Tweet.followingTweets)
                     .transition(.move(edge: .trailing))

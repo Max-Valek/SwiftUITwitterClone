@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TweetsListView: View {
     
-    let tweets: [Tweet]
+    var tweets: [Tweet]
     
     var body: some View {
         

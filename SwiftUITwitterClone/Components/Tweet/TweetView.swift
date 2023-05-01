@@ -13,7 +13,7 @@ struct TweetView: View {
     @State private var isRetweeted: Bool = false
     @State private var showTweetDetail: Bool = false
     
-    let tweet: Tweet
+    var tweet: Tweet
     
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
@@ -29,6 +29,7 @@ struct TweetView: View {
                 HStack {
                     Text("Doge")
                         .font(.title3)
+                        .fontWeight(.semibold)
                     
                     Text("@doge • 1m")
                         .font(.headline)
@@ -77,7 +78,6 @@ struct TweetView: View {
                     Button {
                         withAnimation {
                             isLiked.toggle()
-                            
                         }
                     } label: {
                         HStack {

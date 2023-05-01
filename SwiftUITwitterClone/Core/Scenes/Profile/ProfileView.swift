@@ -22,7 +22,7 @@ struct ProfileView: View {
     
     @Binding var showProfile: Bool
     
-    let tweets: [Tweet] = Tweet.userTweets
+    let user: User = User.dogeUser
     
     var body: some View {
         
@@ -46,8 +46,11 @@ struct ProfileView: View {
                     .frame(height: 0.5)
                     .foregroundColor(Color.theme.text.opacity(0.2))
                 
-                TweetsListView(tweets: tweets)
-                    .padding(.horizontal, 8)
+                if let tweets = user.tweets {
+                    TweetsListView(tweets: tweets)
+                        .padding(.horizontal, 8)
+                }
+                
                 
                 Spacer()
             }
@@ -148,7 +151,7 @@ extension ProfileView {
             HStack(spacing: 16) {
                 HStack(spacing: 2) {
                     Image(systemName: "location.north.circle")
-                    Text("Location")
+                    Text("\(user.location ?? "Location Unknown")")
                 }
                 
                 HStack(spacing: 2) {
@@ -162,7 +165,7 @@ extension ProfileView {
             
             HStack(spacing: 16) {
                 HStack(alignment: .bottom, spacing: 4) {
-                    Text("100")
+                    Text("\(user.following)")
                         .font(.headline)
                         .fontWeight(.bold)
                     Text("Following")
@@ -170,7 +173,7 @@ extension ProfileView {
                         .foregroundColor(Color.theme.text.opacity(0.65))
                 }
                 HStack(alignment: .bottom, spacing: 4) {
-                    Text("100")
+                    Text("\(user.followers)")
                         .font(.headline)
                         .fontWeight(.bold)
                     Text("Followers")
