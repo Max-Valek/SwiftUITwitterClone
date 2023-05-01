@@ -22,6 +22,28 @@ struct HomeView: View {
         
         ZStack {
             
+            ZStack {
+                
+                VStack {
+                    
+                    Spacer()
+                    
+                    HStack {
+                        
+                        Spacer()
+                        
+                        Image(systemName: "square.and.pencil.circle.fill")
+                            .font(.system(size: 55))
+                        .foregroundColor(Color.theme.twitter)
+                        
+                    }
+                }
+                
+            }
+            .padding(.bottom, 80)
+            .padding(.trailing)
+            .zIndex(2)
+            
             Color.theme.background.ignoresSafeArea()
         
             VStack {
