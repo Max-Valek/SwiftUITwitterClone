@@ -22,38 +22,72 @@ struct SampleTabsView: View {
     
     var body: some View {
         
-        TabView(selection: $currentTab) {
+        ZStack {
             
-            ForEach(tabs) { tab in
+            TabView(selection: $currentTab) {
                 
-                GeometryReader { geo in
+                ForEach(tabs) { tab in
                     
-                    Rectangle()
-                        .fill(tab.color)
-                        .frame(width: geo.size.width, height: geo.size.height)
-                }
-                .clipped()
-                .ignoresSafeArea()
-                // in ScrollOffset file
-                .offsetX { rect in
-                    if currentTab.title == tab.title {
-                        contentOffset = rect.minX - (rect.width * CGFloat(index(of: tab)))
+                    GeometryReader { geo in
+                        
+                        Rectangle()
+                            .fill(tab.color)
+                            .frame(width: geo.size.width, height: geo.size.height)
                     }
-                    
-                    updateTabFrame(rect.width)
+                    .clipped()
+                    .ignoresSafeArea()
+                    // in ScrollOffset file
+                    .offsetX { rect in
+                        if currentTab.title == tab.title {
+                            contentOffset = rect.minX - (rect.width * CGFloat(index(of: tab)))
+                        }
+                        
+                        updateTabFrame(rect.width)
+                    }
+                    .tag(tab)
                 }
-                .tag(tab)
+                
             }
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .ignoresSafeArea()
             
+            VStack {
+                
+                HStack(spacing: 0) {
+                    ForEach($tabs) { $tab in
+                        
+                        Button {
+                            withAnimation {
+                                currentTab = tab
+                            }
+                        } label: {
+                            Text(tab.title)
+                                .fontWeight(.semibold)
+                            // save tab's min x and width for calculations
+                                .offsetX { rect in
+                                    tab.minX = rect.minX
+                                    tab.width = rect.width
+                                }
+                        }
+                        
+                        if tab != tabs.last {
+                            Spacer(minLength: 0)
+                        }
+                    }
+                }
+                .padding([.top, .horizontal], 15)
+                .overlay(alignment: .bottomLeading) {
+                    Rectangle()
+                        .frame(width: indicatorWidth, height: 4)
+                        .offset(x: indicatorPosition, y: 10)
+                    
+                }
+                
+                Spacer()
+                
+            }
         }
-        .tabViewStyle(.page(indexDisplayMode: .never))
-        .ignoresSafeArea()
-        .overlay(alignment: .top) {
-            TabsView()
-        }
-//        .overlay {
-//            Text("\(contentOffset)")
-//        }
+        
     }
     
     // calculate tab width and position
@@ -86,40 +120,7 @@ struct SampleTabsView: View {
     func index(of tab: Tab) -> Int {
         return tabs.firstIndex(of: tab) ?? 0
     }
-    
-    // Top Tabs
-    @ViewBuilder
-    func TabsView() -> some View {
-        HStack(spacing: 0) {
-            ForEach($tabs) { $tab in
-                
-                Button {
-                    withAnimation {
-                        currentTab = tab
-                    }
-                } label: {
-                    Text(tab.title)
-                        .fontWeight(.semibold)
-                        // save tab's min x and width for calculations
-                        .offsetX { rect in
-                            tab.minX = rect.minX
-                            tab.width = rect.width
-                        }
-                }
-                
-                if tab != tabs.last {
-                    Spacer(minLength: 0)
-                }
-            }
-        }
-        .padding([.top, .horizontal], 15)
-        .overlay(alignment: .bottomLeading) {
-            Rectangle()
-                .frame(width: indicatorWidth, height: 4)
-                .offset(x: indicatorPosition, y: 10)
-                
-        }
-    }
+
 }
 
 struct SampleTabsView_Previews: PreviewProvider {

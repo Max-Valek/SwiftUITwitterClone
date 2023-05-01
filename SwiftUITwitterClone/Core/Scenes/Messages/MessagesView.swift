@@ -22,6 +22,26 @@ struct MessagesView: View {
                 
                 searchBar
                 
+                RoundedRectangle(cornerRadius: 5)
+                    .frame(height: 0.5)
+                    .foregroundColor(Color.theme.text.opacity(0.2))
+                
+                HStack {
+                    Image(systemName: "envelope")
+                        .font(.title)
+                        .padding(12)
+                        .background(Circle().fill(Color.theme.background))
+                        .padding(1)
+                        .background(Color.theme.text.opacity(0.4), in: Circle())
+                    
+                    Text("Message Requests")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                    
+                    Spacer()
+                }
+                .padding(.horizontal)
+                
                 Spacer()
                 
                 Text("Messages")
@@ -68,7 +88,7 @@ extension MessagesView {
         HStack(spacing: 8) {
             Image(systemName: "magnifyingglass")
             
-            TextField("Search Twitter", text: $searchTxt)
+            TextField("Search Direct Messages", text: $searchTxt)
                 .foregroundColor(Color.theme.text)
             
         }
