@@ -22,6 +22,8 @@ struct ProfileView: View {
     
     @Binding var showProfile: Bool
     
+    let tweets: [Tweet] = Tweet.userTweets
+    
     var body: some View {
         
         ZStack {
@@ -45,7 +47,10 @@ struct ProfileView: View {
                     .foregroundColor(Color.theme.text.opacity(0.2))
                 
                 ScrollView(showsIndicators: false) {
-                    ForYouView()
+                    ForEach(tweets) { tweet in
+                        TweetView(tweet: tweet)
+                    }
+                    .padding(.horizontal)
                 }
                 .padding(.horizontal, 4)
                 
