@@ -81,10 +81,6 @@ struct MessagesView: View {
                 }
                 
                 Spacer()
-                
-                Text("Messages")
-                
-                Spacer()
             }
             .foregroundColor(Color.theme.text)
         }
