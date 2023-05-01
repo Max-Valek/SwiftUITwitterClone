@@ -80,7 +80,7 @@ struct HomeView: View {
             }
             .padding(.horizontal)
             .fullScreenCover(isPresented: $showProfile) {
-                ProfileView(showProfile: $showProfile)
+                ProfileView(showProfile: $showProfile, user: User.doge)
                     .preferredColorScheme(.dark)
             }
             .fullScreenCover(isPresented: $showNewTweetView) {

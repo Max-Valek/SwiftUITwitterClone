@@ -156,6 +156,6 @@ struct TweetDetailView: View {
 struct TweetDetailView_Previews: PreviewProvider {
     static var previews: some View {
         TweetDetailView(showTweetDetail: .constant(true),
-                        tweet: Tweet(date: "1m", text: "This is a sample tweet", images: nil, likes: 585, retweets: 24, bookmarks: 7, views: 2525))
+                        tweet: Tweet(author: User.doge, date: "1m", text: "This is a sample tweet", images: nil, likes: 585, retweets: 24, bookmarks: 7, views: 2525))
     }
 }

@@ -22,7 +22,7 @@ struct ProfileView: View {
     
     @Binding var showProfile: Bool
     
-    let user: User = User.dogeUser
+    let user: User
     
     var body: some View {
         
@@ -46,10 +46,10 @@ struct ProfileView: View {
                     .frame(height: 0.5)
                     .foregroundColor(Color.theme.text.opacity(0.2))
                 
-                if let tweets = user.tweets {
-                    TweetsListView(tweets: tweets)
-                        .padding(.horizontal, 8)
-                }
+//                if let tweets = user.tweets {
+//                    TweetsListView(tweets: tweets)
+//                        .padding(.horizontal, 8)
+//                }
                 
                 
                 Spacer()
@@ -63,7 +63,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(showProfile: .constant(true))
+        ProfileView(showProfile: .constant(true), user: User.doge)
             .preferredColorScheme(.dark)
     }
 }
@@ -101,7 +101,7 @@ extension ProfileView {
     
     private var photoAndEditProfile: some View {
         HStack(alignment: .center) {
-            Image("doge")
+            Image(user.profilePhoto ?? "default")
                 .resizable()
                 .scaledToFill()
                 .clipShape(Circle())
@@ -131,10 +131,10 @@ extension ProfileView {
         HStack {
             
             VStack(alignment: .leading) {
-                Text("Doge")
+                Text(user.displayName)
                     .font(.title2)
                     .fontWeight(.black)
-                Text("@doge")
+                Text("@\(user.username)")
                     .font(.headline)
                     .foregroundColor(Color.theme.text.opacity(0.5))
             }

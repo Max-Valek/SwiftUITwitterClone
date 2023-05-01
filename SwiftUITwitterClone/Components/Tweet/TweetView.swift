@@ -18,7 +18,7 @@ struct TweetView: View {
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
             
-            Image("doge")
+            Image(tweet.author.profilePhoto ?? "default")
                 .resizable()
                 .scaledToFill()
                 .clipShape(Circle())
@@ -27,11 +27,12 @@ struct TweetView: View {
             VStack(alignment: .leading, spacing: 8) {
                 
                 HStack {
-                    Text("Doge")
+                    Text(tweet.author.displayName)
                         .font(.title3)
                         .fontWeight(.semibold)
                     
-                    Text("@doge • 1m")
+                    Text("@\(tweet.author.username)")
+                    Text("• 1m")
                         .font(.headline)
                         .foregroundColor(Color.theme.text.opacity(0.4))
                     
@@ -119,6 +120,6 @@ struct TweetView: View {
 
 struct TweetView_Previews: PreviewProvider {
     static var previews: some View {
-        TweetView(tweet: Tweet(date: "1m", text: "This is a sample tweet", images: nil, likes: 585, retweets: 24, bookmarks: 7, views: 2525))
+        TweetView(tweet: Tweet(author: User.doge, date: "1m", text: "This is a sample tweet", images: nil, likes: 585, retweets: 24, bookmarks: 7, views: 2525))
     }
 }

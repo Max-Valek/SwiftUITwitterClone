@@ -87,7 +87,7 @@ struct MessagesView: View {
             }
             .foregroundColor(Color.theme.text)
             .fullScreenCover(isPresented: $showProfile) {
-                ProfileView(showProfile: $showProfile)
+                ProfileView(showProfile: $showProfile, user: User.doge)
                     .preferredColorScheme(.dark)
             }
         }
