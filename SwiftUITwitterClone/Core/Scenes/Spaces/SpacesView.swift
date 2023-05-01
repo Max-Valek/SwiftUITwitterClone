@@ -11,6 +11,8 @@ struct SpacesView: View {
     
     @State private var searchTxt: String = ""
     
+    @State private var showProfile: Bool = false
+    
     var body: some View {
         
         ZStack {
@@ -30,6 +32,10 @@ struct SpacesView: View {
                 Spacer()
             }
             .foregroundColor(Color.theme.text)
+            .fullScreenCover(isPresented: $showProfile) {
+                ProfileView(showProfile: $showProfile)
+                    .preferredColorScheme(.dark)
+            }
         }
     }
     
@@ -46,9 +52,8 @@ extension SpacesView {
     
     private var topItems: some View {
         HStack(spacing: 8) {
-            Image(systemName: "person.circle")
-                .resizable()
-                .frame(width: 30, height: 30)
+            
+            ProfilePhotoButtonView(showProfile: $showProfile)
             
             Spacer()
             
