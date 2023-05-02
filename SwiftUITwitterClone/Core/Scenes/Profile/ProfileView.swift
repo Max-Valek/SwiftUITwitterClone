@@ -22,6 +22,8 @@ struct ProfileView: View {
     
     @Binding var showProfile: Bool
     
+    // @EnvironmentObject var mainViewModel: MainViewModel
+    
     @StateObject var vm: ProfileViewModel
     
     init(showProfile: Binding<Bool>, user: User) {
