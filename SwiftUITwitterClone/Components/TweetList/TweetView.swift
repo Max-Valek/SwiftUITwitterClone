@@ -116,9 +116,9 @@ struct TweetView: View {
         .fullScreenCover(isPresented: $showTweetDetail) {
             TweetDetailView(showTweetDetail: $showTweetDetail, tweet: tweet)
         }
-        .fullScreenCover(isPresented: $vm.showProfile) {
-            ProfileView(vm: vm, user: tweet.author)
-        }
+//        .fullScreenCover(isPresented: $vm.showTweetAuthorProfile) {
+//            ProfileView(vm: vm, user: tweet.author)
+//        }
     }
     
 }

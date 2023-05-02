@@ -12,9 +12,13 @@ class MainViewModel: ObservableObject {
     @Published var allTweets: [Tweet] = []
     @Published var userTweets: [Tweet] = []
     @Published var showProfile: Bool = false
+    @Published var showTweetAuthorProfile: Bool = false
     @Published var showNewTweetView: Bool = false
     
     @StateObject var tweetService = TweetService()
+    
+    let loggedInUser = User.doge
+    @Published var selectedUser: User?
     
     init() {
         fetchAllTweets()

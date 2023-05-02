@@ -11,14 +11,12 @@ struct ProfilePhotoButtonView: View {
     
     @ObservedObject var vm: MainViewModel
     
-    let user: User
-    
     var body: some View {
         
         Button {
-            vm.showProfile.toggle()
+           vm.showProfile.toggle()
         } label: {
-            Image(user.profilePhoto ?? "default")
+            Image(vm.loggedInUser.profilePhoto ?? "default")
                 .resizable()
                 .scaledToFill()
                 .clipShape(Circle())
@@ -29,6 +27,6 @@ struct ProfilePhotoButtonView: View {
 
 struct ProfilePhotoButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePhotoButtonView(vm: MainViewModel(), user: User.doge)
+        ProfilePhotoButtonView(vm: MainViewModel())
     }
 }

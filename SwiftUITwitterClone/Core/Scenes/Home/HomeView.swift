@@ -16,9 +16,6 @@ struct HomeView: View {
     @State private var selectedTab: HomeTab = .forYou
     @Namespace private var topTabsNamespace
     
-    @State private var showProfile: Bool = false
-    @State private var showNewTweetView: Bool = false
-    
     @ObservedObject var vm: MainViewModel
     
     //@State private var showHeader: Bool = true
@@ -68,9 +65,13 @@ struct HomeView: View {
             }
             .padding(.horizontal)
             .fullScreenCover(isPresented: $vm.showProfile) {
-                ProfileView(vm: vm, user: User.doge)
+                ProfileView(vm: vm, user: vm.loggedInUser)
                     .preferredColorScheme(.dark)
             }
+//            .fullScreenCover(isPresented: $vm.showTweetAuthorProfile) {
+//                ProfileView(vm: vm, user: vm.selectedUser ?? User.doge)
+//                    .preferredColorScheme(.dark)
+//            }
             .fullScreenCover(isPresented: $vm.showNewTweetView) {
                 NewTweetView(showNewTweetView: $vm.showNewTweetView)
             }
@@ -92,7 +93,7 @@ extension HomeView {
     private var topImages: some View {
         HStack {
             
-            ProfilePhotoButtonView(vm: vm, user: User.doge)
+            ProfilePhotoButtonView(vm: vm)
             
             Spacer()
             

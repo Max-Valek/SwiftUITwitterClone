@@ -55,7 +55,7 @@ extension SpacesView {
     private var topItems: some View {
         HStack(spacing: 8) {
             
-            ProfilePhotoButtonView(vm: vm, user: User.doge)
+            ProfilePhotoButtonView(vm: vm)
             
             Spacer()
             
