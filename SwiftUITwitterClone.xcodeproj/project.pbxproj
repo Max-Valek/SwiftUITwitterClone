@@ -117,6 +117,7 @@
 		9D20C36C29FB244500445463 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9DD125702A01A2950032A61C /* Main */,
 				9D45A7C929E9D44D0041C60A /* Scenes */,
 			);
 			path = Core;
@@ -196,7 +197,6 @@
 		9D45A7C929E9D44D0041C60A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				9DD125702A01A2950032A61C /* Main */,
 				9D45A7E629E9DF3D0041C60A /* Home */,
 				9D20C37029FB371200445463 /* Profile */,
 				9DE09BCB29EF3F5E0079F501 /* Search */,
