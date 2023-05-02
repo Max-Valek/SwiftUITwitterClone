@@ -19,19 +19,11 @@ struct User: Identifiable {
     var followers: Int
 }
 
-//extension User: Equatable {
-//    
-//    static func ==(lhs: User, rhs: User) -> Bool {
-//        if lhs.id == rhs.id {
-//            return true
-//        } else {
-//            return false
-//        }
-//    }
-//}
-
 extension User {
     
     static let doge: User = User(displayName: "Doge", username: "doge", profilePhoto: "doge", bio: "The mascot for Dogecoin: a cryptocurrency.", location: "Dogeland", following: 1, followers: 999)
     
+    static let elon: User = User(displayName: "Elon Musk", username: "elon", profilePhoto: "elon", bio: "Owner of Twitter", location: "Twitter", following: 1, followers: 100)
+    
+    static let defaultUser: User = User(displayName: "Default User", username: "default", profilePhoto: "default", bio: "Default Twitter user", location: "Everywhere", following: 0, followers: 0)
 }

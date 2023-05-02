@@ -13,16 +13,19 @@ struct TweetView: View {
     @State private var isRetweeted: Bool = false
     @State private var showTweetDetail: Bool = false
     
+    //@Binding var showProfile: Bool
+    
     var tweet: Tweet
     
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
             
-            Image(tweet.author.profilePhoto ?? "default")
-                .resizable()
-                .scaledToFill()
-                .clipShape(Circle())
-                .frame(width: 38, height: 38)
+//            Image(tweet.author.profilePhoto ?? "default")
+//                .resizable()
+//                .scaledToFill()
+//                .clipShape(Circle())
+//                .frame(width: 38, height: 38)
+            TweetProfilePhotoButtonView(user: tweet.author)
             
             VStack(alignment: .leading, spacing: 8) {
                 

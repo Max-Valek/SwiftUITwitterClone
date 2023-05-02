@@ -22,6 +22,7 @@
 		9D45A7E429E9DAB20041C60A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7E329E9DAB20041C60A /* MainView.swift */; };
 		9D45A7E929E9DF660041C60A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A7E829E9DF660041C60A /* HomeView.swift */; };
 		9D45A80129E9FDAC0041C60A /* TweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45A80029E9FDAC0041C60A /* TweetView.swift */; };
+		9D51E0C02A00899100917C7C /* TweetProfilePhotoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51E0BF2A00899100917C7C /* TweetProfilePhotoButtonView.swift */; };
 		9D73CD432A002A3000CA6211 /* ParticleEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D73CD422A002A3000CA6211 /* ParticleEffect.swift */; };
 		9D73CD462A002A7D00CA6211 /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D73CD452A002A7D00CA6211 /* Particle.swift */; };
 		9D73CD492A002F8500CA6211 /* ProfilePhotoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D73CD482A002F8500CA6211 /* ProfilePhotoButtonView.swift */; };
@@ -55,6 +56,7 @@
 		9D45A7E329E9DAB20041C60A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9D45A7E829E9DF660041C60A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9D45A80029E9FDAC0041C60A /* TweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetView.swift; sourceTree = "<group>"; };
+		9D51E0BF2A00899100917C7C /* TweetProfilePhotoButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetProfilePhotoButtonView.swift; sourceTree = "<group>"; };
 		9D73CD422A002A3000CA6211 /* ParticleEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEffect.swift; sourceTree = "<group>"; };
 		9D73CD452A002A7D00CA6211 /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 		9D73CD482A002F8500CA6211 /* ProfilePhotoButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoButtonView.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				9D45A7FF29E9FD9D0041C60A /* Tweet */,
 				9D45A7CA29E9D47C0041C60A /* BottomTabBar */,
 				9D73CD482A002F8500CA6211 /* ProfilePhotoButtonView.swift */,
+				9D51E0BF2A00899100917C7C /* TweetProfilePhotoButtonView.swift */,
 				9D73CD532A0053FC00CA6211 /* TweetsListView.swift */,
 			);
 			path = Components;
@@ -357,6 +360,7 @@
 				9D73CD432A002A3000CA6211 /* ParticleEffect.swift in Sources */,
 				9D20C37229FB372E00445463 /* ProfileView.swift in Sources */,
 				9D7C0DB429FC70BD00650BEB /* ScrollOffset.swift in Sources */,
+				9D51E0C02A00899100917C7C /* TweetProfilePhotoButtonView.swift in Sources */,
 				9D7C0DBA29FC722F00650BEB /* SampleTabsView.swift in Sources */,
 				9D73CD542A0053FC00CA6211 /* TweetsListView.swift in Sources */,
 				9D45A7D529E9D5D90041C60A /* BottomTabBarItem.swift in Sources */,

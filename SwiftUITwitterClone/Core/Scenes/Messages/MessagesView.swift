@@ -106,7 +106,7 @@ extension MessagesView {
     private var topItems: some View {
         HStack(spacing: 8) {
             
-            ProfilePhotoButtonView(showProfile: $showProfile)
+            ProfilePhotoButtonView(showProfile: $showProfile, user: User.doge)
             
             Spacer()
             

@@ -22,7 +22,12 @@ struct ProfileView: View {
     
     @Binding var showProfile: Bool
     
-    let user: User
+    @StateObject var vm: ProfileViewModel
+    
+    init(showProfile: Binding<Bool>, user: User) {
+        _showProfile = showProfile
+        _vm = StateObject(wrappedValue: ProfileViewModel(user: user))
+    }
     
     var body: some View {
         
@@ -46,10 +51,10 @@ struct ProfileView: View {
                     .frame(height: 0.5)
                     .foregroundColor(Color.theme.text.opacity(0.2))
                 
-//                if let tweets = user.tweets {
-//                    TweetsListView(tweets: tweets)
-//                        .padding(.horizontal, 8)
-//                }
+                if !vm.userTweets.isEmpty {
+                    TweetsListView(tweets: vm.userTweets)
+                        .padding(.horizontal, 8)
+                }
                 
                 
                 Spacer()
@@ -101,7 +106,7 @@ extension ProfileView {
     
     private var photoAndEditProfile: some View {
         HStack(alignment: .center) {
-            Image(user.profilePhoto ?? "default")
+            Image(vm.user.profilePhoto ?? "default")
                 .resizable()
                 .scaledToFill()
                 .clipShape(Circle())
@@ -131,10 +136,10 @@ extension ProfileView {
         HStack {
             
             VStack(alignment: .leading) {
-                Text(user.displayName)
+                Text(vm.user.displayName)
                     .font(.title2)
                     .fontWeight(.black)
-                Text("@\(user.username)")
+                Text("@\(vm.user.username)")
                     .font(.headline)
                     .foregroundColor(Color.theme.text.opacity(0.5))
             }
@@ -151,7 +156,7 @@ extension ProfileView {
             HStack(spacing: 16) {
                 HStack(spacing: 2) {
                     Image(systemName: "location.north.circle")
-                    Text("\(user.location ?? "Location Unknown")")
+                    Text("\(vm.user.location ?? "Location Unknown")")
                 }
                 
                 HStack(spacing: 2) {
@@ -165,7 +170,7 @@ extension ProfileView {
             
             HStack(spacing: 16) {
                 HStack(alignment: .bottom, spacing: 4) {
-                    Text("\(user.following)")
+                    Text("\(vm.user.following)")
                         .font(.headline)
                         .fontWeight(.bold)
                     Text("Following")
@@ -173,7 +178,7 @@ extension ProfileView {
                         .foregroundColor(Color.theme.text.opacity(0.65))
                 }
                 HStack(alignment: .bottom, spacing: 4) {
-                    Text("\(user.followers)")
+                    Text("\(vm.user.followers)")
                         .font(.headline)
                         .fontWeight(.bold)
                     Text("Followers")

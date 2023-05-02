@@ -11,6 +11,8 @@ struct TweetsListView: View {
     
     var tweets: [Tweet]
     
+    //@Binding var showProfile: Bool
+    
     var body: some View {
         
         ScrollView(showsIndicators: false) {
