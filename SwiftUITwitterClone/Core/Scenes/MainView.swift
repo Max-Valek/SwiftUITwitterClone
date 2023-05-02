@@ -14,7 +14,6 @@ struct MainView: View {
     
     @State private var tabSelection: BottomTabBarItem = BottomTabBarItem.home
     
-    
     var body: some View {
         // TabView from Apple
         // defaultTabView
