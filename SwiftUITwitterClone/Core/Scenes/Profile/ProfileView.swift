@@ -20,23 +20,16 @@ struct ProfileView: View {
     @State private var selectedTab: ProfileTab = .tweets
     @Namespace private var profileNamespace
     @ObservedObject var vm: MainViewModel
-    // user passed in
     let user: User
 
     var body: some View {
         
         ZStack {
-            
             Color.theme.background.ignoresSafeArea()
-            
             VStack(spacing: 0) {
-                
                 headerAndButtons
-                
                 photoAndEditProfile
-                
                 nameAndUsername
-                
                 if let bio = user.bio {
                     HStack {
                         Text(bio)
@@ -46,28 +39,20 @@ struct ProfileView: View {
                     .padding(.bottom, 8)
                     .padding(.horizontal, 25)
                 }
-                
                 info
-                
                 tabs
-                
                 HorizontalLine()
-                
                 if !vm.userTweets.isEmpty {
                     TweetsListView(tweets: vm.userTweets, vm: vm)
                         .padding(.horizontal, 8)
                 }
-                
-                
                 Spacer()
             }
             .foregroundColor(Color.theme.text)
             .onAppear {
                 vm.fetchUserTweets(user: user)
             }
-            
         }
-        
     }
 }
 
