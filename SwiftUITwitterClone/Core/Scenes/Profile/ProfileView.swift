@@ -51,9 +51,7 @@ struct ProfileView: View {
                 
                 tabs
                 
-                RoundedRectangle(cornerRadius: 5)
-                    .frame(height: 0.5)
-                    .foregroundColor(Color.theme.text.opacity(0.2))
+                HorizontalLine()
                 
                 if !vm.userTweets.isEmpty {
                     TweetsListView(tweets: vm.userTweets, vm: vm)
@@ -114,7 +112,7 @@ extension ProfileView {
         }
         .frame(height: 80)
     }
-    
+    // profile photo and edit profile button
     private var photoAndEditProfile: some View {
         HStack(alignment: .center) {
             Image(user.profilePhoto ?? "default")
@@ -142,7 +140,7 @@ extension ProfileView {
         }
         .padding(.horizontal)
     }
-    
+    // display name and username
     private var nameAndUsername: some View {
         HStack {
             
@@ -161,7 +159,7 @@ extension ProfileView {
         .padding(.bottom, -10)
         .offset(y: -16)
     }
-    
+    // location, joined, following, followers
     private var info: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 16) {
@@ -201,7 +199,7 @@ extension ProfileView {
         }
         .padding(.horizontal, 25)
     }
-    
+    // tweets, replies, media, likes
     private var tabs: some View {
         HStack {
             

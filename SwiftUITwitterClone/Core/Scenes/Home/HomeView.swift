@@ -20,35 +20,45 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-            newTweetButton
+            
+            NewTweetButton(vm: vm)
+            
             Color.theme.background.ignoresSafeArea()
+            
             VStack {
                 VStack {
                     topImages
                     topTabs
-                    RoundedRectangle(cornerRadius: 5)
-                        .frame(height: 0.5)
-                        .foregroundColor(Color.theme.text.opacity(0.2))
+                    HorizontalLine()
                 }
                 .background(Color.theme.background.opacity(0.95))
                 
-                content
+                // Main Content
+                VStack {
+                    switch selectedTab {
+                    case .forYou:
+                        TweetsListView(tweets: Tweet.forYouTweets, vm: vm)
+                            .transition(.move(edge: .leading))
+                        
+                    case .following:
+                        TweetsListView(tweets: Tweet.followingTweets, vm: vm)
+                            .transition(.move(edge: .trailing))
+                    }
+                }
+                
                 Spacer()
             }
             .padding(.horizontal)
-            // show loggedInUser's profile if show user is true
             .fullScreenCover(isPresented: $vm.showProfile) {
                 ProfileView(vm: vm, user: vm.loggedInUser)
                     .preferredColorScheme(.dark)
             }
-            // show selected user's profile
             .fullScreenCover(isPresented: $vm.showTweetAuthorProfile) {
                 if let user = vm.selectedUser {
                     ProfileView(vm: vm, user: user)
                         .preferredColorScheme(.dark)
                 }
             }
-            // show new tweet view
             .fullScreenCover(isPresented: $vm.showNewTweetView) {
                 NewTweetView(showNewTweetView: $vm.showNewTweetView)
             }
@@ -132,42 +142,5 @@ extension HomeView {
         }
         .fontWeight(.semibold)
         .font(.headline)
-    }
-    // tweet list view depending on current tab
-    private var content: some View {
-        VStack {
-            switch selectedTab {
-            case .forYou:
-                TweetsListView(tweets: Tweet.forYouTweets, vm: vm)
-                    .transition(.move(edge: .leading))
-                
-            case .following:
-                TweetsListView(tweets: Tweet.followingTweets, vm: vm)
-                    .transition(.move(edge: .trailing))
-            }
-        }
-    }
-    // plus button
-    private var newTweetButton: some View {
-        ZStack {
-            VStack {
-                Spacer()
-                HStack {
-                    Spacer()
-                    Button {
-                        vm.showNewTweetView.toggle()
-                    } label: {
-                        Image(systemName: "plus")
-                            .font(.system(size: 24, weight: .semibold))
-                        .foregroundColor(Color.theme.text)
-                        .padding()
-                        .background(Color.theme.twitter, in: Circle())
-                    }
-                }
-            }
-        }
-        .padding(.bottom, 85)
-        .padding(.trailing)
-        .zIndex(2)
     }
 }

@@ -15,27 +15,18 @@ struct NotificationsView: View {
     
     @State private var selectedTab: NotificationTab = .all
     @Namespace var notificationsNamespace
-    
     @State private var showProfile: Bool = false
-    
     @ObservedObject var vm: MainViewModel
     
     var body: some View {
         
         ZStack {
-            
             Color.theme.background.ignoresSafeArea()
-            
             VStack {
-                
                 topItems
-                
                 tabs
-                
                 Spacer()
-                
                 Text("Notifications")
-                
                 Spacer()
             }
             .foregroundColor(Color.theme.text)
@@ -55,7 +46,7 @@ struct NotificationsView_Previews: PreviewProvider {
 }
 
 extension NotificationsView {
-    
+    // logged in user profile image, title, settings button
     private var topItems: some View {
         HStack(spacing: 8) {
             
@@ -76,7 +67,7 @@ extension NotificationsView {
         .padding(.horizontal)
         .foregroundColor(Color.theme.text)
     }
-    
+    // all, verified, and mentions tabs + underline
     private var tabs: some View {
         HStack(spacing: 8) {
             

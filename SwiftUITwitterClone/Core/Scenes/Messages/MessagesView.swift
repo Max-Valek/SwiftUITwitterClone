@@ -10,81 +10,22 @@ import SwiftUI
 struct MessagesView: View {
     
     @State private var searchTxt: String = ""
-    
     @State private var showProfile: Bool = false
-    
     @ObservedObject var vm: MainViewModel
     
     var body: some View {
+        
         ZStack {
-            
             Color.theme.background.ignoresSafeArea()
-            
             VStack {
-                
                 topItems
-                
                 searchBar
-                
-                RoundedRectangle(cornerRadius: 5)
-                    .frame(height: 0.5)
-                    .foregroundColor(Color.theme.text.opacity(0.2))
-                
+                HorizontalLine()
                 ScrollView {
-                    HStack(spacing: 2) {
-                        Image(systemName: "envelope")
-                            .font(.title)
-                            .padding(12)
-                            .background(Circle().fill(Color.theme.background))
-                            .padding(1)
-                            .background(Color.theme.text.opacity(0.4), in: Circle())
-                        
-                        Text("Message Requests")
-                            .font(.subheadline)
-                            .fontWeight(.bold)
-                        
-                        Spacer()
-                    }
-                    
-                    ForEach(0...5, id: \.self) { _ in
-                        HStack {
-                            Image(systemName: "person")
-                                .font(.title)
-                                .padding(12)
-                                .background(Circle().fill(Color.theme.background))
-                                .padding(1)
-                                .background(Color.theme.text.opacity(0.4), in: Circle())
-                            
-                            VStack {
-                                HStack(spacing: 2) {
-                                    Text("Group")
-                                        .font(.subheadline)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(Color.theme.text)
-                                    
-                                    Text("•")
-                                    
-                                    Text("20m")
-                                    
-                                    Spacer()
-                                }
-                                
-                                HStack {
-                                    Text("User sent @user's Tweet")
-                                    
-                                    Spacer()
-                                }
-                            }
-                            .foregroundColor(Color.theme.text.opacity(0.4))
-                            
-                            Spacer()
-                        }
-                        .padding(.leading, 2)
-                    }
-                    
+                    messageRequests
+                    conversations
                 }
                 .padding(.horizontal, 8)
-                
                 Spacer()
             }
             .foregroundColor(Color.theme.text)
@@ -104,7 +45,7 @@ struct MessagesView_Previews: PreviewProvider {
 }
 
 extension MessagesView {
-    
+    // logged in user image, title, and settings button
     private var topItems: some View {
         HStack(spacing: 8) {
             
@@ -125,7 +66,7 @@ extension MessagesView {
         .padding(.horizontal)
         .foregroundColor(Color.theme.text)
     }
-    
+    // search bar
     private var searchBar: some View {
         HStack(spacing: 8) {
             Image(systemName: "magnifyingglass")
@@ -141,5 +82,60 @@ extension MessagesView {
                 .fill(Color.theme.text.opacity(0.2))
         )
         .padding(.horizontal)
+    }
+    // message requests row
+    private var messageRequests: some View {
+        HStack(spacing: 2) {
+            Image(systemName: "envelope")
+                .font(.title)
+                .padding(12)
+                .background(Circle().fill(Color.theme.background))
+                .padding(1)
+                .background(Color.theme.text.opacity(0.4), in: Circle())
+            
+            Text("Message Requests")
+                .font(.subheadline)
+                .fontWeight(.bold)
+            
+            Spacer()
+        }
+    }
+    // conversations list
+    private var conversations: some View {
+        ForEach(0...5, id: \.self) { _ in
+            HStack {
+                Image(systemName: "person")
+                    .font(.title)
+                    .padding(12)
+                    .background(Circle().fill(Color.theme.background))
+                    .padding(1)
+                    .background(Color.theme.text.opacity(0.4), in: Circle())
+                
+                VStack {
+                    HStack(spacing: 2) {
+                        Text("Group")
+                            .font(.subheadline)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.theme.text)
+                        
+                        Text("•")
+                        
+                        Text("20m")
+                        
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Text("User sent @user's Tweet")
+                        
+                        Spacer()
+                    }
+                }
+                .foregroundColor(Color.theme.text.opacity(0.4))
+                
+                Spacer()
+            }
+            .padding(.leading, 2)
+        }
     }
 }

@@ -10,25 +10,17 @@ import SwiftUI
 struct SearchView: View {
     
     @State private var searchTxt: String = ""
-    
     @State private var showProfile: Bool = false
-    
     @ObservedObject var vm: MainViewModel
     
     var body: some View {
         
         ZStack {
-            
             Color.theme.background.ignoresSafeArea()
-            
             VStack {
-                
                 topItems
-                
                 Spacer()
-                
                 Text("Search")
-                
                 Spacer()
             }
             .foregroundColor(Color.theme.text)
@@ -48,7 +40,7 @@ struct SearchView_Previews: PreviewProvider {
 }
 
 extension SearchView {
-    
+    // loggen in user photo, search bar, settings button
     private var topItems: some View {
         HStack(spacing: 8) {
             

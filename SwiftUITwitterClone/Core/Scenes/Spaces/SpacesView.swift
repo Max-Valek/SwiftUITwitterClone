@@ -10,27 +10,18 @@ import SwiftUI
 struct SpacesView: View {
     
     @State private var searchTxt: String = ""
-    
     @State private var showProfile: Bool = false
-    
     @ObservedObject var vm: MainViewModel
     
     var body: some View {
         
         ZStack {
-            
             Color.theme.background.ignoresSafeArea()
-            
             VStack {
-                
                 topItems
-                
                 searchBar
-                
                 Spacer()
-                
                 Text("Spaces")
-                
                 Spacer()
             }
             .foregroundColor(Color.theme.text)
@@ -51,7 +42,7 @@ struct SpacesView_Previews: PreviewProvider {
 }
 
 extension SpacesView {
-    
+    // logged in user photo and title
     private var topItems: some View {
         HStack(spacing: 8) {
             
@@ -73,7 +64,7 @@ extension SpacesView {
         .padding(.horizontal)
         .foregroundColor(Color.theme.text)
     }
-    
+    // search bar
     private var searchBar: some View {
         HStack(spacing: 8) {
             Image(systemName: "magnifyingglass")
