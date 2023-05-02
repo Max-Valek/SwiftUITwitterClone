@@ -17,29 +17,12 @@ struct NewTweetView: View {
         ZStack {
             Color.theme.background
                 .ignoresSafeArea()
-            
             VStack {
                 topItems
-                
                 HStack(spacing: 16) {
-                    VStack {
-                        Image("doge")
-                            .resizable()
-                            .scaledToFill()
-                            .clipShape(Circle())
-                            .frame(width: 38, height: 38)
-                        
-                        Spacer()
-                    }
-                    
-                    VStack {
-                        TextField("What's Happening?", text: $newTweetText, axis: .vertical)
-                            .padding(.top)
-                        
-                        Spacer()
-                    }
+                    profileImageColumn
+                    inputTextColumn
                 }
-                
                 Spacer()
             }
             .padding(.horizontal, 30)
@@ -55,7 +38,7 @@ struct NewTweetView_Previews: PreviewProvider {
 }
 
 extension NewTweetView {
-    
+    // cancel and tweet buttons
     private var topItems: some View {
         HStack {
             
@@ -82,5 +65,26 @@ extension NewTweetView {
         .frame(maxWidth: .infinity)
         .padding(.bottom)
         .background(Color.theme.text.opacity(0.02))
+    }
+    // profile image
+    private var profileImageColumn: some View {
+        VStack {
+            Image("doge")
+                .resizable()
+                .scaledToFill()
+                .clipShape(Circle())
+                .frame(width: 38, height: 38)
+            
+            Spacer()
+        }
+    }
+    // text field
+    private var inputTextColumn: some View {
+        VStack {
+            TextField("What's Happening?", text: $newTweetText, axis: .vertical)
+                .padding(.top)
+            
+            Spacer()
+        }
     }
 }
