@@ -43,6 +43,16 @@ struct ProfileView: View {
                 
                 nameAndUsername
                 
+                if let bio = vm.user.bio {
+                    HStack {
+                        Text(bio)
+                        Spacer()
+                    }
+                    .padding(.top, 8)
+                    .padding(.bottom, 8)
+                    .padding(.horizontal, 25)
+                }
+                
                 info
                 
                 tabs

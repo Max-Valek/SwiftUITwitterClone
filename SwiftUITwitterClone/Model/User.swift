@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct User: Identifiable {
+struct User: Identifiable, Hashable {
     var id = UUID()
     var displayName: String
     var username: String
@@ -21,7 +21,7 @@ struct User: Identifiable {
 
 extension User {
     
-    static let doge: User = User(displayName: "Doge", username: "doge", profilePhoto: "doge", bio: "The mascot for Dogecoin: a cryptocurrency.", location: "Dogeland", following: 1, followers: 999)
+    static let doge: User = User(displayName: "Doge", username: "doge", profilePhoto: "doge", bio: "The mascot for Dogecoin: a cryptocurrency. I am now testing a multiline bio.", location: "Dogeland", following: 1, followers: 999)
     
     static let elon: User = User(displayName: "Elon Musk", username: "elon", profilePhoto: "elon", bio: "Owner of Twitter", location: "Twitter", following: 1, followers: 100)
     

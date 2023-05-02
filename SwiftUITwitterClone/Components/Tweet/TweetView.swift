@@ -34,10 +34,12 @@ struct TweetView: View {
                         .font(.title3)
                         .fontWeight(.semibold)
                     
-                    Text("@\(tweet.author.username)")
-                    Text("• 1m")
-                        .font(.headline)
-                        .foregroundColor(Color.theme.text.opacity(0.4))
+                    HStack {
+                        Text("@\(tweet.author.username)")
+                        Text("• 1m")
+                    }
+                    .font(.headline)
+                    .foregroundColor(Color.theme.text.opacity(0.4))
                     
                     Spacer()
                     

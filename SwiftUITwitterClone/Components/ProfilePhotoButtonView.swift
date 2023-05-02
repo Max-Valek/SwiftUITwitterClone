@@ -14,6 +14,7 @@ struct ProfilePhotoButtonView: View {
     let user: User
     
     var body: some View {
+        
         Button {
             showProfile.toggle()
         } label: {

@@ -11,9 +11,10 @@ import SwiftUI
 struct SwiftUITwitterCloneApp: App {
     var body: some Scene {
         WindowGroup {
+            
             MainView()
                 .preferredColorScheme(.dark)
-
+            
         }
     }
 }
