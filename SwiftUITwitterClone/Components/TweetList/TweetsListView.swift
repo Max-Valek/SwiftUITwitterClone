@@ -11,13 +11,14 @@ struct TweetsListView: View {
     
     var tweets: [Tweet]
     
+    @ObservedObject var vm: MainViewModel
     //@Binding var showProfile: Bool
     
     var body: some View {
         
         ScrollView(showsIndicators: false) {
             ForEach(tweets) { tweet in
-                TweetView(tweet: tweet)
+                TweetView(vm: vm, tweet: tweet)
                 
                 RoundedRectangle(cornerRadius: 5)
                     .frame(height: 0.5)
@@ -30,7 +31,7 @@ struct TweetsListView: View {
 
 struct TweetsListView_Previews: PreviewProvider {
     static var previews: some View {
-        TweetsListView(tweets: Tweet.forYouTweets)
+        TweetsListView(tweets: Tweet.forYouTweets, vm: MainViewModel())
             .preferredColorScheme(.dark)
     }
 }

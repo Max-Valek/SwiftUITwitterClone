@@ -14,6 +14,8 @@ struct MainView: View {
     
     @State private var tabSelection: BottomTabBarItem = BottomTabBarItem.home
     
+    @StateObject private var vm = MainViewModel()
+    
     var body: some View {
         // TabView from Apple
         // defaultTabView
@@ -24,21 +26,21 @@ struct MainView: View {
             
             // home, search, spaces, notifications, messages
             
-            HomeView()
+            HomeView(vm: vm)
             //Color.black
                 // add TabBarItem to TabBarItemsPreferenceKey array
                 .bottomTabBarItem(tab: BottomTabBarItem.home, selection: $tabSelection)
             
-            SearchView()
+            SearchView(vm: vm)
                 .bottomTabBarItem(tab: BottomTabBarItem.search, selection: $tabSelection)
             
-            SpacesView()
+            SpacesView(vm: vm)
                 .bottomTabBarItem(tab: BottomTabBarItem.spaces, selection: $tabSelection)
             
-            NotificationsView()
+            NotificationsView(vm: vm)
                 .bottomTabBarItem(tab: BottomTabBarItem.notifications, selection: $tabSelection)
             
-            MessagesView()
+            MessagesView(vm: vm)
                 .bottomTabBarItem(tab: BottomTabBarItem.messages, selection: $tabSelection)
         }
         

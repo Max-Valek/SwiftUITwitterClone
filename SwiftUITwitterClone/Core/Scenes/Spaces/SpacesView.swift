@@ -13,6 +13,8 @@ struct SpacesView: View {
     
     @State private var showProfile: Bool = false
     
+    @ObservedObject var vm: MainViewModel
+    
     var body: some View {
         
         ZStack {
@@ -33,7 +35,7 @@ struct SpacesView: View {
             }
             .foregroundColor(Color.theme.text)
             .fullScreenCover(isPresented: $showProfile) {
-                ProfileView(showProfile: $showProfile, user: User.doge)
+                ProfileView(vm: vm, user: User.doge)
                     .preferredColorScheme(.dark)
             }
         }
@@ -43,7 +45,7 @@ struct SpacesView: View {
 
 struct SpacesView_Previews: PreviewProvider {
     static var previews: some View {
-        SpacesView()
+        SpacesView(vm: MainViewModel())
             .preferredColorScheme(.dark)
     }
 }
@@ -53,7 +55,7 @@ extension SpacesView {
     private var topItems: some View {
         HStack(spacing: 8) {
             
-            ProfilePhotoButtonView(showProfile: $showProfile, user: User.doge)
+            ProfilePhotoButtonView(vm: vm, user: User.doge)
             
             Spacer()
             

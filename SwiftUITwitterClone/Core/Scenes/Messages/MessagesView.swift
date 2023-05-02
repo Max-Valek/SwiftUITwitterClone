@@ -13,6 +13,8 @@ struct MessagesView: View {
     
     @State private var showProfile: Bool = false
     
+    @ObservedObject var vm: MainViewModel
+    
     var body: some View {
         ZStack {
             
@@ -87,7 +89,7 @@ struct MessagesView: View {
             }
             .foregroundColor(Color.theme.text)
             .fullScreenCover(isPresented: $showProfile) {
-                ProfileView(showProfile: $showProfile, user: User.doge)
+                ProfileView(vm: vm, user: User.doge)
                     .preferredColorScheme(.dark)
             }
         }
@@ -96,7 +98,7 @@ struct MessagesView: View {
 
 struct MessagesView_Previews: PreviewProvider {
     static var previews: some View {
-        MessagesView()
+        MessagesView(vm: MainViewModel())
             .preferredColorScheme(.dark)
     }
 }
@@ -106,7 +108,7 @@ extension MessagesView {
     private var topItems: some View {
         HStack(spacing: 8) {
             
-            ProfilePhotoButtonView(showProfile: $showProfile, user: User.doge)
+            ProfilePhotoButtonView(vm: vm, user: User.doge)
             
             Spacer()
             

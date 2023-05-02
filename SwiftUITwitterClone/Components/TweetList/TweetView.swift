@@ -15,17 +15,14 @@ struct TweetView: View {
     @State private var showAuthorProfile: Bool = false
     //@Binding var showProfile: Bool
     
+    @ObservedObject var vm: MainViewModel
+    
     var tweet: Tweet
     
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
-            
-//            Image(tweet.author.profilePhoto ?? "default")
-//                .resizable()
-//                .scaledToFill()
-//                .clipShape(Circle())
-//                .frame(width: 38, height: 38)
-            TweetProfilePhotoButtonView(user: tweet.author, showAuthorProfile: $showAuthorProfile)
+
+            TweetProfilePhotoButtonView(vm: vm, user: tweet.author)
             
             VStack(alignment: .leading, spacing: 8) {
                 
@@ -119,8 +116,8 @@ struct TweetView: View {
         .fullScreenCover(isPresented: $showTweetDetail) {
             TweetDetailView(showTweetDetail: $showTweetDetail, tweet: tweet)
         }
-        .fullScreenCover(isPresented: $showAuthorProfile) {
-            ProfileView(showProfile: $showAuthorProfile, user: tweet.author)
+        .fullScreenCover(isPresented: $vm.showProfile) {
+            ProfileView(vm: vm, user: tweet.author)
         }
     }
     
@@ -128,6 +125,6 @@ struct TweetView: View {
 
 struct TweetView_Previews: PreviewProvider {
     static var previews: some View {
-        TweetView(tweet: Tweet(author: User.doge, date: "1m", text: "This is a sample tweet", images: nil, likes: 585, retweets: 24, bookmarks: 7, views: 2525))
+        TweetView(vm: MainViewModel(), tweet: Tweet(author: User.doge, date: "1m", text: "This is a sample tweet", images: nil, likes: 585, retweets: 24, bookmarks: 7, views: 2525))
     }
 }

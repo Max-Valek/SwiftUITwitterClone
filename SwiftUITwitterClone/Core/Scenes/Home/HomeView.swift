@@ -19,24 +19,21 @@ struct HomeView: View {
     @State private var showProfile: Bool = false
     @State private var showNewTweetView: Bool = false
     
+    @ObservedObject var vm: MainViewModel
+    
     //@State private var showHeader: Bool = true
     
     var body: some View {
         
         ZStack {
-            
             ZStack {
-                
                 VStack {
-                    
                     Spacer()
                     
                     HStack {
-                        
                         Spacer()
-                        
                         Button {
-                            showNewTweetView.toggle()
+                            vm.showNewTweetView.toggle()
                         } label: {
                             Image(systemName: "plus")
                                 .font(.system(size: 24, weight: .semibold))
@@ -46,7 +43,6 @@ struct HomeView: View {
                         }
                     }
                 }
-                
             }
             .padding(.bottom, 85)
             .padding(.trailing)
@@ -57,15 +53,7 @@ struct HomeView: View {
             VStack {
                 
                 VStack {
-                    
-//                    if showHeader {
-//                        topImages
-//
-//                        topTabs
-//                    }
-                    
                     topImages
-                    
                     topTabs
                     
                     RoundedRectangle(cornerRadius: 5)
@@ -79,12 +67,12 @@ struct HomeView: View {
                 Spacer()
             }
             .padding(.horizontal)
-            .fullScreenCover(isPresented: $showProfile) {
-                ProfileView(showProfile: $showProfile, user: User.doge)
+            .fullScreenCover(isPresented: $vm.showProfile) {
+                ProfileView(vm: vm, user: User.doge)
                     .preferredColorScheme(.dark)
             }
-            .fullScreenCover(isPresented: $showNewTweetView) {
-                NewTweetView(showNewTweetView: $showNewTweetView)
+            .fullScreenCover(isPresented: $vm.showNewTweetView) {
+                NewTweetView(showNewTweetView: $vm.showNewTweetView)
             }
             
         }
@@ -94,7 +82,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(vm: MainViewModel())
             .preferredColorScheme(.dark)
     }
 }
@@ -104,7 +92,7 @@ extension HomeView {
     private var topImages: some View {
         HStack {
             
-            ProfilePhotoButtonView(showProfile: $showProfile, user: User.doge)
+            ProfilePhotoButtonView(vm: vm, user: User.doge)
             
             Spacer()
             
@@ -183,11 +171,11 @@ extension HomeView {
         VStack {
             switch selectedTab {
             case .forYou:
-                TweetsListView(tweets: Tweet.forYouTweets)
+                TweetsListView(tweets: Tweet.forYouTweets, vm: vm)
                     .transition(.move(edge: .leading))
                 
             case .following:
-                TweetsListView(tweets: Tweet.followingTweets)
+                TweetsListView(tweets: Tweet.followingTweets, vm: vm)
                     .transition(.move(edge: .trailing))
             }
         }

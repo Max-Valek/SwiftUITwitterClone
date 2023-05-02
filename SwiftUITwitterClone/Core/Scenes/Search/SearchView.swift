@@ -13,6 +13,8 @@ struct SearchView: View {
     
     @State private var showProfile: Bool = false
     
+    @ObservedObject var vm: MainViewModel
+    
     var body: some View {
         
         ZStack {
@@ -30,8 +32,8 @@ struct SearchView: View {
                 Spacer()
             }
             .foregroundColor(Color.theme.text)
-            .fullScreenCover(isPresented: $showProfile) {
-                ProfileView(showProfile: $showProfile, user: User.doge)
+            .fullScreenCover(isPresented: $vm.showProfile) {
+                ProfileView(vm: vm, user: User.doge)
                     .preferredColorScheme(.dark)
             }
         }
@@ -40,7 +42,7 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(vm: MainViewModel())
             .preferredColorScheme(.dark)
     }
 }
@@ -50,7 +52,7 @@ extension SearchView {
     private var topItems: some View {
         HStack(spacing: 8) {
             
-            ProfilePhotoButtonView(showProfile: $showProfile, user: User.doge)
+            ProfilePhotoButtonView(vm: vm, user: User.doge)
             
             Spacer()
             

@@ -18,6 +18,8 @@ struct NotificationsView: View {
     
     @State private var showProfile: Bool = false
     
+    @ObservedObject var vm: MainViewModel
+    
     var body: some View {
         
         ZStack {
@@ -38,7 +40,7 @@ struct NotificationsView: View {
             }
             .foregroundColor(Color.theme.text)
             .fullScreenCover(isPresented: $showProfile) {
-                ProfileView(showProfile: $showProfile, user: User.doge)
+                ProfileView(vm: vm, user: User.doge)
                     .preferredColorScheme(.dark)
             }
         }
@@ -47,7 +49,7 @@ struct NotificationsView: View {
 
 struct NotificationsView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationsView()
+        NotificationsView(vm: MainViewModel())
             .preferredColorScheme(.dark)
     }
 }
@@ -57,7 +59,7 @@ extension NotificationsView {
     private var topItems: some View {
         HStack(spacing: 8) {
             
-            ProfilePhotoButtonView(showProfile: $showProfile, user: User.doge)
+            ProfilePhotoButtonView(vm: vm, user: User.doge)
             
             Spacer()
             

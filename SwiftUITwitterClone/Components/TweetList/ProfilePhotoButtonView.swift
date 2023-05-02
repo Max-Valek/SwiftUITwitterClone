@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ProfilePhotoButtonView: View {
     
-    @Binding var showProfile: Bool
+    @ObservedObject var vm: MainViewModel
     
     let user: User
     
     var body: some View {
         
         Button {
-            showProfile.toggle()
+            vm.showProfile.toggle()
         } label: {
             Image(user.profilePhoto ?? "default")
                 .resizable()
@@ -29,6 +29,6 @@ struct ProfilePhotoButtonView: View {
 
 struct ProfilePhotoButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePhotoButtonView(showProfile: .constant(false), user: User.doge)
+        ProfilePhotoButtonView(vm: MainViewModel(), user: User.doge)
     }
 }

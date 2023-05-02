@@ -15,22 +15,14 @@ enum ProfileTab: String, CaseIterable {
 }
 
 struct ProfileView: View {
-    
+
     @State private var selectedTab: ProfileTab = .tweets
-    
     @Namespace private var profileNamespace
     
-    @Binding var showProfile: Bool
+    @ObservedObject var vm: MainViewModel
     
-    // @EnvironmentObject var mainViewModel: MainViewModel
-    
-    @StateObject var vm: ProfileViewModel
-    
-    init(showProfile: Binding<Bool>, user: User) {
-        _showProfile = showProfile
-        _vm = StateObject(wrappedValue: ProfileViewModel(user: user))
-    }
-    
+    let user: User
+
     var body: some View {
         
         ZStack {
@@ -45,7 +37,7 @@ struct ProfileView: View {
                 
                 nameAndUsername
                 
-                if let bio = vm.user.bio {
+                if let bio = user.bio {
                     HStack {
                         Text(bio)
                         Spacer()
@@ -64,7 +56,7 @@ struct ProfileView: View {
                     .foregroundColor(Color.theme.text.opacity(0.2))
                 
                 if !vm.userTweets.isEmpty {
-                    TweetsListView(tweets: vm.userTweets)
+                    TweetsListView(tweets: vm.userTweets, vm: vm)
                         .padding(.horizontal, 8)
                 }
                 
@@ -72,6 +64,9 @@ struct ProfileView: View {
                 Spacer()
             }
             .foregroundColor(Color.theme.text)
+            .onAppear {
+                vm.fetchUserTweets(user: user)
+            }
             
         }
         
@@ -80,7 +75,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(showProfile: .constant(true), user: User.doge)
+        ProfileView(vm: MainViewModel(), user: User.doge)
             .preferredColorScheme(.dark)
     }
 }
@@ -99,7 +94,7 @@ extension ProfileView {
                 VStack {
                     HStack {
                         Button {
-                            showProfile.toggle()
+                            vm.showProfile.toggle()
                         } label: {
                             Image(systemName: "arrow.left")
                         }
@@ -118,7 +113,7 @@ extension ProfileView {
     
     private var photoAndEditProfile: some View {
         HStack(alignment: .center) {
-            Image(vm.user.profilePhoto ?? "default")
+            Image(user.profilePhoto ?? "default")
                 .resizable()
                 .scaledToFill()
                 .clipShape(Circle())
@@ -148,10 +143,10 @@ extension ProfileView {
         HStack {
             
             VStack(alignment: .leading) {
-                Text(vm.user.displayName)
+                Text(user.displayName)
                     .font(.title2)
                     .fontWeight(.black)
-                Text("@\(vm.user.username)")
+                Text("@\(user.username)")
                     .font(.headline)
                     .foregroundColor(Color.theme.text.opacity(0.5))
             }
@@ -168,7 +163,7 @@ extension ProfileView {
             HStack(spacing: 16) {
                 HStack(spacing: 2) {
                     Image(systemName: "location.north.circle")
-                    Text("\(vm.user.location ?? "Location Unknown")")
+                    Text("\(user.location ?? "Location Unknown")")
                 }
                 
                 HStack(spacing: 2) {
@@ -182,7 +177,7 @@ extension ProfileView {
             
             HStack(spacing: 16) {
                 HStack(alignment: .bottom, spacing: 4) {
-                    Text("\(vm.user.following)")
+                    Text("\(user.following)")
                         .font(.headline)
                         .fontWeight(.bold)
                     Text("Following")
@@ -190,7 +185,7 @@ extension ProfileView {
                         .foregroundColor(Color.theme.text.opacity(0.65))
                 }
                 HStack(alignment: .bottom, spacing: 4) {
-                    Text("\(vm.user.followers)")
+                    Text("\(user.followers)")
                         .font(.headline)
                         .fontWeight(.bold)
                     Text("Followers")

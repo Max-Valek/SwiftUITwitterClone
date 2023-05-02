@@ -11,15 +11,16 @@ import SwiftUI
 
 struct TweetProfilePhotoButtonView: View {
     
-    //@Binding var showProfile: Bool
+    @ObservedObject var vm: MainViewModel
     
     let user: User
     
-    @Binding var showAuthorProfile: Bool
-    
     var body: some View {
         Button {
-            showAuthorProfile.toggle()
+//            if !showAuthorProfile {
+//                showAuthorProfile.toggle()
+//            }
+            vm.showProfile.toggle()
         } label: {
             Image(user.profilePhoto ?? "default")
                 .resizable()
@@ -32,6 +33,6 @@ struct TweetProfilePhotoButtonView: View {
 
 struct TweetProfilePhotoButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        TweetProfilePhotoButtonView(user: User.doge, showAuthorProfile: .constant(false))
+        TweetProfilePhotoButtonView(vm: MainViewModel(), user: User.doge)
     }
 }
