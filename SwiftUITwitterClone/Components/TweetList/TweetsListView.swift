@@ -10,19 +10,14 @@ import SwiftUI
 struct TweetsListView: View {
     
     var tweets: [Tweet]
-    
     @ObservedObject var vm: MainViewModel
-    //@Binding var showProfile: Bool
     
     var body: some View {
         
         ScrollView(showsIndicators: false) {
             ForEach(tweets) { tweet in
                 TweetView(vm: vm, tweet: tweet)
-                
-                RoundedRectangle(cornerRadius: 5)
-                    .frame(height: 0.5)
-                    .foregroundColor(Color.theme.text.opacity(0.2))
+                HorizontalLine()
             }
         }
         .padding(.horizontal, 4)
