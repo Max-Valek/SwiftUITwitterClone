@@ -7,19 +7,14 @@
 
 import SwiftUI
 
-// Same as ProfilePhotoButtonView but for tweets, combine the 2 later
-
 struct TweetProfilePhotoButtonView: View {
     
     @ObservedObject var vm: MainViewModel
-    
     let user: User
     
     var body: some View {
+        
         Button {
-//            if !showAuthorProfile {
-//                showAuthorProfile.toggle()
-            //            }
             vm.selectedUser = user
             vm.showTweetAuthorProfile.toggle()
         } label: {
