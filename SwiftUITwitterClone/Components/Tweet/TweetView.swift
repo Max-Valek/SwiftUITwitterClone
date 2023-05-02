@@ -12,7 +12,7 @@ struct TweetView: View {
     @State private var isLiked: Bool = false
     @State private var isRetweeted: Bool = false
     @State private var showTweetDetail: Bool = false
-    
+    @State private var showAuthorProfile: Bool = false
     //@Binding var showProfile: Bool
     
     var tweet: Tweet
@@ -25,7 +25,7 @@ struct TweetView: View {
 //                .scaledToFill()
 //                .clipShape(Circle())
 //                .frame(width: 38, height: 38)
-            TweetProfilePhotoButtonView(user: tweet.author)
+            TweetProfilePhotoButtonView(user: tweet.author, showAuthorProfile: $showAuthorProfile)
             
             VStack(alignment: .leading, spacing: 8) {
                 
@@ -118,6 +118,9 @@ struct TweetView: View {
         .preferredColorScheme(.dark)
         .fullScreenCover(isPresented: $showTweetDetail) {
             TweetDetailView(showTweetDetail: $showTweetDetail, tweet: tweet)
+        }
+        .fullScreenCover(isPresented: $showAuthorProfile) {
+            ProfileView(showProfile: $showAuthorProfile, user: tweet.author)
         }
     }
     

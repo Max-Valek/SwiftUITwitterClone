@@ -15,9 +15,11 @@ struct TweetProfilePhotoButtonView: View {
     
     let user: User
     
+    @Binding var showAuthorProfile: Bool
+    
     var body: some View {
         Button {
-            //showProfile.toggle()
+            showAuthorProfile.toggle()
         } label: {
             Image(user.profilePhoto ?? "default")
                 .resizable()
@@ -30,6 +32,6 @@ struct TweetProfilePhotoButtonView: View {
 
 struct TweetProfilePhotoButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        TweetProfilePhotoButtonView(user: User.doge)
+        TweetProfilePhotoButtonView(user: User.doge, showAuthorProfile: .constant(false))
     }
 }
