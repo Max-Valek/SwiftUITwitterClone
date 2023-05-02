@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// for keeping track of tab
 enum ProfileTab: String, CaseIterable {
     case tweets = "Tweets"
     case replies = "Replies"
@@ -18,9 +19,8 @@ struct ProfileView: View {
 
     @State private var selectedTab: ProfileTab = .tweets
     @Namespace private var profileNamespace
-    
     @ObservedObject var vm: MainViewModel
-    
+    // user passed in
     let user: User
 
     var body: some View {
@@ -81,20 +81,24 @@ struct ProfileView_Previews: PreviewProvider {
 }
 
 extension ProfileView {
-    
+    // header image, back button, search button
     private var headerAndButtons: some View {
         VStack {
             ZStack(alignment: .top) {
                 Rectangle()
                     .fill(Color.theme.twitter)
-                    // .frame(height: 140)
                     .frame(maxWidth: .infinity)
                     .ignoresSafeArea()
                 
                 VStack {
                     HStack {
                         Button {
-                            vm.showProfile.toggle()
+                            if vm.showProfile {
+                                vm.showProfile.toggle()
+                            } else {
+                                vm.showTweetAuthorProfile.toggle()
+                            }
+                            
                         } label: {
                             Image(systemName: "arrow.left")
                         }

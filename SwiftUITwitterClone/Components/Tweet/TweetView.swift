@@ -12,7 +12,7 @@ struct TweetView: View {
     @State private var isLiked: Bool = false
     @State private var isRetweeted: Bool = false
     @State private var showTweetDetail: Bool = false
-    @State private var showAuthorProfile: Bool = false
+//    @State private var showAuthorProfile: Bool = false
     //@Binding var showProfile: Bool
     
     @ObservedObject var vm: MainViewModel
@@ -116,9 +116,6 @@ struct TweetView: View {
         .fullScreenCover(isPresented: $showTweetDetail) {
             TweetDetailView(showTweetDetail: $showTweetDetail, tweet: tweet)
         }
-//        .fullScreenCover(isPresented: $vm.showTweetAuthorProfile) {
-//            ProfileView(vm: vm, user: tweet.author)
-//        }
     }
     
 }

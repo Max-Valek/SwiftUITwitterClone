@@ -178,11 +178,12 @@
 		9D45A7C829E9D44A0041C60A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9DD125732A01A9740032A61C /* Tweet */,
 				9DD1256D2A0192210032A61C /* TweetList */,
 				9D7C0DB229FC708300650BEB /* TopTabs */,
 				9D45A7CA29E9D47C0041C60A /* BottomTabBar */,
 				9D73CD512A00414500CA6211 /* NewTweetView.swift */,
-				9D73CD4A2A0031EF00CA6211 /* TweetDetailView.swift */,
+				9D73CD482A002F8500CA6211 /* ProfilePhotoButtonView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -190,8 +191,7 @@
 		9D45A7C929E9D44D0041C60A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				9D45A7E329E9DAB20041C60A /* MainView.swift */,
-				9DD1256E2A01934E0032A61C /* MainViewModel.swift */,
+				9DD125702A01A2950032A61C /* Main */,
 				9D45A7E629E9DF3D0041C60A /* Home */,
 				9D20C37029FB371200445463 /* Profile */,
 				9DE09BCB29EF3F5E0079F501 /* Search */,
@@ -260,12 +260,44 @@
 		9DD1256D2A0192210032A61C /* TweetList */ = {
 			isa = PBXGroup;
 			children = (
-				9D73CD482A002F8500CA6211 /* ProfilePhotoButtonView.swift */,
-				9D51E0BF2A00899100917C7C /* TweetProfilePhotoButtonView.swift */,
 				9D73CD532A0053FC00CA6211 /* TweetsListView.swift */,
-				9D45A80029E9FDAC0041C60A /* TweetView.swift */,
 			);
 			path = TweetList;
+			sourceTree = "<group>";
+		};
+		9DD125702A01A2950032A61C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9DD125722A01A29F0032A61C /* ViewModel */,
+				9DD125712A01A29D0032A61C /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9DD125712A01A29D0032A61C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D45A7E329E9DAB20041C60A /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9DD125722A01A29F0032A61C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9DD1256E2A01934E0032A61C /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9DD125732A01A9740032A61C /* Tweet */ = {
+			isa = PBXGroup;
+			children = (
+				9D73CD4A2A0031EF00CA6211 /* TweetDetailView.swift */,
+				9D51E0BF2A00899100917C7C /* TweetProfilePhotoButtonView.swift */,
+				9D45A80029E9FDAC0041C60A /* TweetView.swift */,
+			);
+			path = Tweet;
 			sourceTree = "<group>";
 		};
 		9DE09BCB29EF3F5E0079F501 /* Search */ = {

@@ -11,24 +11,13 @@ struct MainView: View {
     
     // selection for content (used in CustomTabBarContainerView)
     @State private var selection: String = "home"
-    
     @State private var tabSelection: BottomTabBarItem = BottomTabBarItem.home
-    
     @StateObject private var vm = MainViewModel()
     
     var body: some View {
-        // TabView from Apple
-        // defaultTabView
-        
         // our custom implementation of TabView
         BottomTabBarContainerView(selection: $tabSelection) {
-            // ViewBuilder
-            
-            // home, search, spaces, notifications, messages
-            
             HomeView(vm: vm)
-            //Color.black
-                // add TabBarItem to TabBarItemsPreferenceKey array
                 .bottomTabBarItem(tab: BottomTabBarItem.home, selection: $tabSelection)
             
             SearchView(vm: vm)

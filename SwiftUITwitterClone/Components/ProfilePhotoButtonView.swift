@@ -14,7 +14,7 @@ struct ProfilePhotoButtonView: View {
     var body: some View {
         
         Button {
-           vm.showProfile.toggle()
+            vm.showProfile.toggle()
         } label: {
             Image(vm.loggedInUser.profilePhoto ?? "default")
                 .resizable()

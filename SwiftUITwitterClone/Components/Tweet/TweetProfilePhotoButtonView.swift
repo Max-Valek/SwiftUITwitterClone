@@ -19,8 +19,9 @@ struct TweetProfilePhotoButtonView: View {
         Button {
 //            if !showAuthorProfile {
 //                showAuthorProfile.toggle()
-//            }
-          //  vm.showTweetAuthorProfile.toggle()
+            //            }
+            vm.selectedUser = user
+            vm.showTweetAuthorProfile.toggle()
         } label: {
             Image(user.profilePhoto ?? "default")
                 .resizable()
