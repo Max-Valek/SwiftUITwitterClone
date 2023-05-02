@@ -19,12 +19,10 @@ struct HomeView: View {
     @ObservedObject var vm: MainViewModel
     
     var body: some View {
+        
         ZStack {
-            
             NewTweetButton(vm: vm)
-            
             Color.theme.background.ignoresSafeArea()
-            
             VStack {
                 VStack {
                     topImages
@@ -32,7 +30,6 @@ struct HomeView: View {
                     HorizontalLine()
                 }
                 .background(Color.theme.background.opacity(0.95))
-                
                 // Main Content
                 VStack {
                     switch selectedTab {
@@ -45,7 +42,6 @@ struct HomeView: View {
                             .transition(.move(edge: .trailing))
                     }
                 }
-                
                 Spacer()
             }
             .padding(.horizontal)
